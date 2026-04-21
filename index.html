@@ -3311,7 +3311,7 @@
             }
 
             .hero-stats {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: 1fr;
             }
 
             .rating-overview {
@@ -3391,6 +3391,14 @@
 
             .team-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Hero container — prevent grid item from expanding past viewport */
+            .hero-content,
+            .hero-left {
+                min-width: 0;
+                max-width: 100%;
+                overflow: hidden;
             }
 
             /* Hero text sizing */
