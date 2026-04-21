@@ -3262,7 +3262,17 @@
             }
 
             section {
-                padding: 60px 5%;
+                padding: 50px 5%;
+            }
+
+            .mobile-nav-links a {
+                min-height: 48px;
+            }
+
+            .footer-links a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
             }
 
             .steps-grid {
@@ -3379,6 +3389,39 @@
 
             .team-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Hero text sizing */
+            .hero-title {
+                font-size: 32px;
+            }
+
+            /* Hero stats: 1 column on phones */
+            .hero-stats {
+                grid-template-columns: 1fr;
+                max-width: 280px;
+            }
+
+            /* Hero form: full width */
+            .hero-form-wrapper {
+                max-width: 100%;
+                width: 100%;
+                padding: 0;
+            }
+
+            /* Section padding */
+            section {
+                padding: 40px 5%;
+            }
+
+            /* Section typography */
+            .section-title {
+                font-size: 24px;
+            }
+
+            .section-desc {
+                font-size: 15px;
+                line-height: 1.6;
             }
         }
 
