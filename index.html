@@ -3168,7 +3168,7 @@
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1200px) {
             .hero-content {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
                 max-width: 700px;
                 text-align: center;
                 padding-top: 60px;
@@ -3393,17 +3393,22 @@
                 grid-template-columns: 1fr;
             }
 
-            /* Hero container — prevent grid item from expanding past viewport */
+            /* Hero container — fix grid track overflow */
             .hero-content,
             .hero-left {
                 min-width: 0;
                 max-width: 100%;
-                overflow: hidden;
             }
 
-            /* Hero text sizing */
+            /* Remove double padding — section already provides 5% side padding */
+            .hero-content {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            /* Hero text sizing — 26px ensures longest line fits at 375px */
             .hero-title {
-                font-size: 32px;
+                font-size: 26px;
             }
 
             /* Hero stats: 1 column on phones */
