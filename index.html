@@ -2878,7 +2878,8 @@
             transition: all 0.3s ease;
         }
 
-        .float-chat:hover .chat-popup {
+        .float-chat:hover .chat-popup,
+        .float-chat.active .chat-popup {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
@@ -5362,10 +5363,11 @@
     </a>
 </div>
 
-<div class="float-chat">
-    <button class="float-chat-btn" aria-label="Live Chat">
-        <i class="fas fa-comments"></i>
-        <span class="chat-notification">1</span>
+<div class="float-chat" id="floatChat">
+    <button class="float-chat-btn" aria-label="Live Chat" onclick="toggleChat()">
+        <i class="fas fa-comments" id="chatIcon"></i>
+        <i class="fas fa-times" id="chatCloseIcon" style="display:none"></i>
+        <span class="chat-notification" id="chatBadge">1</span>
     </button>
     <div class="chat-popup">
         <div class="chat-popup-header">
@@ -5374,12 +5376,10 @@
             <div class="chat-popup-status">Online now — typically replies instantly</div>
         </div>
         <div class="chat-popup-body">
-            <div class="chat-bubble">
-                Hi there! 👋 I'm Emily from JunkAway Pro. How can I help you today? Need a quote or have a question?
-            </div>
+            <div id="chatMessages" style="max-height:180px;overflow-y:auto;margin-bottom:12px;"></div>
             <div class="chat-input">
-                <input type="text" placeholder="Type a message...">
-                <button><i class="fas fa-paper-plane"></i></button>
+                <input type="text" id="chatInput" placeholder="Type a message..." maxlength="300">
+                <button onclick="sendMsg()"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
@@ -5619,6 +5619,164 @@
     document.getElementById('zipCheck')?.addEventListener('keypress', e => {
         if (e.key === 'Enter') checkZip();
     });
+
+    // ===== SMART CHAT =====
+    (function() {
+        function lev(a, b) {
+            const dp = [];
+            for (let i = 0; i <= a.length; i++) dp[i] = [i];
+            for (let j = 0; j <= b.length; j++) dp[0][j] = j;
+            for (let i = 1; i <= a.length; i++)
+                for (let j = 1; j <= b.length; j++)
+                    dp[i][j] = a[i-1]===b[j-1] ? dp[i-1][j-1] : 1+Math.min(dp[i-1][j-1],dp[i-1][j],dp[i][j-1]);
+            return dp[a.length][b.length];
+        }
+
+        function fuzzyMatch(w, kw) {
+            if (w === kw || w.includes(kw) || kw.includes(w)) return true;
+            return w.length >= 4 && kw.length >= 4 && lev(w, kw) <= 2;
+        }
+
+        const INTENTS = [
+            { name:'greeting', phrases:['good morning','good afternoon','good evening'],
+              keywords:['hi','hello','hey','howdy','sup','yo'],
+              r:["Hey there! 👋 Ask me about pricing, what we take, scheduling, or anything else!",
+                 "Hi! Happy to help — what would you like to know about our junk removal services?",
+                 "Hello! Got a question about pricing, booking, or what we haul? I'm here!"] },
+            { name:'pricing', phrases:['how much'],
+              keywords:['price','cost','charge','fee','expensive','cheap','quote','estimate','rate','pay','money','dollar','affordable'],
+              r:["Pricing starts at $99 for a single item and up to $599 for a full truck load. All estimates are free with no obligation — final price confirmed before we start!",
+                 "We offer free upfront estimates! Single items from $99, full loads up to $599. No hidden fees, ever."] },
+            { name:'booking', phrases:['same day','pick up','can you come'],
+              keywords:['book','schedule','appointment','available','come','pickup','today','tomorrow','weekend','asap','urgent','when'],
+              r:["We're available 7 days a week, 7AM–9PM — same-day service if you book before noon! Fill out the form or call (555) 123-4567.",
+                 "Same-day pickups available if you reach us before noon! We work 7 days a week. Use the form above or give us a call."] },
+            { name:'items', phrases:['what do you','can you take'],
+              keywords:['take','remove','haul','furniture','couch','sofa','mattress','bed','fridge','refrigerator','appliance','tv','electronics','yard','debris','trash','cleanout','estate','hoard','construction'],
+              r:["We take almost everything — furniture, appliances, electronics, yard waste, construction debris, and full estate or hoarder cleanouts. Not sure about something specific? Just ask!",
+                 "Furniture, appliances, TVs, yard waste, construction debris, full cleanouts — you name it, we haul it. Ask about any specific item!"] },
+            { name:'hazardous', phrases:[],
+              keywords:['hazardous','chemical','paint','gasoline','propane','asbestos','toxic','dangerous','battery','acid'],
+              r:["We can't take hazardous materials like chemicals, paint, gas, oil, or asbestos — those need special disposal. For everything else, we've got you! Call (555) 123-4567 if unsure."] },
+            { name:'area', phrases:['near me','come to','do you cover'],
+              keywords:['area','location','where','city','zip','serve','nearby','local','travel'],
+              r:["We serve the local area and surrounding communities. Not sure if we cover your ZIP? Call (555) 123-4567 or fill out the form — we'll confirm right away!"] },
+            { name:'eco', phrases:[],
+              keywords:['eco','green','recycle','donate','donation','environment','landfill','sustainable','charity'],
+              r:["85% of what we haul gets recycled or donated to local charities — we take landfill diversion seriously. Feel good about choosing us!"] },
+            { name:'reviews', phrases:[],
+              keywords:['review','rating','star','google','trust','reliable','legit','reputation','testimonial','recommend'],
+              r:["We have a 4.9-star rating with 2,400+ verified Google reviews. Check out the Reviews section on this page — we're proud of every one!"] },
+            { name:'contact', phrases:[],
+              keywords:['talk','speak','call','phone','contact','human','person','someone','number','reach'],
+              r:["Reach us directly at (555) 123-4567, 7 days a week 7AM–9PM. We love talking to customers!",
+                 "Give us a call at (555) 123-4567 — real people answer, no robots on the phone. 😄"] },
+            { name:'thanks', phrases:['sounds good','got it'],
+              keywords:['thank','thanks','ty','thx','great','awesome','perfect','appreciate'],
+              r:["Happy to help! Fill out the form above whenever you're ready for your free estimate. 😊",
+                 "Anytime! Let me know if you have more questions."] },
+        ];
+
+        const FALLBACK = [
+            "Good question! For anything specific, call us at (555) 123-4567 or fill out the form — our team can answer anything. Anything else I can help with?",
+            "I'm not sure about that one — best to call us at (555) 123-4567 for specifics. Is there something else I can help with?"
+        ];
+
+        function normalize(t) { return t.toLowerCase().replace(/[^\w\s]/g,'').replace(/\s+/g,' ').trim(); }
+        function pick(arr) { return arr[Math.floor(Math.random()*arr.length)]; }
+
+        function matchIntents(text) {
+            const norm = normalize(text);
+            const words = norm.split(' ');
+            const matched = [];
+            for (const intent of INTENTS) {
+                if ((intent.phrases.some(p => norm.includes(p))) ||
+                    (intent.keywords.some(kw => words.some(w => fuzzyMatch(w, kw))))) {
+                    matched.push(intent);
+                }
+            }
+            if (matched.length === 1 && matched[0].name === 'greeting') return matched;
+            return matched.filter(i => i.name !== 'greeting');
+        }
+
+        let chatOpened = false, chatActive = false;
+
+        window.toggleChat = function() {
+            const el = document.getElementById('floatChat');
+            const badge = document.getElementById('chatBadge');
+            const icon = document.getElementById('chatIcon');
+            const closeIcon = document.getElementById('chatCloseIcon');
+            chatActive = !chatActive;
+            el.classList.toggle('active', chatActive);
+            if (badge) badge.style.display = chatActive ? 'none' : '';
+            if (icon) icon.style.display = chatActive ? 'none' : '';
+            if (closeIcon) closeIcon.style.display = chatActive ? '' : 'none';
+            if (chatActive && !chatOpened) {
+                chatOpened = true;
+                addMsg('bot', "Hi! I'm here to help. Ask me anything about our junk removal services, pricing, or scheduling.");
+            }
+            if (chatActive) setTimeout(() => document.getElementById('chatInput')?.focus(), 300);
+        };
+
+        function addMsg(role, text) {
+            const c = document.getElementById('chatMessages');
+            if (!c) return;
+            const div = document.createElement('div');
+            if (role === 'bot') {
+                div.className = 'chat-bubble';
+                div.style.marginBottom = '8px';
+                div.textContent = text;
+            } else {
+                div.style.cssText = 'text-align:right;margin-bottom:8px';
+                const span = document.createElement('span');
+                span.style.cssText = 'background:var(--primary);color:#fff;padding:8px 12px;border-radius:12px 12px 4px 12px;font-size:13px;display:inline-block;max-width:90%;text-align:left';
+                span.textContent = text;
+                div.appendChild(span);
+            }
+            c.appendChild(div);
+            c.scrollTop = c.scrollHeight;
+        }
+
+        function showTyping() {
+            const c = document.getElementById('chatMessages');
+            if (!c) return;
+            const el = document.createElement('div');
+            el.id = 'chatTyping';
+            el.className = 'chat-bubble';
+            el.style.marginBottom = '8px';
+            el.innerHTML = '<span style="letter-spacing:4px;font-size:16px">···</span>';
+            c.appendChild(el);
+            c.scrollTop = c.scrollHeight;
+        }
+
+        function removeTyping() { const el = document.getElementById('chatTyping'); if (el) el.remove(); }
+
+        window.sendMsg = function() {
+            const input = document.getElementById('chatInput');
+            if (!input) return;
+            const text = input.value.trim();
+            if (!text) return;
+            input.value = '';
+            addMsg('user', text);
+            showTyping();
+            setTimeout(() => {
+                removeTyping();
+                const matched = matchIntents(text);
+                if (matched.length === 0) {
+                    addMsg('bot', pick(FALLBACK));
+                } else if (matched.length === 1) {
+                    addMsg('bot', pick(matched[0].r));
+                } else {
+                    matched.forEach((intent, i) => setTimeout(() => addMsg('bot', pick(intent.r)), i * 700));
+                }
+            }, 800);
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('chatInput');
+            if (input) input.addEventListener('keypress', e => { if (e.key === 'Enter') window.sendMsg(); });
+        });
+    })();
 
 </script>
 </body>
