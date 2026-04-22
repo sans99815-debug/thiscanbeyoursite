@@ -5634,7 +5634,7 @@
 
         function fuzzyMatch(w, kw) {
             if (w === kw || w.includes(kw) || kw.includes(w)) return true;
-            return w.length >= 4 && kw.length >= 4 && lev(w, kw) <= 2;
+            return w.length >= 6 && kw.length >= 6 && lev(w, kw) <= 2;
         }
 
         const INTENTS = [
@@ -5667,8 +5667,8 @@
             { name:'reviews', phrases:[],
               keywords:['review','rating','star','google','trust','reliable','legit','reputation','testimonial','recommend'],
               r:["We have a 4.9-star rating with 2,400+ verified Google reviews. Check out the Reviews section on this page — we're proud of every one!"] },
-            { name:'contact', phrases:[],
-              keywords:['talk','speak','call','phone','contact','human','person','someone','number','reach'],
+            { name:'contact', phrases:['need help'],
+              keywords:['talk','speak','call','phone','contact','human','person','someone','number','reach','help'],
               r:["Reach us directly at (555) 123-4567, 7 days a week 7AM–9PM. We love talking to customers!",
                  "Give us a call at (555) 123-4567 — real people answer, no robots on the phone. 😄"] },
             { name:'thanks', phrases:['sounds good','got it'],
@@ -5685,18 +5685,17 @@
         function normalize(t) { return t.toLowerCase().replace(/[^\w\s]/g,'').replace(/\s+/g,' ').trim(); }
         function pick(arr) { return arr[Math.floor(Math.random()*arr.length)]; }
 
-        function matchIntents(text) {
+        function bestIntent(text) {
             const norm = normalize(text);
             const words = norm.split(' ');
-            const matched = [];
+            let best = null, bestScore = 0;
             for (const intent of INTENTS) {
-                if ((intent.phrases.some(p => norm.includes(p))) ||
-                    (intent.keywords.some(kw => words.some(w => fuzzyMatch(w, kw))))) {
-                    matched.push(intent);
-                }
+                const phraseHit = intent.phrases.some(p => norm.includes(p));
+                const hits = intent.keywords.filter(kw => words.some(w => fuzzyMatch(w, kw))).length;
+                const score = phraseHit ? 1000 + hits : hits;
+                if (score > bestScore) { bestScore = score; best = intent; }
             }
-            if (matched.length === 1 && matched[0].name === 'greeting') return matched;
-            return matched.filter(i => i.name !== 'greeting');
+            return bestScore > 0 ? best : null;
         }
 
         let chatOpened = false, chatActive = false;
@@ -5761,14 +5760,8 @@
             showTyping();
             setTimeout(() => {
                 removeTyping();
-                const matched = matchIntents(text);
-                if (matched.length === 0) {
-                    addMsg('bot', pick(FALLBACK));
-                } else if (matched.length === 1) {
-                    addMsg('bot', pick(matched[0].r));
-                } else {
-                    matched.forEach((intent, i) => setTimeout(() => addMsg('bot', pick(intent.r)), i * 700));
-                }
+                const matched = bestIntent(text);
+                addMsg('bot', matched ? pick(matched.r) : pick(FALLBACK));
             }, 800);
         };
 
