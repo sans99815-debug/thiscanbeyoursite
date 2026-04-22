@@ -3454,6 +3454,13 @@
             /* Hero text sizing — 26px ensures longest line fits at 375px */
             .hero-title {
                 font-size: 26px;
+                line-height: 1.35;
+            }
+
+            /* Give the underline ::after room so it doesn't touch the next line */
+            .hero-title .highlight {
+                display: inline-block;
+                padding-bottom: 8px;
             }
 
             /* Hero stats: 1 column on phones */
