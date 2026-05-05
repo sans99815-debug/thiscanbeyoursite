@@ -176,13 +176,12 @@
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid rgba(0,0,0,0.06);
-            transition: all 0.3s ease;
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
             height: 75px;
         }
 
         .navbar.scrolled {
             box-shadow: var(--shadow-md);
-            height: 65px;
         }
 
         .logo {
@@ -1748,22 +1747,15 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 16px;
-            background: var(--gray-50);
-            border-radius: 10px;
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .area-item:hover {
-            border-color: var(--primary);
-            background: var(--primary-light);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-100);
         }
 
         .area-item i {
             color: var(--primary);
-            font-size: 14px;
+            font-size: 13px;
+            width: 16px;
+            flex-shrink: 0;
         }
 
         .area-item span {
@@ -3054,6 +3046,23 @@
             opacity: 1;
             transform: translateX(0);
         }
+
+        /* ===== STAGGERED CARD ANIMATIONS ===== */
+        .service-card, .pricing-card, .gallery-item, .testimonial-card {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease;
+        }
+        .service-card.card-visible, .pricing-card.card-visible, .gallery-item.card-visible, .testimonial-card.card-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .service-card:nth-child(2), .pricing-card:nth-child(2), .gallery-item:nth-child(2), .testimonial-card:nth-child(2) { transition-delay: 0.08s; }
+        .service-card:nth-child(3), .pricing-card:nth-child(3), .gallery-item:nth-child(3), .testimonial-card:nth-child(3) { transition-delay: 0.16s; }
+        .service-card:nth-child(4), .pricing-card:nth-child(4), .gallery-item:nth-child(4), .testimonial-card:nth-child(4) { transition-delay: 0.24s; }
+        .service-card:nth-child(5), .pricing-card:nth-child(5), .gallery-item:nth-child(5) { transition-delay: 0.32s; }
+        .service-card:nth-child(6), .pricing-card:nth-child(6), .gallery-item:nth-child(6) { transition-delay: 0.40s; }
+        .service-card:hover { transform: translateY(-6px) !important; }
 
         /* ===== LIGHTBOX ===== */
         .lightbox {
@@ -5303,6 +5312,26 @@
         }, 16);
     }
 
+    // ===== STAGGERED CARD REVEAL =====
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('card-visible');
+                cardObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.service-card, .pricing-card, .gallery-item, .testimonial-card').forEach(el => cardObserver.observe(el));
+
+    // ===== HERO PARALLAX =====
+    const heroBg = document.querySelector('.hero-bg-image');
+    if (heroBg) {
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            heroBg.style.transform = 'translateY(' + (y * 0.3) + 'px)';
+        }, { passive: true });
+    }
+
     // ===== FAQ TOGGLE =====
     function toggleFaq(el) {
         const item = el.closest('.faq-item');
@@ -5620,7 +5649,7 @@
     '.dl*{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}',
 
     /* badge */
-    '#db{position:fixed;top:14px;left:50%;transform:translateX(-50%);background:rgba(249,115,22,0.12);color:#f97316;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:20px;z-index:99999;pointer-events:none;box-shadow:0 2px 12px rgba(249,115,22,.15);white-space:nowrap;border:1px solid rgba(249,115,22,0.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}',
+    '#db{position:fixed;top:14px;left:50%;transform:translateX(-50%);background:rgba(249,115,22,0.07);color:#f97316;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:20px;z-index:99999;pointer-events:none;box-shadow:none;white-space:nowrap;border:1px solid rgba(249,115,22,0.22);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}',
 
     /* welcome modal */
     '#dwb{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:99998;display:flex;align-items:center;justify-content:center;animation:dFI .35s ease}',
@@ -5652,36 +5681,32 @@
     '#dgt .dtd{width:6px;height:6px;background:#fff;border-radius:50%;animation:dPL 1.6s infinite;flex-shrink:0}',
 
     /* pricing drawer */
-    '#ddr{position:fixed;top:0;right:0;height:100%;width:360px;max-width:92vw;background:#0f172a;z-index:99995;box-shadow:-8px 0 50px rgba(0,0,0,.5);transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);overflow-y:auto;display:flex;flex-direction:column}',
+    '#ddr{position:fixed;top:0;right:0;height:100%;width:380px;max-width:92vw;background:#0a0f1a;z-index:99995;box-shadow:-8px 0 50px rgba(0,0,0,.6);transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);overflow-y:auto;display:flex;flex-direction:column}',
     '#ddr.open{transform:translateX(0)}',
-    '#ddr-head{background:#1e293b;padding:22px 24px 18px;flex-shrink:0;border-bottom:1px solid rgba(249,115,22,.2)}',
-    '#ddr-head .dh-tag{font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#f97316;margin-bottom:6px}',
-    '#ddr-head h2{font-size:1.1rem;font-weight:800;color:#f8fafc;margin:0;line-height:1.3}',
-    '#ddr-close{position:absolute;top:16px;right:18px;background:none;border:none;color:#475569;font-size:22px;cursor:pointer;line-height:1;z-index:1}',
-    '#ddr-close:hover{color:#f8fafc}',
-    '#ddr-body{padding:24px;flex:1}',
-    '.ddr-block{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid #1e293b}',
-    '.ddr-block:last-child{border-bottom:none;margin-bottom:0}',
-    '.ddr-label{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#475569;margin-bottom:8px}',
-    '.ddr-title{font-size:1rem;font-weight:800;color:#f8fafc;margin:0 0 4px}',
-    '.ddr-price{font-size:1.6rem;font-weight:800;color:#f97316;margin:0 0 10px;line-height:1}',
-    '.ddr-price span{font-size:.8rem;font-weight:600;color:#475569}',
-    '.ddr-list{list-style:none;margin:0 0 0;padding:0}',
-    '.ddr-list li{font-size:.8rem;color:#94a3b8;padding:3px 0;display:flex;align-items:flex-start;gap:7px;line-height:1.4}',
-    '.ddr-list li::before{content:"\\2713";color:#f97316;font-weight:700;flex-shrink:0;margin-top:1px}',
-    '.ddr-addon{background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.25);border-radius:10px;padding:14px;margin-top:12px}',
-    '.ddr-addon .da-label{font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#f97316;margin-bottom:4px}',
-    '.ddr-addon .da-title{font-size:.88rem;font-weight:700;color:#f8fafc;margin:0 0 3px}',
-    '.ddr-addon .da-desc{font-size:.78rem;color:#94a3b8;margin:0 0 8px;line-height:1.4}',
-    '.ddr-addon .da-price{font-size:1.1rem;font-weight:800;color:#f97316}',
-    '.ddr-recep{background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:10px;padding:14px}',
-    '.ddr-recep .dr-label{font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#4ade80;margin-bottom:4px}',
-    '.ddr-recep .dr-title{font-size:.88rem;font-weight:700;color:#f8fafc;margin:0 0 6px}',
-    '.ddr-recep .dr-list{list-style:none;margin:0 0 10px;padding:0}',
-    '.ddr-recep .dr-list li{font-size:.78rem;color:#86efac;padding:2px 0;display:flex;gap:6px;align-items:flex-start;line-height:1.4}',
-    '.ddr-recep .dr-list li::before{content:"\\25B8";color:#4ade80;flex-shrink:0}',
-    '.ddr-recep .dr-note{font-size:.72rem;color:#4ade80;font-style:italic;margin:0;opacity:.75}',
-    '#ddr-cta{display:block;width:100%;background:#f97316;color:#fff;border:none;border-radius:10px;padding:13px;font-size:.9rem;font-weight:700;cursor:pointer;text-align:center;margin-top:20px}',
+    '#ddr-head{padding:28px 28px 22px;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.06)}',
+    '#ddr-head .dh-tag{font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#f97316;margin-bottom:10px}',
+    '#ddr-head h2{font-size:1.25rem;font-weight:800;color:#f8fafc;margin:0;line-height:1.25}',
+    '#ddr-close{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.06);border:none;color:#94a3b8;font-size:18px;cursor:pointer;line-height:1;z-index:1;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}',
+    '#ddr-close:hover{background:rgba(255,255,255,.12);color:#f8fafc}',
+    '#ddr-body{padding:0;flex:1}',
+    '.ddr-block{padding:24px 28px;border-bottom:1px solid rgba(255,255,255,.06)}',
+    '.ddr-block:last-child{border-bottom:none}',
+    '.ddr-label{font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#475569;margin-bottom:12px}',
+    '.ddr-title{font-size:1.05rem;font-weight:700;color:#f8fafc;margin:0 0 2px}',
+    '.ddr-price{font-size:2.2rem;font-weight:900;color:#f97316;margin:8px 0 14px;line-height:1;letter-spacing:-.02em}',
+    '.ddr-price span{font-size:.85rem;font-weight:500;color:#475569;letter-spacing:0}',
+    '.ddr-list{list-style:none;margin:0;padding:0}',
+    '.ddr-list li{font-size:.82rem;color:#64748b;padding:4px 0;display:flex;align-items:flex-start;gap:8px;line-height:1.45}',
+    '.ddr-list li::before{content:"—";color:#f97316;font-weight:700;flex-shrink:0}',
+    '.ddr-addon-line{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.05);font-size:.8rem;color:#64748b}',
+    '.ddr-addon-line strong{color:#f97316}',
+    '.ddr-recep-title{font-size:1rem;font-weight:700;color:#f8fafc;margin:0 0 10px}',
+    '.ddr-recep-list{list-style:none;margin:0 0 12px;padding:0}',
+    '.ddr-recep-list li{font-size:.82rem;color:#64748b;padding:3px 0;display:flex;gap:8px;line-height:1.45}',
+    '.ddr-recep-list li::before{content:"—";color:#475569;flex-shrink:0}',
+    '.ddr-recep-note{font-size:.78rem;color:#475569;font-style:italic;margin:0}',
+    '#ddr-foot{padding:20px 28px 28px;flex-shrink:0}',
+    '#ddr-cta{display:block;width:100%;background:#f97316;color:#fff;border:none;border-radius:10px;padding:15px;font-size:.95rem;font-weight:800;cursor:pointer;text-align:center;letter-spacing:.01em}',
     '#ddr-cta:hover{background:#ea580c}',
 
     /* AI chat info card */
@@ -5702,10 +5727,10 @@
     '@keyframes dSU{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}',
     '@keyframes dPL{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}',
     '@media(max-width:768px){',
-    '#ddr{width:100%;left:0;right:0;top:auto;bottom:0;height:88vh;border-radius:20px 20px 0 0;transform:translateY(100%)}',
+    '#ddr{width:100%;max-width:100%;left:0;right:0;top:auto;bottom:0;height:90vh;border-radius:18px 18px 0 0;transform:translateY(100%)}',
     '#ddr.open{transform:translateY(0)}',
-    '#dgt{top:auto;bottom:80px;transform:none}',
-    '#dgt button{border-radius:10px 10px 0 0;writing-mode:horizontal-tb;transform:none;padding:10px 14px;font-size:10px}',
+    '#dgt{top:auto;bottom:72px;left:50%;right:auto;transform:translateX(-50%);width:auto}',
+    '#dgt button{border-radius:24px;writing-mode:horizontal-tb;transform:none;padding:11px 22px;font-size:12px;white-space:nowrap;box-shadow:0 4px 20px rgba(249,115,22,.5)}',
     '#dsn{display:none}',
     '#dcc{display:none}',
     '}'
@@ -5736,62 +5761,49 @@
     '<div id="ddr-head"><div class="dh-tag">For Business Owners</div><h2>What does a site like this cost?</h2></div>',
     '<div id="ddr-body">',
 
-    /* website package */
+    /* website */
     '<div class="ddr-block">',
-    '<div class="ddr-label">Website Package</div>',
-    '<div class="ddr-title">Your Full Site, Built &amp; Live</div>',
+    '<div class="ddr-label">Website</div>',
     '<div class="ddr-price">$1,000 <span>one-time</span></div>',
     '<ul class="ddr-list">',
-    '<li>Custom branding, colors &amp; logo</li>',
-    '<li>Your service area, phone &amp; pricing</li>',
-    '<li>Looks perfect on phones, tablets &amp; desktop</li>',
-    '<li>Booking form, before &amp; after gallery</li>',
-    '<li>Live within 48 hours</li>',
+    '<li>Custom branding built around your business</li>',
+    '<li>Phone, service area &amp; pricing set up for you</li>',
+    '<li>Booking form, gallery, everything works on day one</li>',
+    '<li>Live in 48 hours</li>',
     '</ul>',
-
-    /* AI chat add-on */
-    '<div class="ddr-addon">',
-    '<div class="da-label">Optional Add-On</div>',
-    '<div class="da-title">AI Chat Assistant</div>',
-    '<div class="da-desc">Like the chat on this site. Answers customer questions about pricing, services &amp; scheduling — automatically, 24/7.</div>',
-    '<div class="da-price">+$200</div>',
-    '</div>',
+    '<div class="ddr-addon-line">Add AI chat (like this one) for <strong>+$200</strong></div>',
     '</div>',
 
     /* maintenance */
     '<div class="ddr-block">',
-    '<div class="ddr-label">Ongoing</div>',
-    '<div class="ddr-title">Monthly Maintenance</div>',
+    '<div class="ddr-label">Monthly</div>',
     '<div class="ddr-price">$50 <span>/ month</span></div>',
     '<ul class="ddr-list">',
-    '<li>Hosting &amp; domain management</li>',
-    '<li>Content updates &amp; edits</li>',
-    '<li>Site stays online &amp; fast — you get notified if anything breaks</li>',
+    '<li>Hosting &amp; domain handled</li>',
+    '<li>Content updates whenever you need them</li>',
+    '<li>Site stays fast — you get alerted if anything breaks</li>',
     '</ul>',
     '</div>',
 
-    /* AI receptionist */
+    /* receptionist */
     '<div class="ddr-block">',
-    '<div class="ddr-recep">',
-    '<div class="dr-label">Also Available</div>',
-    '<div class="dr-title">AI Phone Receptionist</div>',
-    '<ul class="dr-list">',
+    '<div class="ddr-label">Also Available</div>',
+    '<div class="ddr-recep-title">AI Phone Receptionist</div>',
+    '<ul class="ddr-recep-list">',
     '<li>Answers every call — 24/7, no hold music</li>',
-    '<li>Qualifies the lead, captures the job details</li>',
-    '<li>Sounds like a real person, not a robot</li>',
-    '<li>Works while you\'re on a job</li>',
+    '<li>Captures the lead, books the job</li>',
+    '<li>Sounds like a real person</li>',
     '</ul>',
-    '<p class="dr-note">Pricing available on request</p>',
-    '</div>',
+    '<p class="ddr-recep-note">Pricing on request</p>',
     '</div>',
 
-    '<button id="ddr-cta">Get In Touch &rarr;</button>',
-    '</div>'
+    '</div>',
+    '<div id="ddr-foot"><button id="ddr-cta">Get In Touch &rarr;</button></div>'
   ].join('');
   document.body.appendChild(dr);
 
-  function openDrawer() { dr.classList.add('open'); bd.classList.add('show'); }
-  function closeDrawer() { dr.classList.remove('open'); bd.classList.remove('show'); }
+  function openDrawer() { dr.classList.add('open'); bd.classList.add('show'); gt.style.opacity='0'; gt.style.pointerEvents='none'; }
+  function closeDrawer() { dr.classList.remove('open'); bd.classList.remove('show'); gt.style.opacity='1'; gt.style.pointerEvents='auto'; }
   document.getElementById('ddr-close').addEventListener('click', closeDrawer);
   bd.addEventListener('click', closeDrawer);
 
