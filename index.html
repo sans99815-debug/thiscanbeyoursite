@@ -5692,14 +5692,14 @@
     '#ddr-cta{display:block;width:100%;background:#f97316;color:#fff;border:none;border-radius:10px;padding:15px;font-size:.95rem;font-weight:800;cursor:pointer;text-align:center;letter-spacing:.01em}',
     '#ddr-cta:hover{background:#ea580c}',
 
-    /* AI chat info card */
-    '#dcc{position:fixed;bottom:90px;left:20px;background:#0f172a;color:#fff;border-radius:12px;padding:14px 16px;max-width:240px;z-index:99994;box-shadow:0 8px 30px rgba(0,0,0,.3);opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}',
+    /* AI chat info card — speech bubble above chat button */
+    '#dcc{position:fixed;bottom:90px;right:20px;background:#0f172a;color:#fff;border-radius:12px 12px 4px 12px;padding:14px 36px 14px 16px;width:220px;z-index:99994;box-shadow:0 8px 30px rgba(0,0,0,.4);opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s ease;pointer-events:none}',
+    '#dcc::after{content:"";position:absolute;bottom:-10px;right:18px;border-width:10px 8px 0 8px;border-style:solid;border-color:#0f172a transparent transparent transparent}',
     '#dcc.show{opacity:1;transform:translateY(0);pointer-events:auto}',
-    '#dcc .dc-tag{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#f97316;margin-bottom:5px}',
-    '#dcc .dc-title{font-size:.85rem;font-weight:700;margin:0 0 4px}',
-    '#dcc .dc-desc{font-size:.75rem;color:#94a3b8;line-height:1.45;margin:0 0 8px}',
-    '#dcc .dc-price{font-size:.75rem;font-weight:700;color:#f97316}',
-    '#dccx{position:absolute;top:8px;right:10px;background:none;border:none;color:#475569;font-size:14px;cursor:pointer;line-height:1}',
+    '#dcc .dc-tag{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#f97316;margin-bottom:6px}',
+    '#dcc .dc-title{font-size:.82rem;font-weight:700;margin:0 0 5px;line-height:1.35}',
+    '#dcc .dc-price{font-size:.8rem;font-weight:700;color:#f97316;margin-top:8px}',
+    '#dccx{position:absolute;top:8px;right:8px;background:none;border:none;color:#475569;font-size:13px;cursor:pointer;line-height:1;width:20px;height:20px;display:flex;align-items:center;justify-content:center}',
     '#dccx:hover{color:#fff}',
 
     /* backdrop for drawer */
@@ -5715,7 +5715,6 @@
     '#dgt{top:auto;bottom:72px;left:50%;right:auto;transform:translateX(-50%);width:auto}',
     '#dgt button{border-radius:24px;writing-mode:horizontal-tb;transform:none;padding:11px 22px;font-size:12px;white-space:nowrap;box-shadow:0 4px 20px rgba(249,115,22,.5)}',
     '#dsn{display:none}',
-    '#dcc{display:none}',
     '}'
   ].join('');
   document.head.appendChild(s);
@@ -5812,7 +5811,7 @@
 
   /* ── 6. AI CHAT INFO CARD (bottom-left, appears after 15s) ── */
   var cc = document.createElement('div'); cc.id='dcc'; cc.className='dl';
-  cc.innerHTML = '<button id="dccx">&times;</button><div class="dc-tag">&#128172; AI Chat Assistant</div><div class="dc-title">The chat on this site is automated</div><div class="dc-desc">It reads every message and replies instantly with pricing, services, and scheduling info — no human needed.</div><div class="dc-price">Add it to your site for +$200</div>';
+  cc.innerHTML = '<button id="dccx">&times;</button><div class="dc-tag">&#128172; AI Chat</div><div class="dc-title">This chat is automated — no human on the other end. Answers questions about pricing &amp; scheduling 24/7.</div><div class="dc-price">+$200 to add to your site</div>';
   document.body.appendChild(cc);
   document.getElementById('dccx').addEventListener('click', function(){ cc.classList.remove('show'); });
   setTimeout(function(){ cc.classList.add('show'); }, 15000);
