@@ -5819,7 +5819,17 @@
   var cc = document.createElement('div'); cc.id='dcc'; cc.className='dl';
   cc.innerHTML = '<button id="dccx">&times;</button><div class="dc-tag">&#128172; AI Chat</div><div class="dc-title">This chat is automated — no human on the other end. Answers questions about pricing &amp; scheduling 24/7.</div><div class="dc-price">+$200 to add to your site</div>';
   document.body.appendChild(cc);
-  document.getElementById('dccx').addEventListener('click', function(){ cc.classList.remove('show'); });
+  function hideCC() { cc.classList.remove('show'); }
+  document.getElementById('dccx').addEventListener('click', hideCC);
+
+  /* close on click/touch outside, or when chat widget is tapped */
+  document.addEventListener('click', function(e) {
+    if (cc.classList.contains('show') && !cc.contains(e.target)) hideCC();
+  });
+  document.addEventListener('touchend', function(e) {
+    if (cc.classList.contains('show') && !cc.contains(e.target)) hideCC();
+  }, { passive: true });
+
   setTimeout(function(){ cc.classList.add('show'); }, 15000);
 
 })();
