@@ -2874,7 +2874,6 @@
             transition: all 0.3s ease;
         }
 
-        .float-chat:hover .chat-popup,
         .float-chat.active .chat-popup {
             opacity: 1;
             visibility: visible;
@@ -5566,6 +5565,13 @@
             }
             if (chatActive) setTimeout(() => document.getElementById('chatInput')?.focus(), 300);
         };
+
+        document.addEventListener('click', function(e) {
+            if (chatActive && !e.target.closest('#floatChat')) toggleChat();
+        });
+        document.addEventListener('touchend', function(e) {
+            if (chatActive && !e.target.closest('#floatChat')) toggleChat();
+        }, { passive: true });
 
         function addMsg(role, text) {
             const c = document.getElementById('chatMessages');
