@@ -5604,83 +5604,208 @@
 
 </script>
 <script>
-/* Demo Overlay — does not touch any existing site HTML/CSS/JS */
+/* Demo Overlay v2 — badge, welcome modal, scroll nudge, pricing drawer, AI chat card */
 (function () {
-  const ORANGE = '#f97316';
-  const DARK   = '#0f172a';
-  const WHITE  = '#ffffff';
 
-  const style = document.createElement('style');
-  style.textContent = [
-    '.demo-layer * { box-sizing:border-box; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }',
-    '#demo-badge { position:fixed; top:14px; left:50%; transform:translateX(-50%); background:#f97316; color:#fff; font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:5px 14px; border-radius:20px; z-index:99999; pointer-events:none; box-shadow:0 2px 10px rgba(249,115,22,.45); white-space:nowrap; }',
-    '#demo-welcome-backdrop { position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:99998; display:flex; align-items:center; justify-content:center; animation:demoFadeIn .35s ease; }',
-    '#demo-welcome-box { background:#fff; border-radius:16px; max-width:460px; width:90%; padding:36px 32px; box-shadow:0 24px 60px rgba(0,0,0,.3); text-align:center; position:relative; animation:demoSlideUp .4s ease; }',
-    '#demo-welcome-box .demo-pill { display:inline-block; background:#f97316; color:#fff; font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:4px 12px; border-radius:20px; margin-bottom:16px; }',
-    '#demo-welcome-box h2 { font-size:1.5rem; font-weight:800; color:#0f172a; margin:0 0 10px; line-height:1.25; }',
-    '#demo-welcome-box p { font-size:.9rem; color:#64748b; line-height:1.6; margin:0 0 24px; }',
-    '#demo-welcome-box .demo-progress { height:3px; background:#e2e8f0; border-radius:3px; overflow:hidden; margin-bottom:20px; }',
-    '#demo-welcome-box .demo-progress-bar { height:100%; background:#f97316; border-radius:3px; width:0%; transition:width 4s linear; }',
-    '#demo-welcome-close { background:#0f172a; color:#fff; border:none; padding:11px 28px; border-radius:8px; font-size:.875rem; font-weight:700; cursor:pointer; }',
-    '#demo-welcome-close:hover { background:#1e293b; }',
-    '#demo-welcome-box .demo-skip { display:block; margin-top:12px; font-size:.75rem; color:#94a3b8; cursor:pointer; text-decoration:underline; }',
-    '#demo-scroll-popup { position:fixed; bottom:90px; right:20px; background:#0f172a; color:#fff; border-radius:14px; padding:20px 22px; max-width:280px; z-index:99997; box-shadow:0 12px 40px rgba(0,0,0,.35); transform:translateX(320px); transition:transform .45s cubic-bezier(.34,1.56,.64,1); border-left:4px solid #f97316; }',
-    '#demo-scroll-popup.show { transform:translateX(0); }',
-    '#demo-scroll-popup .demo-sp-tag { font-size:9px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:#f97316; margin-bottom:8px; }',
-    '#demo-scroll-popup h3 { font-size:1rem; font-weight:800; margin:0 0 8px; line-height:1.3; }',
-    '#demo-scroll-popup p { font-size:.8rem; color:#94a3b8; line-height:1.5; margin:0 0 14px; }',
-    '#demo-scroll-popup .demo-sp-cta { display:block; width:100%; background:#f97316; color:#fff; border:none; border-radius:8px; padding:10px; font-size:.8rem; font-weight:700; cursor:pointer; text-align:center; text-decoration:none; }',
-    '#demo-scroll-popup .demo-sp-cta:hover { opacity:.88; }',
-    '#demo-scroll-close { position:absolute; top:10px; right:12px; background:none; border:none; color:#475569; font-size:18px; cursor:pointer; line-height:1; }',
-    '#demo-scroll-close:hover { color:#fff; }',
-    '#demo-get-tab { position:fixed; right:-2px; top:50%; transform:translateY(-50%); z-index:99996; }',
-    '#demo-get-tab button { background:#f97316; color:#fff; border:none; border-radius:10px 0 0 10px; padding:14px 10px; cursor:pointer; font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; writing-mode:vertical-rl; text-orientation:mixed; transform:rotate(180deg); line-height:1; display:flex; align-items:center; gap:8px; box-shadow:-3px 0 16px rgba(249,115,22,.4); transition:padding .2s,background .2s; }',
-    '#demo-get-tab button:hover { background:#ea580c; padding:14px 14px; }',
-    '#demo-get-tab .demo-tab-dot { width:6px; height:6px; background:#fff; border-radius:50%; animation:demoPulse 1.6s infinite; flex-shrink:0; }',
-    '@keyframes demoFadeIn { from{opacity:0} to{opacity:1} }',
-    '@keyframes demoSlideUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }',
-    '@keyframes demoPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }'
-  ].join(' ');
-  document.head.appendChild(style);
+  /* ── STYLES ── */
+  var s = document.createElement('style');
+  s.textContent = [
+    '.dl*{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}',
 
-  // 1. BADGE
-  var badge = document.createElement('div');
-  badge.id = 'demo-badge'; badge.className = 'demo-layer';
-  badge.textContent = 'Demo Site';
-  document.body.appendChild(badge);
+    /* badge */
+    '#db{position:fixed;top:14px;left:50%;transform:translateX(-50%);background:#f97316;color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:20px;z-index:99999;pointer-events:none;box-shadow:0 2px 10px rgba(249,115,22,.45);white-space:nowrap}',
 
-  // 2. WELCOME MODAL
-  var backdrop = document.createElement('div');
-  backdrop.id = 'demo-welcome-backdrop'; backdrop.className = 'demo-layer';
-  backdrop.innerHTML = '<div id="demo-welcome-box"><div class="demo-pill">Live Demo</div><h2>You\'re previewing a full junk removal website</h2><p>Everything you see — the AI chat, pricing, before &amp; after photos, booking form — is fully built and ready. This site can be customized for your brand and live within 48 hours.</p><div class="demo-progress"><div class="demo-progress-bar" id="demo-prog"></div></div><button id="demo-welcome-close">Explore the Site</button><span class="demo-skip">Auto-closing in 4 seconds</span></div>';
-  document.body.appendChild(backdrop);
-  requestAnimationFrame(function(){ document.getElementById('demo-prog').style.width = '100%'; });
-  function closeModal() {
-    backdrop.style.opacity = '0'; backdrop.style.transition = 'opacity .3s';
-    setTimeout(function(){ backdrop.remove(); }, 300);
-  }
-  var timer = setTimeout(closeModal, 4000);
-  document.getElementById('demo-welcome-close').addEventListener('click', function(){ clearTimeout(timer); closeModal(); });
-  backdrop.addEventListener('click', function(e){ if (e.target === backdrop){ clearTimeout(timer); closeModal(); } });
+    /* welcome modal */
+    '#dwb{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:99998;display:flex;align-items:center;justify-content:center;animation:dFI .35s ease}',
+    '#dwx{background:#fff;border-radius:16px;max-width:460px;width:90%;padding:36px 32px;box-shadow:0 24px 60px rgba(0,0,0,.3);text-align:center;animation:dSU .4s ease}',
+    '#dwx .dp{display:inline-block;background:#f97316;color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px}',
+    '#dwx h2{font-size:1.45rem;font-weight:800;color:#0f172a;margin:0 0 10px;line-height:1.25}',
+    '#dwx p{font-size:.88rem;color:#64748b;line-height:1.6;margin:0 0 22px}',
+    '#dwx .dpr{height:3px;background:#e2e8f0;border-radius:3px;overflow:hidden;margin-bottom:20px}',
+    '#dwx .dpb{height:100%;background:#f97316;border-radius:3px;width:0%;transition:width 4s linear}',
+    '#dwc{background:#0f172a;color:#fff;border:none;padding:11px 28px;border-radius:8px;font-size:.875rem;font-weight:700;cursor:pointer}',
+    '#dwc:hover{background:#1e293b}',
+    '#dwx .dsk{display:block;margin-top:12px;font-size:.75rem;color:#94a3b8;cursor:pointer;text-decoration:underline}',
 
-  // 3. SCROLL POPUP
-  var popup = document.createElement('div');
-  popup.id = 'demo-scroll-popup'; popup.className = 'demo-layer';
-  popup.innerHTML = '<button id="demo-scroll-close">&times;</button><div class="demo-sp-tag">&#9889; For Business Owners</div><h3>Want this site for your business?</h3><p>Custom brand, your service area, your phone number — live in 48 hours.</p><a class="demo-sp-cta" href="#">Get Your Own Site &rarr;</a>';
-  document.body.appendChild(popup);
-  document.getElementById('demo-scroll-close').addEventListener('click', function(){ popup.classList.remove('show'); });
-  var scrollShown = false;
+    /* scroll nudge */
+    '#dsn{position:fixed;bottom:90px;right:20px;background:#0f172a;color:#fff;border-radius:14px;padding:18px 20px;max-width:260px;z-index:99997;box-shadow:0 12px 40px rgba(0,0,0,.35);transform:translateX(310px);transition:transform .45s cubic-bezier(.34,1.56,.64,1);border-left:4px solid #f97316}',
+    '#dsn.show{transform:translateX(0)}',
+    '#dsn .dnt{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#f97316;margin-bottom:6px}',
+    '#dsn h3{font-size:.95rem;font-weight:800;margin:0 0 6px;line-height:1.3}',
+    '#dsn p{font-size:.78rem;color:#94a3b8;line-height:1.5;margin:0 0 12px}',
+    '#dsn .dnb{display:block;width:100%;background:#f97316;color:#fff;border:none;border-radius:8px;padding:9px;font-size:.78rem;font-weight:700;cursor:pointer;text-align:center}',
+    '#dsn .dnb:hover{opacity:.88}',
+    '#dnx{position:absolute;top:8px;right:10px;background:none;border:none;color:#475569;font-size:18px;cursor:pointer;line-height:1}',
+    '#dnx:hover{color:#fff}',
+
+    /* right-edge tab */
+    '#dgt{position:fixed;right:-2px;top:50%;transform:translateY(-50%);z-index:99996}',
+    '#dgt button{background:#f97316;color:#fff;border:none;border-radius:10px 0 0 10px;padding:14px 10px;cursor:pointer;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);line-height:1;display:flex;align-items:center;gap:8px;box-shadow:-3px 0 16px rgba(249,115,22,.4);transition:padding .2s,background .2s}',
+    '#dgt button:hover{background:#ea580c;padding:14px 14px}',
+    '#dgt .dtd{width:6px;height:6px;background:#fff;border-radius:50%;animation:dPL 1.6s infinite;flex-shrink:0}',
+
+    /* pricing drawer */
+    '#ddr{position:fixed;top:0;right:0;height:100%;width:360px;max-width:92vw;background:#fff;z-index:99995;box-shadow:-8px 0 40px rgba(0,0,0,.18);transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);overflow-y:auto;display:flex;flex-direction:column}',
+    '#ddr.open{transform:translateX(0)}',
+    '#ddr-head{background:#0f172a;padding:22px 24px 18px;flex-shrink:0}',
+    '#ddr-head .dh-tag{font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#f97316;margin-bottom:6px}',
+    '#ddr-head h2{font-size:1.1rem;font-weight:800;color:#fff;margin:0;line-height:1.3}',
+    '#ddr-close{position:absolute;top:16px;right:18px;background:none;border:none;color:#64748b;font-size:22px;cursor:pointer;line-height:1;z-index:1}',
+    '#ddr-close:hover{color:#fff}',
+    '#ddr-body{padding:24px;flex:1}',
+    '.ddr-block{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid #f1f5f9}',
+    '.ddr-block:last-child{border-bottom:none;margin-bottom:0}',
+    '.ddr-label{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#94a3b8;margin-bottom:8px}',
+    '.ddr-title{font-size:1rem;font-weight:800;color:#0f172a;margin:0 0 4px}',
+    '.ddr-price{font-size:1.6rem;font-weight:800;color:#f97316;margin:0 0 10px;line-height:1}',
+    '.ddr-price span{font-size:.8rem;font-weight:600;color:#94a3b8}',
+    '.ddr-list{list-style:none;margin:0 0 0;padding:0}',
+    '.ddr-list li{font-size:.8rem;color:#475569;padding:3px 0;display:flex;align-items:flex-start;gap:7px;line-height:1.4}',
+    '.ddr-list li::before{content:"\\2713";color:#f97316;font-weight:700;flex-shrink:0;margin-top:1px}',
+    '.ddr-addon{background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:14px;margin-top:12px}',
+    '.ddr-addon .da-label{font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#ea580c;margin-bottom:4px}',
+    '.ddr-addon .da-title{font-size:.88rem;font-weight:700;color:#0f172a;margin:0 0 3px}',
+    '.ddr-addon .da-desc{font-size:.78rem;color:#92400e;margin:0 0 8px;line-height:1.4}',
+    '.ddr-addon .da-price{font-size:1.1rem;font-weight:800;color:#ea580c}',
+    '.ddr-recep{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:14px}',
+    '.ddr-recep .dr-label{font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#16a34a;margin-bottom:4px}',
+    '.ddr-recep .dr-title{font-size:.88rem;font-weight:700;color:#0f172a;margin:0 0 6px}',
+    '.ddr-recep .dr-list{list-style:none;margin:0 0 10px;padding:0}',
+    '.ddr-recep .dr-list li{font-size:.78rem;color:#166534;padding:2px 0;display:flex;gap:6px;align-items:flex-start;line-height:1.4}',
+    '.ddr-recep .dr-list li::before{content:"\\25B8";color:#16a34a;flex-shrink:0}',
+    '.ddr-recep .dr-note{font-size:.72rem;color:#15803d;font-style:italic;margin:0}',
+    '#ddr-cta{display:block;width:100%;background:#f97316;color:#fff;border:none;border-radius:10px;padding:13px;font-size:.9rem;font-weight:700;cursor:pointer;text-align:center;margin-top:20px}',
+    '#ddr-cta:hover{background:#ea580c}',
+
+    /* AI chat info card */
+    '#dcc{position:fixed;bottom:90px;left:20px;background:#0f172a;color:#fff;border-radius:12px;padding:14px 16px;max-width:240px;z-index:99994;box-shadow:0 8px 30px rgba(0,0,0,.3);opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}',
+    '#dcc.show{opacity:1;transform:translateY(0);pointer-events:auto}',
+    '#dcc .dc-tag{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#f97316;margin-bottom:5px}',
+    '#dcc .dc-title{font-size:.85rem;font-weight:700;margin:0 0 4px}',
+    '#dcc .dc-desc{font-size:.75rem;color:#94a3b8;line-height:1.45;margin:0 0 8px}',
+    '#dcc .dc-price{font-size:.75rem;font-weight:700;color:#f97316}',
+    '#dccx{position:absolute;top:8px;right:10px;background:none;border:none;color:#475569;font-size:14px;cursor:pointer;line-height:1}',
+    '#dccx:hover{color:#fff}',
+
+    /* backdrop for drawer */
+    '#dbd{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:99993;opacity:0;pointer-events:none;transition:opacity .3s}',
+    '#dbd.show{opacity:1;pointer-events:auto}',
+
+    '@keyframes dFI{from{opacity:0}to{opacity:1}}',
+    '@keyframes dSU{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}',
+    '@keyframes dPL{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}'
+  ].join('');
+  document.head.appendChild(s);
+
+  /* ── 1. BADGE ── */
+  var b = document.createElement('div');
+  b.id = 'db'; b.className = 'dl'; b.textContent = 'Demo Site';
+  document.body.appendChild(b);
+
+  /* ── 2. WELCOME MODAL ── */
+  var bk = document.createElement('div');
+  bk.id = 'dwb'; bk.className = 'dl';
+  bk.innerHTML = '<div id="dwx"><div class="dp">Live Demo</div><h2>You\'re previewing a full junk removal website</h2><p>Everything you see — the AI chat, pricing, before &amp; after photos, booking form — is fully built and ready to launch with your brand.</p><div class="dpr"><div class="dpb" id="dpp"></div></div><button id="dwc">Explore the Site</button><span class="dsk">Auto-closing in 4 seconds</span></div>';
+  document.body.appendChild(bk);
+  requestAnimationFrame(function(){ document.getElementById('dpp').style.width='100%'; });
+  function closeWelcome() { bk.style.opacity='0'; bk.style.transition='opacity .3s'; setTimeout(function(){ bk.remove(); },300); }
+  var wt = setTimeout(closeWelcome, 4000);
+  document.getElementById('dwc').addEventListener('click', function(){ clearTimeout(wt); closeWelcome(); });
+  bk.addEventListener('click', function(e){ if(e.target===bk){ clearTimeout(wt); closeWelcome(); } });
+
+  /* ── 3. PRICING DRAWER ── */
+  var bd = document.createElement('div'); bd.id='dbd'; bd.className='dl'; document.body.appendChild(bd);
+  var dr = document.createElement('div'); dr.id='ddr'; dr.className='dl';
+  dr.innerHTML = [
+    '<button id="ddr-close">&times;</button>',
+    '<div id="ddr-head"><div class="dh-tag">For Business Owners</div><h2>What does a site like this cost?</h2></div>',
+    '<div id="ddr-body">',
+
+    /* website package */
+    '<div class="ddr-block">',
+    '<div class="ddr-label">Website Package</div>',
+    '<div class="ddr-title">Your Full Site, Built &amp; Live</div>',
+    '<div class="ddr-price">$1,000 <span>one-time</span></div>',
+    '<ul class="ddr-list">',
+    '<li>Custom branding, colors &amp; logo</li>',
+    '<li>Your service area, phone &amp; pricing</li>',
+    '<li>Mobile-responsive on every device</li>',
+    '<li>Booking form, before &amp; after gallery</li>',
+    '<li>Live within 48 hours</li>',
+    '</ul>',
+
+    /* AI chat add-on */
+    '<div class="ddr-addon">',
+    '<div class="da-label">Optional Add-On</div>',
+    '<div class="da-title">AI Chat Assistant</div>',
+    '<div class="da-desc">Like the chat on this site. Answers customer questions about pricing, services &amp; scheduling — automatically, 24/7.</div>',
+    '<div class="da-price">+$200</div>',
+    '</div>',
+    '</div>',
+
+    /* maintenance */
+    '<div class="ddr-block">',
+    '<div class="ddr-label">Ongoing</div>',
+    '<div class="ddr-title">Monthly Maintenance</div>',
+    '<div class="ddr-price">$50 <span>/ month</span></div>',
+    '<ul class="ddr-list">',
+    '<li>Hosting &amp; domain management</li>',
+    '<li>Content updates &amp; edits</li>',
+    '<li>Performance &amp; uptime monitoring</li>',
+    '</ul>',
+    '</div>',
+
+    /* AI receptionist */
+    '<div class="ddr-block">',
+    '<div class="ddr-recep">',
+    '<div class="dr-label">Also Available</div>',
+    '<div class="dr-title">AI Phone Receptionist</div>',
+    '<ul class="dr-list">',
+    '<li>Answers every call — 24/7, no hold music</li>',
+    '<li>Qualifies the lead, captures the job details</li>',
+    '<li>Sounds like a real person, not a robot</li>',
+    '<li>Works while you\'re on a job</li>',
+    '</ul>',
+    '<p class="dr-note">Pricing available on request</p>',
+    '</div>',
+    '</div>',
+
+    '<button id="ddr-cta">Get In Touch &rarr;</button>',
+    '</div>'
+  ].join('');
+  document.body.appendChild(dr);
+
+  function openDrawer() { dr.classList.add('open'); bd.classList.add('show'); }
+  function closeDrawer() { dr.classList.remove('open'); bd.classList.remove('show'); }
+  document.getElementById('ddr-close').addEventListener('click', closeDrawer);
+  bd.addEventListener('click', closeDrawer);
+
+  /* ── 4. SCROLL NUDGE ── */
+  var sn = document.createElement('div'); sn.id='dsn'; sn.className='dl';
+  sn.innerHTML = '<button id="dnx">&times;</button><div class="dnt">&#9889; For Business Owners</div><h3>Like what you see?</h3><p>This site can be live for your business in 48 hours.</p><button class="dnb" id="dno">See Pricing &rarr;</button>';
+  document.body.appendChild(sn);
+  document.getElementById('dnx').addEventListener('click', function(){ sn.classList.remove('show'); });
+  document.getElementById('dno').addEventListener('click', function(){ sn.classList.remove('show'); openDrawer(); });
+  var scrollDone = false;
   window.addEventListener('scroll', function() {
-    if (scrollShown) return;
-    var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    if (pct >= 0.55) { scrollShown = true; popup.classList.add('show'); }
-  }, { passive: true });
+    if(scrollDone) return;
+    if(window.scrollY/(document.body.scrollHeight-window.innerHeight) >= 0.55) {
+      scrollDone=true; sn.classList.add('show');
+    }
+  }, { passive:true });
 
-  // 4. GET THIS SITE TAB
-  var tab = document.createElement('div');
-  tab.id = 'demo-get-tab'; tab.className = 'demo-layer';
-  tab.innerHTML = '<button onclick="document.getElementById(\'demo-scroll-popup\').classList.toggle(\'show\')"><span class="demo-tab-dot"></span>Get This Site</button>';
-  document.body.appendChild(tab);
+  /* ── 5. RIGHT-EDGE TAB ── */
+  var gt = document.createElement('div'); gt.id='dgt'; gt.className='dl';
+  gt.innerHTML = '<button id="dgtb"><span class="dtd"></span>Get This Site</button>';
+  document.body.appendChild(gt);
+  document.getElementById('dgtb').addEventListener('click', openDrawer);
+
+  /* ── 6. AI CHAT INFO CARD (bottom-left, appears after 15s) ── */
+  var cc = document.createElement('div'); cc.id='dcc'; cc.className='dl';
+  cc.innerHTML = '<button id="dccx">&times;</button><div class="dc-tag">&#128172; AI Chat Assistant</div><div class="dc-title">The chat on this site is automated</div><div class="dc-desc">It reads every message and replies instantly with pricing, services, and scheduling info — no human needed.</div><div class="dc-price">Add it to your site for +$200</div>';
+  document.body.appendChild(cc);
+  document.getElementById('dccx').addEventListener('click', function(){ cc.classList.remove('show'); });
+  setTimeout(function(){ cc.classList.add('show'); }, 15000);
 
 })();
 </script>
