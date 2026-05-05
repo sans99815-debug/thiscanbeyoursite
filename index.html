@@ -1,18 +1,23 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JunkAway Pro | #1 Junk Removal Service</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=optional" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JunkAway Pro | #1 Junk Removal Service</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=optional" rel="stylesheet"/>
+<style>
         :root {
-            --primary: #f97316;
-            --primary-dark: #ea580c;
-            --primary-light: #fed7aa;
-            --secondary: #1e293b;
-            --secondary-light: #334155;
+            --primary: #e85d26;
+            --primary-dark: #c1390d;
+            --primary-light: #ffe6d5;
+            --secondary: #1a2744;
+            --secondary-light: #253257;
+            --warm-bg: #fffcf8;
+            --warm-tint: #fef3e8;
+            --warm-text: #2d2416;
+            --star: #fbbf24;
             --accent: #10b981;
             --accent-dark: #059669;
             --white: #ffffff;
@@ -197,7 +202,7 @@
             justify-content: center;
             font-size: 22px;
             color: white;
-            box-shadow: 0 4px 15px rgba(249,115,22,0.4);
+            box-shadow: 0 4px 15px rgba(232,93,38,0.4);
         }
 
         .logo-text {
@@ -206,7 +211,7 @@
         }
 
         .logo-name {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 22px;
             font-weight: 800;
             color: var(--secondary);
@@ -327,8 +332,8 @@
         }
 
         @keyframes phonePulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(249,115,22,0.4); }
-            50% { box-shadow: 0 0 0 8px rgba(249,115,22,0); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(232,93,38,0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(232,93,38,0); }
         }
 
         .btn-quote {
@@ -340,12 +345,12 @@
             font-size: 14px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(249,115,22,0.3);
+            box-shadow: 0 4px 15px rgba(232,93,38,0.3);
         }
 
         .btn-quote:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(249,115,22,0.4);
+            box-shadow: 0 8px 25px rgba(232,93,38,0.4);
         }
 
         .hamburger {
@@ -383,7 +388,7 @@
         .hero-bg-image {
             position: absolute;
             inset: 0;
-            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80');
+            background-image: url('images/hero.jpg');
             background-size: cover;
             background-position: center;
             opacity: 0.15;
@@ -392,7 +397,7 @@
         .hero-bg-pattern {
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(circle at 25% 25%, rgba(249,115,22,0.15) 0%, transparent 50%),
+            background-image: radial-gradient(circle at 25% 25%, rgba(232,93,38,0.15) 0%, transparent 50%),
                               radial-gradient(circle at 75% 75%, rgba(16,185,129,0.1) 0%, transparent 50%);
         }
 
@@ -423,8 +428,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(249,115,22,0.2);
-            border: 1px solid rgba(249,115,22,0.3);
+            background: rgba(232,93,38,0.2);
+            border: 1px solid rgba(232,93,38,0.3);
             color: var(--primary);
             padding: 8px 16px;
             border-radius: 50px;
@@ -439,16 +444,10 @@
             height: 8px;
             background: var(--primary);
             border-radius: 50%;
-            animation: blink 1.5s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
         }
 
         .hero-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: clamp(38px, 5vw, 68px);
             font-weight: 800;
             color: var(--white);
@@ -508,14 +507,14 @@
             align-items: center;
             gap: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(249,115,22,0.4);
+            box-shadow: 0 8px 25px rgba(232,93,38,0.4);
             border: none;
             cursor: pointer;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(249,115,22,0.5);
+            box-shadow: 0 15px 35px rgba(232,93,38,0.5);
         }
 
         .btn-secondary {
@@ -557,7 +556,7 @@
         }
 
         .hero-stat-number {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 32px;
             font-weight: 800;
             color: var(--primary);
@@ -597,7 +596,7 @@
         }
 
         .form-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 24px;
             font-weight: 700;
             color: var(--secondary);
@@ -645,7 +644,7 @@
         .form-control:focus {
             border-color: var(--primary);
             background: white;
-            box-shadow: 0 0 0 4px rgba(249,115,22,0.1);
+            box-shadow: 0 0 0 4px rgba(232,93,38,0.1);
         }
 
         select.form-control {
@@ -732,7 +731,7 @@
         }
 
         .section-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: clamp(30px, 4vw, 48px);
             font-weight: 800;
             color: var(--secondary);
@@ -754,7 +753,7 @@
 
         /* ===== HOW IT WORKS ===== */
         .how-it-works {
-            background: white;
+            background: var(--warm-tint);
         }
 
         .steps-grid {
@@ -791,7 +790,7 @@
             justify-content: center;
             margin: 0 auto 20px;
             font-size: 28px;
-            box-shadow: 0 10px 30px rgba(249,115,22,0.4);
+            box-shadow: 0 10px 30px rgba(232,93,38,0.4);
             position: relative;
             transition: transform 0.3s ease;
         }
@@ -974,7 +973,7 @@
 
         .pricing-card.popular {
             border-color: var(--primary);
-            background: linear-gradient(180deg, rgba(249,115,22,0.03) 0%, white 100%);
+            background: linear-gradient(180deg, rgba(232,93,38,0.03) 0%, white 100%);
             box-shadow: var(--shadow-xl);
             transform: scale(1.05);
         }
@@ -1024,7 +1023,7 @@
         }
 
         .pricing-amount {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 48px;
             font-weight: 800;
             color: var(--secondary);
@@ -1102,12 +1101,12 @@
         .btn-pricing-filled {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            box-shadow: 0 8px 25px rgba(249,115,22,0.4);
+            box-shadow: 0 8px 25px rgba(232,93,38,0.4);
         }
 
         .btn-pricing-filled:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(249,115,22,0.5);
+            box-shadow: 0 12px 30px rgba(232,93,38,0.5);
         }
 
         /* ===== WHY CHOOSE US ===== */
@@ -1121,7 +1120,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(circle at 0% 100%, rgba(249,115,22,0.2) 0%, transparent 50%);
+            background-image: radial-gradient(circle at 0% 100%, rgba(232,93,38,0.2) 0%, transparent 50%);
         }
 
         .why-grid {
@@ -1169,7 +1168,7 @@
         }
 
         .why-stat-num {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 36px;
             font-weight: 800;
             color: var(--primary);
@@ -1213,8 +1212,8 @@
         .why-feature-icon {
             width: 48px;
             height: 48px;
-            background: rgba(249,115,22,0.2);
-            border: 1px solid rgba(249,115,22,0.3);
+            background: rgba(232,93,38,0.2);
+            border: 1px solid rgba(232,93,38,0.3);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -1239,7 +1238,7 @@
 
         /* ===== REVIEWS ===== */
         .reviews {
-            background: var(--gray-50);
+            background: var(--warm-tint);
         }
 
         .rating-overview {
@@ -1259,7 +1258,7 @@
         }
 
         .rating-big {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 72px;
             font-weight: 800;
             color: var(--secondary);
@@ -1267,7 +1266,7 @@
         }
 
         .rating-stars-big {
-            color: #f59e0b;
+            color: #fbbf24;
             font-size: 24px;
             margin: 5px 0;
         }
@@ -1344,7 +1343,7 @@
         }
 
         .platform-badge .stars {
-            color: #f59e0b;
+            color: #fbbf24;
             font-size: 12px;
         }
 
@@ -1437,7 +1436,7 @@
         }
 
         .review-stars {
-            color: #f59e0b;
+            color: #fbbf24;
             font-size: 14px;
             margin-bottom: 10px;
         }
@@ -1824,7 +1823,7 @@
         }
 
         .eco-stat-num {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 36px;
             font-weight: 800;
             color: #6ee7b7;
@@ -1911,7 +1910,7 @@
 
         .faq-item.open {
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(249,115,22,0.08);
+            box-shadow: 0 0 0 4px rgba(232,93,38,0.08);
         }
 
         .faq-question {
@@ -1978,7 +1977,7 @@
         }
 
         .faq-cta-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 26px;
             font-weight: 800;
             margin-bottom: 12px;
@@ -2160,12 +2159,12 @@
             right: -100px;
             width: 300px;
             height: 300px;
-            background: rgba(249,115,22,0.1);
+            background: rgba(232,93,38,0.1);
             border-radius: 50%;
         }
 
         .booking-info-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 28px;
             font-weight: 800;
             color: white;
@@ -2200,7 +2199,7 @@
         .booking-perk-icon {
             width: 40px;
             height: 40px;
-            background: rgba(249,115,22,0.2);
+            background: rgba(232,93,38,0.2);
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -2226,7 +2225,7 @@
         }
 
         .booking-form-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 24px;
             font-weight: 800;
             color: var(--secondary);
@@ -2420,7 +2419,7 @@
         }
 
         .cta-banner-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: clamp(30px, 5vw, 52px);
             font-weight: 800;
             color: white;
@@ -2831,15 +2830,15 @@
             color: white;
             font-size: 24px;
             cursor: pointer;
-            box-shadow: 0 8px 25px rgba(249,115,22,0.4);
+            box-shadow: 0 8px 25px rgba(232,93,38,0.4);
             transition: all 0.3s ease;
             border: none;
             animation: chatPulse 3s infinite;
         }
 
         @keyframes chatPulse {
-            0%, 100% { box-shadow: 0 8px 25px rgba(249,115,22,0.4); }
-            50% { box-shadow: 0 8px 35px rgba(249,115,22,0.6); }
+            0%, 100% { box-shadow: 0 8px 25px rgba(232,93,38,0.4); }
+            50% { box-shadow: 0 8px 35px rgba(232,93,38,0.6); }
         }
 
         .float-chat-btn:hover {
@@ -3528,1867 +3527,1691 @@
     </style>
 </head>
 <body>
-
 <!-- LOADER -->
 <div id="loader">
-    <div class="loader-content">
-        <span class="loader-truck">🚛</span>
-        <p class="loader-text">JUNKAWAY PRO</p>
-        <div class="loader-bar">
-            <div class="loader-bar-fill"></div>
-        </div>
-    </div>
+<div class="loader-content">
+<span class="loader-truck">🚛</span>
+<p class="loader-text">JUNKAWAY PRO</p>
+<div class="loader-bar">
+<div class="loader-bar-fill"></div>
 </div>
-
+</div>
+</div>
 <!-- TOAST CONTAINER -->
 <div class="toast-container" id="toastContainer"></div>
-
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <img class="lightbox-img" id="lightboxImg" src="" alt="">
-    <button class="lightbox-close" onclick="closeLightbox()">
-        <i class="fas fa-times"></i>
-    </button>
+<img alt="" class="lightbox-img" id="lightboxImg" src=""/>
+<button class="lightbox-close" onclick="closeLightbox()">
+<i class="fas fa-times"></i>
+</button>
 </div>
-
 <!-- MOBILE MENU -->
 <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
 <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-menu-close" onclick="closeMobileMenu()">
-        <i class="fas fa-times"></i>
-    </button>
-    <div style="margin-top:10px;">
-        <div class="logo">
-            <div class="logo-icon">🚛</div>
-            <div class="logo-text">
-                <span class="logo-name">Junk<span>Away</span></span>
-                <span class="logo-tagline">Pro Services</span>
-            </div>
-        </div>
-    </div>
-    <ul class="mobile-nav-links">
-        <li><a href="#services">Services <i class="fas fa-chevron-right"></i></a></li>
-        <li><a href="#how-it-works">How It Works <i class="fas fa-chevron-right"></i></a></li>
-        <li><a href="#pricing">Pricing <i class="fas fa-chevron-right"></i></a></li>
-        <li><a href="#reviews">Reviews <i class="fas fa-chevron-right"></i></a></li>
-        <li><a href="#gallery">Gallery <i class="fas fa-chevron-right"></i></a></li>
-        <li><a href="#areas">Service Areas <i class="fas fa-chevron-right"></i></a></li>
-        <li><a href="#faq">FAQ <i class="fas fa-chevron-right"></i></a></li>
-        <li><a href="#contact">Contact <i class="fas fa-chevron-right"></i></a></li>
-    </ul>
-    <div class="mobile-nav-actions">
-        <a href="tel:+15551234567" class="btn-primary" style="justify-content:center;">
-            <i class="fas fa-phone"></i> (555) 123-4567
-        </a>
-        <a href="#booking" class="btn-secondary" style="justify-content:center;background:#f1f5f9;color:#1e293b;border-color:#e2e8f0;" onclick="closeMobileMenu()">
-            <i class="fas fa-calendar"></i> Book Online
-        </a>
-    </div>
+<button class="mobile-menu-close" onclick="closeMobileMenu()">
+<i class="fas fa-times"></i>
+</button>
+<div style="margin-top:10px;">
+<div class="logo">
+<div class="logo-icon">🚛</div>
+<div class="logo-text">
+<span class="logo-name">Junk<span>Away</span></span>
+<span class="logo-tagline">Pro Services</span>
 </div>
-
+</div>
+</div>
+<ul class="mobile-nav-links">
+<li><a href="#services">Services <i class="fas fa-chevron-right"></i></a></li>
+<li><a href="#how-it-works">How It Works <i class="fas fa-chevron-right"></i></a></li>
+<li><a href="#pricing">Pricing <i class="fas fa-chevron-right"></i></a></li>
+<li><a href="#reviews">Reviews <i class="fas fa-chevron-right"></i></a></li>
+<li><a href="#gallery">Gallery <i class="fas fa-chevron-right"></i></a></li>
+<li><a href="#areas">Service Areas <i class="fas fa-chevron-right"></i></a></li>
+<li><a href="#faq">FAQ <i class="fas fa-chevron-right"></i></a></li>
+<li><a href="#contact">Contact <i class="fas fa-chevron-right"></i></a></li>
+</ul>
+<div class="mobile-nav-actions">
+<a class="btn-primary" href="tel:+15551234567" style="justify-content:center;">
+<i class="fas fa-phone"></i> (555) 123-4567
+        </a>
+<a class="btn-secondary" href="#booking" onclick="closeMobileMenu()" style="justify-content:center;background:#f1f5f9;color:#1e293b;border-color:#e2e8f0;">
+<i class="fas fa-calendar"></i> Book Online
+        </a>
+</div>
+</div>
 <!-- ANNOUNCEMENT BAR -->
 <div class="announcement-bar">
-    <div style="overflow:hidden;">
-        <div class="announcement-ticker">
-            <span>⚡ <span>SAME-DAY SERVICE AVAILABLE</span> — Book before 12PM for same-day pickup!</span>
-            <span>🌿 <span>ECO-FRIENDLY</span> — 85% of items recycled or donated</span>
-            <span>⭐ <span>4.9/5 RATING</span> — Over 2,400+ verified Google reviews</span>
-            <span>💰 <span>FREE ESTIMATES</span> — No obligation, upfront pricing</span>
-            <span>⚡ <span>SAME-DAY SERVICE AVAILABLE</span> — Book before 12PM for same-day pickup!</span>
-            <span>🌿 <span>ECO-FRIENDLY</span> — 85% of items recycled or donated</span>
-            <span>⭐ <span>4.9/5 RATING</span> — Over 2,400+ verified Google reviews</span>
-            <span>💰 <span>FREE ESTIMATES</span> — No obligation, upfront pricing</span>
-        </div>
-    </div>
+<div style="overflow:hidden;">
+<div class="announcement-ticker">
+<span>⚡ <span>SAME-DAY SERVICE AVAILABLE</span> — Book before 12PM for same-day pickup!</span>
+<span>🌿 <span>ECO-FRIENDLY</span> — 85% of items recycled or donated</span>
+<span>⭐ <span>4.9/5 RATING</span> — Over 2,400+ verified Google reviews</span>
+<span>💰 <span>FREE ESTIMATES</span> — No obligation, upfront pricing</span>
+<span>⚡ <span>SAME-DAY SERVICE AVAILABLE</span> — Book before 12PM for same-day pickup!</span>
+<span>🌿 <span>ECO-FRIENDLY</span> — 85% of items recycled or donated</span>
+<span>⭐ <span>4.9/5 RATING</span> — Over 2,400+ verified Google reviews</span>
+<span>💰 <span>FREE ESTIMATES</span> — No obligation, upfront pricing</span>
 </div>
-
+</div>
+</div>
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
-    <a href="#" class="logo">
-        <div class="logo-icon">🚛</div>
-        <div class="logo-text">
-            <span class="logo-name">Junk<span>Away</span></span>
-            <span class="logo-tagline">Pro Services</span>
-        </div>
-    </a>
-
-    <ul class="nav-links">
-        <li class="dropdown">
-            <a href="#services">Services</a>
-            <div class="dropdown-menu">
-                <a href="#services"><i class="fas fa-home"></i> Residential Junk Removal</a>
-                <a href="#services"><i class="fas fa-building"></i> Commercial Cleanout</a>
-                <a href="#services"><i class="fas fa-dumpster"></i> Dumpster Rental</a>
-                <a href="#services"><i class="fas fa-couch"></i> Furniture Removal</a>
-                <a href="#services"><i class="fas fa-tools"></i> Construction Debris</a>
-                <a href="#services"><i class="fas fa-car"></i> Vehicle Removal</a>
-                <a href="#services"><i class="fas fa-leaf"></i> Yard Waste</a>
-                <a href="#services"><i class="fas fa-hard-hat"></i> Estate Cleanouts</a>
-            </div>
-        </li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li class="dropdown">
-            <a href="#">Resources</a>
-            <div class="dropdown-menu">
-                <a href="#gallery"><i class="fas fa-images"></i> Photo Gallery</a>
-                <a href="#blog"><i class="fas fa-blog"></i> Blog</a>
-                <a href="#areas"><i class="fas fa-map-marker-alt"></i> Service Areas</a>
-                <a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
-            </div>
-        </li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <div class="nav-actions">
-        <a href="tel:+15551234567" class="nav-phone">
-            <div class="nav-phone-icon">
-                <i class="fas fa-phone"></i>
-            </div>
+<a class="logo" href="#">
+<div class="logo-icon">🚛</div>
+<div class="logo-text">
+<span class="logo-name">Junk<span>Away</span></span>
+<span class="logo-tagline">Pro Services</span>
+</div>
+</a>
+<ul class="nav-links">
+<li class="dropdown">
+<a href="#services">Services</a>
+<div class="dropdown-menu">
+<a href="#services"><i class="fas fa-home"></i> Residential Junk Removal</a>
+<a href="#services"><i class="fas fa-building"></i> Commercial Cleanout</a>
+<a href="#services"><i class="fas fa-dumpster"></i> Dumpster Rental</a>
+<a href="#services"><i class="fas fa-couch"></i> Furniture Removal</a>
+<a href="#services"><i class="fas fa-tools"></i> Construction Debris</a>
+<a href="#services"><i class="fas fa-car"></i> Vehicle Removal</a>
+<a href="#services"><i class="fas fa-leaf"></i> Yard Waste</a>
+<a href="#services"><i class="fas fa-hard-hat"></i> Estate Cleanouts</a>
+</div>
+</li>
+<li><a href="#how-it-works">How It Works</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li class="dropdown">
+<a href="#">Resources</a>
+<div class="dropdown-menu">
+<a href="#gallery"><i class="fas fa-images"></i> Photo Gallery</a>
+<a href="#blog"><i class="fas fa-blog"></i> Blog</a>
+<a href="#areas"><i class="fas fa-map-marker-alt"></i> Service Areas</a>
+<a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
+</div>
+</li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="nav-actions">
+<a class="nav-phone" href="tel:+15551234567">
+<div class="nav-phone-icon">
+<i class="fas fa-phone"></i>
+</div>
             (555) 123-4567
         </a>
-        <a href="#booking" class="btn-quote">
-            <i class="fas fa-calendar-check" style="margin-right:6px;"></i>
-            Book Now
+<a class="btn-quote" href="#booking">
+<i class="fas fa-calendar-check" style="margin-right:6px;"></i>
+            Book Free Estimate
         </a>
-        <div class="hamburger" onclick="openMobileMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
+<div class="hamburger" onclick="openMobileMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
 </nav>
-
 <!-- HERO -->
 <section class="hero" id="home">
-    <div class="hero-bg">
-        <div class="hero-bg-image"></div>
-        <div class="hero-bg-pattern"></div>
-        <div class="hero-grid"></div>
-    </div>
-
-    <div class="hero-content">
-        <div class="hero-left">
-            <div class="hero-badge">
-                <div class="dot"></div>
+<div class="hero-bg">
+<div class="hero-bg-image"></div>
+<div class="hero-bg-pattern"></div>
+<div class="hero-grid"></div>
+</div>
+<div class="hero-content">
+<div class="hero-left">
+<div class="hero-badge">
+<div class="dot"></div>
                 #1 Rated Junk Removal Service
             </div>
-
-            <h1 class="hero-title">
-                We Haul It All&nbsp;—<br>
-                <span class="highlight">Fast, Clean</span><br>
-                <span style="white-space:nowrap">& <span class="green">Eco-Friendly</span></span>
-            </h1>
-
-            <p class="hero-description">
+<h1 class="hero-title">
+                We Haul It All —<br/>
+<span class="highlight">Fast, Clean</span><br/>
+<span style="white-space:nowrap">&amp; <span class="green">Eco-Friendly</span></span>
+</h1>
+<p class="hero-description">
                 From single items to full estate cleanouts, JunkAway Pro handles it all. 
                 Licensed, insured, and available 7 days a week. Same-day service available. 
                 We donate what we can and recycle the rest.
             </p>
-
-            <div class="hero-cta">
-                <a href="#booking" class="btn-primary">
-                    <i class="fas fa-calendar-check"></i>
+<div class="hero-cta">
+<a class="btn-primary" href="#booking">
+<i class="fas fa-calendar-check"></i>
                     Book Free Estimate
                 </a>
-                <a href="tel:+15551234567" class="btn-secondary">
-                    <i class="fas fa-phone"></i>
+<a class="btn-secondary" href="tel:+15551234567">
+<i class="fas fa-phone"></i>
                     Call Now
                 </a>
-            </div>
-
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <span class="hero-stat-number counter" data-target="15000">0</span>
-                    <div class="hero-stat-label">Jobs Completed</div>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number counter" data-target="2400">0</span>
-                    <div class="hero-stat-label">5-Star Reviews</div>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number counter" data-target="12">0</span>
-                    <div class="hero-stat-label">Years Experience</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="hero-form-wrapper">
-            <div class="hero-form-card">
-                <h3 class="form-title">🎯 Get Your Free Quote</h3>
-                <p class="form-subtitle">Get an instant estimate — No hidden fees, ever.</p>
-
-                <form onsubmit="handleHeroForm(event)">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" class="form-control" placeholder="John" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" class="form-control" placeholder="Smith" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" class="form-control" placeholder="(555) 000-0000" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>ZIP Code</label>
-                        <input type="text" class="form-control" placeholder="Enter your ZIP code" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Service Type</label>
-                        <select class="form-control" required>
-                            <option value="">Select a service...</option>
-                            <option>Residential Junk Removal</option>
-                            <option>Commercial Cleanout</option>
-                            <option>Furniture & Appliance</option>
-                            <option>Construction Debris</option>
-                            <option>Estate Cleanout</option>
-                            <option>Yard Waste Removal</option>
-                            <option>Dumpster Rental</option>
-                            <option>Vehicle Removal</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Preferred Date</label>
-                        <input type="date" class="form-control" required>
-                    </div>
-
-                    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:14px;">
-                        <i class="fas fa-bolt"></i>
+</div>
+<div class="hero-stats">
+<div class="hero-stat">
+<span class="hero-stat-number counter" data-target="15000">0</span>
+<div class="hero-stat-label">Jobs Completed</div>
+</div>
+<div class="hero-stat">
+<span class="hero-stat-number counter" data-target="2400">0</span>
+<div class="hero-stat-label">5-Star Reviews</div>
+</div>
+<div class="hero-stat">
+<span class="hero-stat-number counter" data-target="12">0</span>
+<div class="hero-stat-label">Years Experience</div>
+</div>
+</div>
+</div>
+<div class="hero-form-wrapper">
+<div class="hero-form-card">
+<h3 class="form-title">🎯 Get My Free Estimate</h3>
+<p class="form-subtitle">Get an instant estimate — No hidden fees, ever.</p>
+<form onsubmit="handleHeroForm(event)">
+<div class="form-row">
+<div class="form-group">
+<label>First Name</label>
+<input class="form-control" placeholder="John" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>Last Name</label>
+<input class="form-control" placeholder="Smith" required="" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label>Phone Number</label>
+<input class="form-control" placeholder="(555) 000-0000" required="" type="tel"/>
+</div>
+<div class="form-group">
+<label>ZIP Code</label>
+<input class="form-control" placeholder="Enter your ZIP code" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>Service Type</label>
+<select class="form-control" required="">
+<option value="">Select a service...</option>
+<option>Residential Junk Removal</option>
+<option>Commercial Cleanout</option>
+<option>Furniture &amp; Appliance</option>
+<option>Construction Debris</option>
+<option>Estate Cleanout</option>
+<option>Yard Waste Removal</option>
+<option>Dumpster Rental</option>
+<option>Vehicle Removal</option>
+</select>
+</div>
+<div class="form-group">
+<label>Preferred Date</label>
+<input class="form-control" required="" type="date"/>
+</div>
+<button class="btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:14px;" type="submit">
+<i class="fas fa-bolt"></i>
                         Get My Free Quote
                     </button>
-                </form>
-
-                <div class="form-guarantee">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>100% free quote • No obligation • Responds in under 30 minutes</span>
-                </div>
-            </div>
-        </div>
-    </div>
+</form>
+<div class="form-guarantee">
+<i class="fas fa-shield-alt"></i>
+<span>100% free quote • No obligation • Responds in under 30 minutes</span>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- TRUST BAR -->
 <div class="trust-bar">
-    <div class="trust-inner">
-        <div class="trust-item">
-            <i class="fas fa-shield-check"></i>
-            <span>Fully Licensed & Insured</span>
-        </div>
-        <div class="trust-item">
-            <i class="fas fa-clock"></i>
-            <span>Same-Day Service Available</span>
-        </div>
-        <div class="trust-item">
-            <i class="fab fa-google" style="color:#4285f4;"></i>
-            <span>4.9 ★ Google Rating (2,400+ reviews)</span>
-        </div>
-        <div class="trust-item">
-            <i class="fas fa-leaf" style="color:#10b981;"></i>
-            <span>85% Recycled & Donated</span>
-        </div>
-        <div class="trust-item">
-            <i class="fas fa-tag"></i>
-            <span>Upfront Pricing, No Surprises</span>
-        </div>
-        <div class="trust-item">
-            <i class="fas fa-calendar-alt"></i>
-            <span>7 Days a Week, 7AM–9PM</span>
-        </div>
-    </div>
+<div class="trust-inner">
+<div class="trust-item">
+<i class="fas fa-shield-check"></i>
+<span>Fully Licensed &amp; Insured</span>
 </div>
-
+<div class="trust-item">
+<i class="fas fa-clock"></i>
+<span>Same-Day Service Available</span>
+</div>
+<div class="trust-item">
+<i class="fab fa-google" style="color:#4285f4;"></i>
+<span>4.9 ★ Google Rating (2,400+ reviews)</span>
+</div>
+<div class="trust-item">
+<i class="fas fa-leaf" style="color:#10b981;"></i>
+<span>85% Recycled &amp; Donated</span>
+</div>
+<div class="trust-item">
+<i class="fas fa-tag"></i>
+<span>Upfront Pricing, No Surprises</span>
+</div>
+<div class="trust-item">
+<i class="fas fa-calendar-alt"></i>
+<span>7 Days a Week, 7AM–9PM</span>
+</div>
+</div>
+</div>
 <!-- HOW IT WORKS -->
 <section class="how-it-works" id="how-it-works">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">
-                <i class="fas fa-route"></i> Process
+<div class="container">
+<div class="section-header reveal">
+<div class="section-tag">
+<i class="fas fa-route"></i> Process
             </div>
-            <h2 class="section-title">How It Works in <span>4 Easy Steps</span></h2>
-            <p class="section-desc">Getting rid of your junk has never been easier. We make the process quick, transparent, and stress-free.</p>
-        </div>
-
-        <div class="steps-grid">
-            <div class="step-card reveal" style="transition-delay:0.1s">
-                <div class="step-number">
+<h2 class="section-title">How It Works in <span>4 Easy Steps</span></h2>
+<p class="section-desc">Getting rid of your junk has never been easier. We make the process quick, transparent, and stress-free.</p>
+</div>
+<div class="steps-grid">
+<div class="step-card reveal" style="transition-delay:0.1s">
+<div class="step-number">
                     📞
                     <span class="step-num">1</span>
-                </div>
-                <h3 class="step-title">Call or Book Online</h3>
-                <p class="step-desc">Call us or fill out our form. We'll confirm your appointment within minutes and give you a 2-hour arrival window.</p>
-            </div>
-
-            <div class="step-card reveal" style="transition-delay:0.2s">
-                <div class="step-number">
+</div>
+<h3 class="step-title">Call or Book Online</h3>
+<p class="step-desc">Call us or fill out our form. We'll confirm your appointment within minutes and give you a 2-hour arrival window.</p>
+</div>
+<div class="step-card reveal" style="transition-delay:0.2s">
+<div class="step-number">
                     📋
                     <span class="step-num">2</span>
-                </div>
-                <h3 class="step-title">Get a Free On-Site Quote</h3>
-                <p class="step-desc">Our team arrives, evaluates your items, and gives you an all-inclusive price upfront. No hidden fees, ever.</p>
-            </div>
-
-            <div class="step-card reveal" style="transition-delay:0.3s">
-                <div class="step-number">
+</div>
+<h3 class="step-title">Get a Free On-Site Quote</h3>
+<p class="step-desc">Our team arrives, evaluates your items, and gives you an all-inclusive price upfront. No hidden fees, ever.</p>
+</div>
+<div class="step-card reveal" style="transition-delay:0.3s">
+<div class="step-number">
                     🚛
                     <span class="step-num">3</span>
-                </div>
-                <h3 class="step-title">We Do the Heavy Lifting</h3>
-                <p class="step-desc">Say yes and we haul everything away immediately. We carry items from anywhere on your property — attic to backyard.</p>
-            </div>
-
-            <div class="step-card reveal" style="transition-delay:0.4s">
-                <div class="step-number">
+</div>
+<h3 class="step-title">We Do the Heavy Lifting</h3>
+<p class="step-desc">Say yes and we haul everything away immediately. We carry items from anywhere on your property — attic to backyard.</p>
+</div>
+<div class="step-card reveal" style="transition-delay:0.4s">
+<div class="step-number">
                     ✨
                     <span class="step-num">4</span>
-                </div>
-                <h3 class="step-title">We Clean Up After</h3>
-                <p class="step-desc">We sweep up the area when we're done. You pay only after the job is complete. Cash, card, or digital payment accepted.</p>
-            </div>
-        </div>
-    </div>
+</div>
+<h3 class="step-title">We Clean Up After</h3>
+<p class="step-desc">We sweep up the area when we're done. You pay only after the job is complete. Cash, card, or digital payment accepted.</p>
+</div>
+</div>
+</div>
 </section>
-
 <!-- SERVICES -->
 <section class="services" id="services">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">
-                <i class="fas fa-truck"></i> What We Remove
+<div class="container">
+<div class="section-header reveal">
+<div class="section-tag">
+<i class="fas fa-truck"></i> What We Remove
             </div>
-            <h2 class="section-title">Our <span>Junk Removal</span> Services</h2>
-            <p class="section-desc">We handle all types of residential and commercial junk removal. If it needs to go, we'll take care of it.</p>
-        </div>
-
-        <div class="services-grid">
-            <!-- Service 1 -->
-            <div class="service-card reveal" style="transition-delay:0.1s">
-                <div class="service-image-wrapper">
-                    <img class="service-image" 
-                         src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" 
-                         alt="Residential Junk Removal"
-                         onerror="this.style.background='linear-gradient(135deg,#f97316,#ea580c)';this.style.minHeight='200px';">
-                    <span class="service-badge">Most Popular</span>
-                </div>
-                <div class="service-body">
-                    <div class="service-icon">🏠</div>
-                    <h3 class="service-title">Residential Junk Removal</h3>
-                    <p class="service-desc">Full-service junk pickup for homes. We handle everything from single items to whole-house cleanouts.</p>
-                    <div class="service-items">
-                        <span class="service-tag">Old Furniture</span>
-                        <span class="service-tag">Appliances</span>
-                        <span class="service-tag">Electronics</span>
-                        <span class="service-tag">Garage Clutter</span>
-                        <span class="service-tag">Basement Junk</span>
-                    </div>
-                    <a href="#booking" class="service-link">Book This Service <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Service 2 -->
-            <div class="service-card reveal" style="transition-delay:0.2s">
-                <div class="service-image-wrapper">
-                    <img class="service-image" 
-                         src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80" 
-                         alt="Commercial Junk Removal"
-                         onerror="this.style.background='linear-gradient(135deg,#1e293b,#334155)';this.style.minHeight='200px';">
-                </div>
-                <div class="service-body">
-                    <div class="service-icon">🏢</div>
-                    <h3 class="service-title">Commercial Cleanout</h3>
-                    <p class="service-desc">Office moves, retail cleanouts, and foreclosure cleanups done fast with minimal disruption.</p>
-                    <div class="service-items">
-                        <span class="service-tag">Office Furniture</span>
-                        <span class="service-tag">IT Equipment</span>
-                        <span class="service-tag">File Cabinets</span>
-                        <span class="service-tag">Shelving</span>
-                    </div>
-                    <a href="#booking" class="service-link">Book This Service <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="service-card reveal" style="transition-delay:0.3s">
-                <div class="service-image-wrapper">
-                    <img class="service-image" 
-                         src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" 
-                         alt="Construction Debris Removal"
-                         onerror="this.style.background='linear-gradient(135deg,#92400e,#78350f)';this.style.minHeight='200px';">
-                </div>
-                <div class="service-body">
-                    <div class="service-icon">🔨</div>
-                    <h3 class="service-title">Construction Debris</h3>
-                    <p class="service-desc">Post-renovation cleanup made easy. We haul away drywall, concrete, lumber, and more.</p>
-                    <div class="service-items">
-                        <span class="service-tag">Drywall</span>
-                        <span class="service-tag">Lumber</span>
-                        <span class="service-tag">Concrete</span>
-                        <span class="service-tag">Tiles</span>
-                        <span class="service-tag">Roofing</span>
-                    </div>
-                    <a href="#booking" class="service-link">Book This Service <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Service 4 -->
-            <div class="service-card reveal" style="transition-delay:0.1s">
-                <div class="service-image-wrapper">
-                    <img class="service-image" 
-                         src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" 
-                         alt="Furniture Removal"
-                         onerror="this.style.background='linear-gradient(135deg,#7c3aed,#6d28d9)';this.style.minHeight='200px';">
-                </div>
-                <div class="service-body">
-                    <div class="service-icon">🛋️</div>
-                    <h3 class="service-title">Furniture & Appliance</h3>
-                    <p class="service-desc">Heavy item removal with no damage to your floors or walls. We even disconnect appliances.</p>
-                    <div class="service-items">
-                        <span class="service-tag">Sofas</span>
-                        <span class="service-tag">Mattresses</span>
-                        <span class="service-tag">Refrigerators</span>
-                        <span class="service-tag">Washers/Dryers</span>
-                    </div>
-                    <a href="#booking" class="service-link">Book This Service <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Service 5 -->
-            <div class="service-card reveal" style="transition-delay:0.2s">
-                <div class="service-image-wrapper">
-                    <img class="service-image" 
-                         src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" 
-                         alt="Yard Waste Removal"
-                         onerror="this.style.background='linear-gradient(135deg,#065f46,#047857)';this.style.minHeight='200px';">
-                </div>
-                <div class="service-body">
-                    <div class="service-icon">🌿</div>
-                    <h3 class="service-title">Yard Waste Removal</h3>
-                    <p class="service-desc">Storm cleanup, landscaping debris, and seasonal yard waste hauled away quickly and responsibly.</p>
-                    <div class="service-items">
-                        <span class="service-tag">Tree Branches</span>
-                        <span class="service-tag">Leaves</span>
-                        <span class="service-tag">Dirt & Soil</span>
-                        <span class="service-tag">Old Sheds</span>
-                    </div>
-                    <a href="#booking" class="service-link">Book This Service <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Service 6 -->
-            <div class="service-card reveal" style="transition-delay:0.3s">
-                <div class="service-image-wrapper">
-                    <img class="service-image" 
-                         src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" 
-                         alt="Estate Cleanout"
-                         onerror="this.style.background='linear-gradient(135deg,#1e40af,#1d4ed8)';this.style.minHeight='200px';">
-                    <span class="service-badge">Full Service</span>
-                </div>
-                <div class="service-body">
-                    <div class="service-icon">🏡</div>
-                    <h3 class="service-title">Estate Cleanouts</h3>
-                    <p class="service-desc">Complete estate cleanouts handled with care and compassion. We sort, donate, and recycle whenever possible.</p>
-                    <div class="service-items">
-                        <span class="service-tag">Full Estate</span>
-                        <span class="service-tag">Foreclosure</span>
-                        <span class="service-tag">Hoarding</span>
-                        <span class="service-tag">Senior Downsizing</span>
-                    </div>
-                    <a href="#booking" class="service-link">Book This Service <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
+<h2 class="section-title">Our <span>Junk Removal</span> Services</h2>
+<p class="section-desc">We handle all types of residential and commercial junk removal. If it needs to go, we'll take care of it.</p>
+</div>
+<div class="services-grid">
+<!-- Service 1 -->
+<div class="service-card reveal" style="transition-delay:0.1s">
+<div class="service-image-wrapper">
+<img alt="Residential Junk Removal" class="service-image" onerror="this.style.background='linear-gradient(135deg,#f97316,#ea580c)';this.style.minHeight='200px';" src="images/residential.jpg"/>
+<span class="service-badge">Most Popular</span>
+</div>
+<div class="service-body">
+<div class="service-icon">🏠</div>
+<h3 class="service-title">Residential Junk Removal</h3>
+<p class="service-desc">Full-service junk pickup for homes. We handle everything from single items to whole-house cleanouts.</p>
+<div class="service-items">
+<span class="service-tag">Old Furniture</span>
+<span class="service-tag">Appliances</span>
+<span class="service-tag">Electronics</span>
+<span class="service-tag">Garage Clutter</span>
+<span class="service-tag">Basement Junk</span>
+</div>
+<a class="service-link" href="#booking">Book This Service <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="service-card reveal" style="transition-delay:0.2s">
+<div class="service-image-wrapper">
+<img alt="Commercial Junk Removal" class="service-image" onerror="this.style.background='linear-gradient(135deg,#1e293b,#334155)';this.style.minHeight='200px';" src="images/commercial.jpg"/>
+</div>
+<div class="service-body">
+<div class="service-icon">🏢</div>
+<h3 class="service-title">Commercial Cleanout</h3>
+<p class="service-desc">Office moves, retail cleanouts, and foreclosure cleanups done fast with minimal disruption.</p>
+<div class="service-items">
+<span class="service-tag">Office Furniture</span>
+<span class="service-tag">IT Equipment</span>
+<span class="service-tag">File Cabinets</span>
+<span class="service-tag">Shelving</span>
+</div>
+<a class="service-link" href="#booking">Book This Service <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="service-card reveal" style="transition-delay:0.3s">
+<div class="service-image-wrapper">
+<img alt="Construction Debris Removal" class="service-image" onerror="this.style.background='linear-gradient(135deg,#92400e,#78350f)';this.style.minHeight='200px';" src="images/construction.jpg"/>
+</div>
+<div class="service-body">
+<div class="service-icon">🔨</div>
+<h3 class="service-title">Construction Debris</h3>
+<p class="service-desc">Post-renovation cleanup made easy. We haul away drywall, concrete, lumber, and more.</p>
+<div class="service-items">
+<span class="service-tag">Drywall</span>
+<span class="service-tag">Lumber</span>
+<span class="service-tag">Concrete</span>
+<span class="service-tag">Tiles</span>
+<span class="service-tag">Roofing</span>
+</div>
+<a class="service-link" href="#booking">Book This Service <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="service-card reveal" style="transition-delay:0.1s">
+<div class="service-image-wrapper">
+<img alt="Furniture Removal" class="service-image" onerror="this.style.background='linear-gradient(135deg,#7c3aed,#6d28d9)';this.style.minHeight='200px';" src="images/furniture.jpg"/>
+</div>
+<div class="service-body">
+<div class="service-icon">🛋️</div>
+<h3 class="service-title">Furniture &amp; Appliance</h3>
+<p class="service-desc">Heavy item removal with no damage to your floors or walls. We even disconnect appliances.</p>
+<div class="service-items">
+<span class="service-tag">Sofas</span>
+<span class="service-tag">Mattresses</span>
+<span class="service-tag">Refrigerators</span>
+<span class="service-tag">Washers/Dryers</span>
+</div>
+<a class="service-link" href="#booking">Book This Service <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+<!-- Service 5 -->
+<div class="service-card reveal" style="transition-delay:0.2s">
+<div class="service-image-wrapper">
+<img alt="Yard Waste Removal" class="service-image" onerror="this.style.background='linear-gradient(135deg,#065f46,#047857)';this.style.minHeight='200px';" src="images/yard-waste.jpg"/>
+</div>
+<div class="service-body">
+<div class="service-icon">🌿</div>
+<h3 class="service-title">Yard Waste Removal</h3>
+<p class="service-desc">Storm cleanup, landscaping debris, and seasonal yard waste hauled away quickly and responsibly.</p>
+<div class="service-items">
+<span class="service-tag">Tree Branches</span>
+<span class="service-tag">Leaves</span>
+<span class="service-tag">Dirt &amp; Soil</span>
+<span class="service-tag">Old Sheds</span>
+</div>
+<a class="service-link" href="#booking">Book This Service <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+<!-- Service 6 -->
+<div class="service-card reveal" style="transition-delay:0.3s">
+<div class="service-image-wrapper">
+<img alt="Estate Cleanout" class="service-image" onerror="this.style.background='linear-gradient(135deg,#1e40af,#1d4ed8)';this.style.minHeight='200px';" src="images/estate.jpg"/>
+<span class="service-badge">Full Service</span>
+</div>
+<div class="service-body">
+<div class="service-icon">🏡</div>
+<h3 class="service-title">Estate Cleanouts</h3>
+<p class="service-desc">Complete estate cleanouts handled with care and compassion. We sort, donate, and recycle whenever possible.</p>
+<div class="service-items">
+<span class="service-tag">Full Estate</span>
+<span class="service-tag">Foreclosure</span>
+<span class="service-tag">Hoarding</span>
+<span class="service-tag">Senior Downsizing</span>
+</div>
+<a class="service-link" href="#booking">Book This Service <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- PRICING -->
 <section class="pricing" id="pricing">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">
-                <i class="fas fa-tag"></i> Transparent Pricing
+<div class="container">
+<div class="section-header reveal">
+<div class="section-tag">
+<i class="fas fa-tag"></i> Transparent Pricing
             </div>
-            <h2 class="section-title">Simple, <span>Honest Pricing</span></h2>
-            <p class="section-desc">Volume-based pricing with no hidden fees. You pay for the space used in our truck — nothing more.</p>
-        </div>
-
-        <div class="pricing-grid">
-            <!-- Starter -->
-            <div class="pricing-card reveal" style="transition-delay:0.1s">
-                <span class="pricing-icon">📦</span>
-                <h3 class="pricing-name">Minimum Load</h3>
-                <p class="pricing-desc">Perfect for 1–2 small items, a few boxes, or a single piece of furniture.</p>
-                <div class="pricing-price">
-                    <div class="pricing-from">Starting from</div>
-                    <div class="pricing-amount"><sup>$</sup><span class="counter" data-target="75">0</span></div>
-                    <div class="pricing-unit">up to 1/8 truck</div>
-                </div>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-check-circle"></i> Up to 2 items or small load</li>
-                    <li><i class="fas fa-check-circle"></i> Free on-site estimate</li>
-                    <li><i class="fas fa-check-circle"></i> Same-day available</li>
-                    <li><i class="fas fa-check-circle"></i> Eco-friendly disposal</li>
-                    <li><i class="fas fa-check-circle"></i> Sweep up included</li>
-                    <li class="disabled"><i class="fas fa-times-circle"></i> Hazmat items</li>
-                    <li class="disabled"><i class="fas fa-times-circle"></i> Specialty dismantling</li>
-                </ul>
-                <a href="#booking" class="btn-pricing btn-pricing-outline">Get Started</a>
-            </div>
-
-            <!-- Popular -->
-            <div class="pricing-card popular reveal" style="transition-delay:0.2s">
-                <span class="popular-badge">⭐ Most Popular</span>
-                <span class="pricing-icon">🚛</span>
-                <h3 class="pricing-name">Half Truck Load</h3>
-                <p class="pricing-desc">Great for home cleanouts, garage clearing, or multiple furniture pieces.</p>
-                <div class="pricing-price">
-                    <div class="pricing-from">Starting from</div>
-                    <div class="pricing-amount"><sup>$</sup><span class="counter" data-target="275">0</span></div>
-                    <div class="pricing-unit">up to 1/2 truck</div>
-                </div>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-check-circle"></i> Up to 4-5 cubic yards</li>
-                    <li><i class="fas fa-check-circle"></i> Free on-site estimate</li>
-                    <li><i class="fas fa-check-circle"></i> Same-day available</li>
-                    <li><i class="fas fa-check-circle"></i> Eco-friendly disposal</li>
-                    <li><i class="fas fa-check-circle"></i> Full sweep up included</li>
-                    <li><i class="fas fa-check-circle"></i> Donation drop-off</li>
-                    <li><i class="fas fa-check-circle"></i> Heavy item labor</li>
-                </ul>
-                <a href="#booking" class="btn-pricing btn-pricing-filled">Book This Plan</a>
-            </div>
-
-            <!-- Full -->
-            <div class="pricing-card reveal" style="transition-delay:0.3s">
-                <span class="pricing-icon">🏗️</span>
-                <h3 class="pricing-name">Full Truck Load</h3>
-                <p class="pricing-desc">Complete estate cleanouts, commercial jobs, and large-scale junk removal projects.</p>
-                <div class="pricing-price">
-                    <div class="pricing-from">Starting from</div>
-                    <div class="pricing-amount"><sup>$</sup><span class="counter" data-target="499">0</span></div>
-                    <div class="pricing-unit">full truck load</div>
-                </div>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-check-circle"></i> Up to 12 cubic yards</li>
-                    <li><i class="fas fa-check-circle"></i> Free on-site estimate</li>
-                    <li><i class="fas fa-check-circle"></i> Priority scheduling</li>
-                    <li><i class="fas fa-check-circle"></i> Eco-friendly disposal</li>
-                    <li><i class="fas fa-check-circle"></i> Deep sweep & wipedown</li>
-                    <li><i class="fas fa-check-circle"></i> Donation coordination</li>
-                    <li><i class="fas fa-check-circle"></i> Specialty dismantling</li>
-                </ul>
-                <a href="#booking" class="btn-pricing btn-pricing-outline">Get Started</a>
-            </div>
-        </div>
-
-        <div class="reveal" style="text-align:center;margin-top:40px;padding:30px;background:var(--gray-50);border-radius:var(--radius-lg);border:1px solid var(--gray-200);">
-            <p style="color:var(--gray-600);font-size:15px;">
-                <i class="fas fa-info-circle" style="color:var(--primary);margin-right:8px;"></i>
+<h2 class="section-title">Simple, <span>Honest Pricing</span></h2>
+<p class="section-desc">Volume-based pricing with no hidden fees. You pay for the space used in our truck — nothing more.</p>
+</div>
+<div class="pricing-grid">
+<!-- Starter -->
+<div class="pricing-card reveal" style="transition-delay:0.1s">
+<span class="pricing-icon">📦</span>
+<h3 class="pricing-name">Minimum Load</h3>
+<p class="pricing-desc">Perfect for 1–2 small items, a few boxes, or a single piece of furniture.</p>
+<div class="pricing-price">
+<div class="pricing-from">Starting from</div>
+<div class="pricing-amount"><sup>$</sup><span class="counter" data-target="157">0</span></div>
+<div class="pricing-unit">up to 1/8 truck</div>
+</div>
+<ul class="pricing-features">
+<li><i class="fas fa-check-circle"></i> Up to 2 items or small load</li>
+<li><i class="fas fa-check-circle"></i> Free on-site estimate</li>
+<li><i class="fas fa-check-circle"></i> Same-day available</li>
+<li><i class="fas fa-check-circle"></i> Eco-friendly disposal</li>
+<li><i class="fas fa-check-circle"></i> Sweep up included</li>
+<li class="disabled"><i class="fas fa-times-circle"></i> Hazmat items</li>
+<li class="disabled"><i class="fas fa-times-circle"></i> Specialty dismantling</li>
+</ul>
+<a class="btn-pricing btn-pricing-outline" href="#booking">Get Started</a>
+</div>
+<!-- Popular -->
+<div class="pricing-card popular reveal" style="transition-delay:0.2s">
+<span class="popular-badge">⭐ Most Popular</span>
+<span class="pricing-icon">🚛</span>
+<h3 class="pricing-name">Half Truck Load</h3>
+<p class="pricing-desc">Great for home cleanouts, garage clearing, or multiple furniture pieces.</p>
+<div class="pricing-price">
+<div class="pricing-from">Starting from</div>
+<div class="pricing-amount"><sup>$</sup><span class="counter" data-target="497">0</span></div>
+<div class="pricing-unit">up to 1/2 truck</div>
+</div>
+<ul class="pricing-features">
+<li><i class="fas fa-check-circle"></i> Up to 4-5 cubic yards</li>
+<li><i class="fas fa-check-circle"></i> Free on-site estimate</li>
+<li><i class="fas fa-check-circle"></i> Same-day available</li>
+<li><i class="fas fa-check-circle"></i> Eco-friendly disposal</li>
+<li><i class="fas fa-check-circle"></i> Full sweep up included</li>
+<li><i class="fas fa-check-circle"></i> Donation drop-off</li>
+<li><i class="fas fa-check-circle"></i> Heavy item labor</li>
+</ul>
+<a class="btn-pricing btn-pricing-filled" href="#booking">Book This Plan</a>
+</div>
+<!-- Full -->
+<div class="pricing-card reveal" style="transition-delay:0.3s">
+<span class="pricing-icon">🏗️</span>
+<h3 class="pricing-name">Full Truck Load</h3>
+<p class="pricing-desc">Complete estate cleanouts, commercial jobs, and large-scale junk removal projects.</p>
+<div class="pricing-price">
+<div class="pricing-from">Starting from</div>
+<div class="pricing-amount"><sup>$</sup><span class="counter" data-target="897">0</span></div>
+<div class="pricing-unit">full truck load</div>
+</div>
+<ul class="pricing-features">
+<li><i class="fas fa-check-circle"></i> Up to 12 cubic yards</li>
+<li><i class="fas fa-check-circle"></i> Free on-site estimate</li>
+<li><i class="fas fa-check-circle"></i> Priority scheduling</li>
+<li><i class="fas fa-check-circle"></i> Eco-friendly disposal</li>
+<li><i class="fas fa-check-circle"></i> Deep sweep &amp; wipedown</li>
+<li><i class="fas fa-check-circle"></i> Donation coordination</li>
+<li><i class="fas fa-check-circle"></i> Specialty dismantling</li>
+</ul>
+<a class="btn-pricing btn-pricing-outline" href="#booking">Get Started</a>
+</div>
+</div>
+<div class="reveal" style="text-align:center;margin-top:40px;padding:30px;background:var(--gray-50);border-radius:var(--radius-lg);border:1px solid var(--gray-200);">
+<p style="color:var(--gray-600);font-size:15px;">
+<i class="fas fa-info-circle" style="color:var(--primary);margin-right:8px;"></i>
                 All prices are estimates. Final pricing is based on actual volume. Additional fees may apply for specialty items (tires, paint, hazmat). 
                 <strong style="color:var(--primary);">We always provide an exact price before any work begins.</strong>
-            </p>
-        </div>
-    </div>
+</p>
+</div>
+</div>
 </section>
-
 <!-- WHY CHOOSE US -->
 <section class="why-us" id="why-us">
-    <div class="container">
-        <div class="why-grid">
-            <div class="why-image-stack reveal-left">
-                <img class="why-img-main" 
-                     src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" 
-                     alt="Professional team"
-                     onerror="this.style.background='linear-gradient(135deg,#f97316,#ea580c)';this.style.display='flex';this.style.alignItems='center';this.style.justifyContent='center';">
-                <img class="why-img-accent" 
-                     src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=400&q=80" 
-                     alt="Clean truck"
-                     onerror="this.style.display='none';">
-                <div class="why-stat-card">
-                    <span class="why-stat-num">12+</span>
-                    <div class="why-stat-text">Years in Business</div>
+<div class="container">
+<div class="why-grid">
+<div class="why-image-stack reveal-left">
+<img alt="Professional team" class="why-img-main" onerror="this.style.background='linear-gradient(135deg,#f97316,#ea580c)';this.style.display='flex';this.style.alignItems='center';this.style.justifyContent='center';" src="images/why-main.jpg"/>
+<img alt="Clean truck" class="why-img-accent" onerror="this.style.display='none';" src="images/why-accent.jpg"/>
+<div class="why-stat-card">
+<span class="why-stat-num">12+</span>
+<div class="why-stat-text">Years in Business</div>
+</div>
+</div>
+<div class="why-content reveal-right">
+<div class="section-tag" style="display:inline-flex;">
+<i class="fas fa-trophy"></i> Why Choose Us
                 </div>
-            </div>
-
-            <div class="why-content reveal-right">
-                <div class="section-tag" style="display:inline-flex;">
-                    <i class="fas fa-trophy"></i> Why Choose Us
-                </div>
-                <h2 class="section-title" style="color:white;">
-                    The <span>JunkAway Pro</span><br>Difference
+<h2 class="section-title" style="color:white;">
+                    The <span>JunkAway Pro</span><br/>Difference
                 </h2>
-                <p class="section-desc" style="color:rgba(255,255,255,0.6);text-align:left;max-width:none;">
+<p class="section-desc" style="color:rgba(255,255,255,0.6);text-align:left;max-width:none;">
                     We're not just another junk removal company. We're a team of professionals who care about your home, 
                     your community, and the environment. Here's why thousands trust us.
                 </p>
-
-                <div class="why-features">
-                    <div class="why-feature">
-                        <div class="why-feature-icon">⚡</div>
-                        <div>
-                            <div class="why-feature-title">Same-Day Service</div>
-                            <div class="why-feature-desc">Book before noon and we'll be there today. Available 7 days a week.</div>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feature-icon">💯</div>
-                        <div>
-                            <div class="why-feature-title">100% Satisfaction</div>
-                            <div class="why-feature-desc">Not happy? We'll make it right or refund you — no questions asked.</div>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feature-icon">🌿</div>
-                        <div>
-                            <div class="why-feature-title">Eco-Responsible</div>
-                            <div class="why-feature-desc">85% of items are recycled or donated. We keep junk out of landfills.</div>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feature-icon">🔒</div>
-                        <div>
-                            <div class="why-feature-title">Licensed & Insured</div>
-                            <div class="why-feature-desc">Fully licensed, bonded, and insured for your peace of mind.</div>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feature-icon">💰</div>
-                        <div>
-                            <div class="why-feature-title">Upfront Pricing</div>
-                            <div class="why-feature-desc">You see the price before we start. Zero surprises on your bill.</div>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feature-icon">👷</div>
-                        <div>
-                            <div class="why-feature-title">Background Checked</div>
-                            <div class="why-feature-desc">All team members are background-checked and professionally trained.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-bars" style="margin-top:35px;">
-                    <div class="skill-bar">
-                        <div class="skill-header">
-                            <span>Customer Satisfaction</span>
-                            <span>98%</span>
-                        </div>
-                        <div class="skill-track">
-                            <div class="skill-fill" data-width="98"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-header">
-                            <span>On-Time Arrival Rate</span>
-                            <span>96%</span>
-                        </div>
-                        <div class="skill-track">
-                            <div class="skill-fill" data-width="96"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-header">
-                            <span>Recycling & Donation Rate</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-track">
-                            <div class="skill-fill" data-width="85"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="why-features">
+<div class="why-feature">
+<div class="why-feature-icon">⚡</div>
+<div>
+<div class="why-feature-title">Same-Day Service</div>
+<div class="why-feature-desc">Book before noon and we'll be there today. Available 7 days a week.</div>
+</div>
+</div>
+<div class="why-feature">
+<div class="why-feature-icon">💯</div>
+<div>
+<div class="why-feature-title">100% Satisfaction</div>
+<div class="why-feature-desc">Not happy? We'll make it right or refund you — no questions asked.</div>
+</div>
+</div>
+<div class="why-feature">
+<div class="why-feature-icon">🌿</div>
+<div>
+<div class="why-feature-title">Eco-Responsible</div>
+<div class="why-feature-desc">85% of items are recycled or donated. We keep junk out of landfills.</div>
+</div>
+</div>
+<div class="why-feature">
+<div class="why-feature-icon">🔒</div>
+<div>
+<div class="why-feature-title">Licensed &amp; Insured</div>
+<div class="why-feature-desc">Fully licensed, bonded, and insured for your peace of mind.</div>
+</div>
+</div>
+<div class="why-feature">
+<div class="why-feature-icon">💰</div>
+<div>
+<div class="why-feature-title">Upfront Pricing</div>
+<div class="why-feature-desc">You see the price before we start. Zero surprises on your bill.</div>
+</div>
+</div>
+<div class="why-feature">
+<div class="why-feature-icon">👷</div>
+<div>
+<div class="why-feature-title">Background Checked</div>
+<div class="why-feature-desc">All team members are background-checked and professionally trained.</div>
+</div>
+</div>
+</div>
+<div class="skill-bars" style="margin-top:35px;">
+<div class="skill-bar">
+<div class="skill-header">
+<span>Customer Satisfaction</span>
+<span>98%</span>
+</div>
+<div class="skill-track">
+<div class="skill-fill" data-width="98"></div>
+</div>
+</div>
+<div class="skill-bar">
+<div class="skill-header">
+<span>On-Time Arrival Rate</span>
+<span>96%</span>
+</div>
+<div class="skill-track">
+<div class="skill-fill" data-width="96"></div>
+</div>
+</div>
+<div class="skill-bar">
+<div class="skill-header">
+<span>Recycling &amp; Donation Rate</span>
+<span>85%</span>
+</div>
+<div class="skill-track">
+<div class="skill-fill" data-width="85"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- REVIEWS -->
 <section class="reviews" id="reviews">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">
-                <i class="fas fa-star"></i> Testimonials
+<div class="container">
+<div class="section-header reveal">
+<div class="section-tag">
+<i class="fas fa-star"></i> Testimonials
             </div>
-            <h2 class="section-title">What Our <span>Customers Say</span></h2>
-            <p class="section-desc">Don't just take our word for it. Here's what real customers have to say about JunkAway Pro.</p>
-        </div>
-
-        <!-- Rating Overview -->
-        <div class="rating-overview reveal">
-            <div class="overall-rating">
-                <div class="rating-big">4.9</div>
-                <div class="rating-stars-big">★★★★★</div>
-                <div class="rating-count">Based on 2,400+ reviews</div>
-            </div>
-
-            <div class="rating-divider"></div>
-
-            <div class="rating-breakdown">
-                <div class="rating-bar-row">
-                    <span class="rating-bar-label">5 ★</span>
-                    <div class="rating-bar-track">
-                        <div class="rating-bar-fill" style="width:0" data-width="92"></div>
-                    </div>
-                    <span class="rating-bar-pct">92%</span>
-                </div>
-                <div class="rating-bar-row">
-                    <span class="rating-bar-label">4 ★</span>
-                    <div class="rating-bar-track">
-                        <div class="rating-bar-fill" style="width:0" data-width="5"></div>
-                    </div>
-                    <span class="rating-bar-pct">5%</span>
-                </div>
-                <div class="rating-bar-row">
-                    <span class="rating-bar-label">3 ★</span>
-                    <div class="rating-bar-track">
-                        <div class="rating-bar-fill" style="width:0" data-width="2"></div>
-                    </div>
-                    <span class="rating-bar-pct">2%</span>
-                </div>
-                <div class="rating-bar-row">
-                    <span class="rating-bar-label">2 ★</span>
-                    <div class="rating-bar-track">
-                        <div class="rating-bar-fill" style="width:0" data-width="1"></div>
-                    </div>
-                    <span class="rating-bar-pct">1%</span>
-                </div>
-                <div class="rating-bar-row">
-                    <span class="rating-bar-label">1 ★</span>
-                    <div class="rating-bar-track">
-                        <div class="rating-bar-fill" style="width:0" data-width="0.5"></div>
-                    </div>
-                    <span class="rating-bar-pct">0.5%</span>
-                </div>
-            </div>
-
-            <div class="rating-divider"></div>
-
-            <div class="platform-badges">
-                <div class="platform-badge">
-                    <i class="fab fa-google" style="color:#4285f4;font-size:20px;"></i>
-                    <div>
-                        <div style="font-size:14px;font-weight:700;color:var(--secondary);">Google</div>
-                        <div class="stars">★★★★★</div>
-                        <div style="font-size:11px;color:var(--gray-400);">4.9 · 1,847 reviews</div>
-                    </div>
-                </div>
-                <div class="platform-badge">
-                    <i class="fab fa-yelp" style="color:#f43f5e;font-size:20px;"></i>
-                    <div>
-                        <div style="font-size:14px;font-weight:700;color:var(--secondary);">Yelp</div>
-                        <div class="stars">★★★★★</div>
-                        <div style="font-size:11px;color:var(--gray-400);">4.8 · 412 reviews</div>
-                    </div>
-                </div>
-                <div class="platform-badge">
-                    <i class="fab fa-facebook" style="color:#1877f2;font-size:20px;"></i>
-                    <div>
-                        <div style="font-size:14px;font-weight:700;color:var(--secondary);">Facebook</div>
-                        <div class="stars">★★★★★</div>
-                        <div style="font-size:11px;color:var(--gray-400);">4.9 · 189 reviews</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Review Cards -->
-        <div class="reviews-grid">
-            <div class="review-card reveal" style="transition-delay:0.1s">
-                <div class="review-header">
-                    <div class="review-avatar-fallback">M</div>
-                    <div>
-                        <div class="reviewer-name">Michael T.</div>
-                        <div class="reviewer-meta">
-                            <span class="reviewer-platform"><i class="fab fa-google" style="color:#4285f4;"></i> Google</span>
-                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Called in the morning and they were at my house by 2pm. The two guys were polite, professional, and worked fast. They cleared out my entire garage — 20 years of clutter — in under 2 hours. The price was exactly what they quoted. Absolutely will use again!"</p>
-                <div class="review-date"><i class="far fa-calendar"></i> 2 weeks ago</div>
-                <span class="review-service-tag">🏠 Garage Cleanout</span>
-            </div>
-
-            <div class="review-card reveal" style="transition-delay:0.2s">
-                <div class="review-header">
-                    <div class="review-avatar-fallback" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);">S</div>
-                    <div>
-                        <div class="reviewer-name">Sarah K.</div>
-                        <div class="reviewer-meta">
-                            <span class="reviewer-platform"><i class="fab fa-yelp" style="color:#f43f5e;"></i> Yelp</span>
-                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Used JunkAway Pro for my mom's estate cleanout after she passed. They were incredibly respectful and patient with us during a difficult time. They donated several items to local charities, which meant a lot. Highly recommend for anyone going through a similar situation."</p>
-                <div class="review-date"><i class="far fa-calendar"></i> 1 month ago</div>
-                <span class="review-service-tag">🏡 Estate Cleanout</span>
-            </div>
-
-            <div class="review-card reveal" style="transition-delay:0.3s">
-                <div class="review-header">
-                    <div class="review-avatar-fallback" style="background:linear-gradient(135deg,#065f46,#047857);">R</div>
-                    <div>
-                        <div class="reviewer-name">Robert D.</div>
-                        <div class="reviewer-meta">
-                            <span class="reviewer-platform"><i class="fab fa-google" style="color:#4285f4;"></i> Google</span>
-                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Best junk removal experience I've had. I've tried 3 other companies before finding JunkAway. The difference is night and day. They showed up on time (actually 10 min early!), gave me a fair price, and left the area cleaner than they found it. This is my go-to now."</p>
-                <div class="review-date"><i class="far fa-calendar"></i> 3 weeks ago</div>
-                <span class="review-service-tag">🛋️ Furniture Removal</span>
-            </div>
-
-            <div class="review-card reveal" style="transition-delay:0.1s">
-                <div class="review-header">
-                    <div class="review-avatar-fallback" style="background:linear-gradient(135deg,#1e40af,#1d4ed8);">J</div>
-                    <div>
-                        <div class="reviewer-name">Jennifer L.</div>
-                        <div class="reviewer-meta">
-                            <span class="reviewer-platform"><i class="fab fa-facebook" style="color:#1877f2;"></i> Facebook</span>
-                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Used them for a post-renovation cleanout — drywall, lumber, old fixtures. They were efficient and knew exactly how to handle the debris. The crew even swept the floor when they were done. Would 100% recommend for construction waste removal. Super professional!"</p>
-                <div class="review-date"><i class="far fa-calendar"></i> 2 months ago</div>
-                <span class="review-service-tag">🔨 Construction Debris</span>
-            </div>
-
-            <div class="review-card reveal" style="transition-delay:0.2s">
-                <div class="review-header">
-                    <div class="review-avatar-fallback" style="background:linear-gradient(135deg,#92400e,#78350f);">C</div>
-                    <div>
-                        <div class="reviewer-name">Carlos M.</div>
-                        <div class="reviewer-meta">
-                            <span class="reviewer-platform"><i class="fab fa-google" style="color:#4285f4;"></i> Google</span>
-                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"The online booking was super easy. I booked at 8am and had a team at my house by 11am. They took old appliances, furniture, and a mountain of boxes from my move. Price was very reasonable for the amount of stuff. The guys were friendly and worked non-stop."</p>
-                <div class="review-date"><i class="far fa-calendar"></i> 1 week ago</div>
-                <span class="review-service-tag">🏢 Move-Out Cleanout</span>
-            </div>
-
-            <div class="review-card reveal" style="transition-delay:0.3s">
-                <div class="review-header">
-                    <div class="review-avatar-fallback" style="background:linear-gradient(135deg,#be185d,#9d174d);">A</div>
-                    <div>
-                        <div class="reviewer-name">Amanda W.</div>
-                        <div class="reviewer-meta">
-                            <span class="reviewer-platform"><i class="fab fa-yelp" style="color:#f43f5e;"></i> Yelp</span>
-                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Outstanding company. I'm a property manager and I use JunkAway Pro exclusively for all my tenant turnover cleanouts. They're reliable, fast, and my tenants' old furniture is gone the same day I call. Their commercial pricing is fair for repeat clients. 10/10 recommend!"</p>
-                <div class="review-date"><i class="far fa-calendar"></i> 5 days ago</div>
-                <span class="review-service-tag">🏢 Commercial Client</span>
-            </div>
-        </div>
-    </div>
+<h2 class="section-title">What Our <span>Customers Say</span></h2>
+<p class="section-desc">Don't just take our word for it. Here's what real customers have to say about JunkAway Pro.</p>
+</div>
+<!-- Rating Overview -->
+<div class="rating-overview reveal">
+<div class="overall-rating">
+<div class="rating-big">4.9</div>
+<div class="rating-stars-big">★★★★★</div>
+<div class="rating-count">Based on 2,400+ reviews</div>
+</div>
+<div class="rating-divider"></div>
+<div class="rating-breakdown">
+<div class="rating-bar-row">
+<span class="rating-bar-label">5 ★</span>
+<div class="rating-bar-track">
+<div class="rating-bar-fill" data-width="92" style="width:0"></div>
+</div>
+<span class="rating-bar-pct">92%</span>
+</div>
+<div class="rating-bar-row">
+<span class="rating-bar-label">4 ★</span>
+<div class="rating-bar-track">
+<div class="rating-bar-fill" data-width="5" style="width:0"></div>
+</div>
+<span class="rating-bar-pct">5%</span>
+</div>
+<div class="rating-bar-row">
+<span class="rating-bar-label">3 ★</span>
+<div class="rating-bar-track">
+<div class="rating-bar-fill" data-width="2" style="width:0"></div>
+</div>
+<span class="rating-bar-pct">2%</span>
+</div>
+<div class="rating-bar-row">
+<span class="rating-bar-label">2 ★</span>
+<div class="rating-bar-track">
+<div class="rating-bar-fill" data-width="1" style="width:0"></div>
+</div>
+<span class="rating-bar-pct">1%</span>
+</div>
+<div class="rating-bar-row">
+<span class="rating-bar-label">1 ★</span>
+<div class="rating-bar-track">
+<div class="rating-bar-fill" data-width="0.5" style="width:0"></div>
+</div>
+<span class="rating-bar-pct">0.5%</span>
+</div>
+</div>
+<div class="rating-divider"></div>
+<div class="platform-badges">
+<div class="platform-badge">
+<i class="fab fa-google" style="color:#4285f4;font-size:20px;"></i>
+<div>
+<div style="font-size:14px;font-weight:700;color:var(--secondary);">Google</div>
+<div class="stars">★★★★★</div>
+<div style="font-size:11px;color:var(--gray-400);">4.9 · 1,847 reviews</div>
+</div>
+</div>
+<div class="platform-badge">
+<i class="fab fa-yelp" style="color:#f43f5e;font-size:20px;"></i>
+<div>
+<div style="font-size:14px;font-weight:700;color:var(--secondary);">Yelp</div>
+<div class="stars">★★★★★</div>
+<div style="font-size:11px;color:var(--gray-400);">4.8 · 412 reviews</div>
+</div>
+</div>
+<div class="platform-badge">
+<i class="fab fa-facebook" style="color:#1877f2;font-size:20px;"></i>
+<div>
+<div style="font-size:14px;font-weight:700;color:var(--secondary);">Facebook</div>
+<div class="stars">★★★★★</div>
+<div style="font-size:11px;color:var(--gray-400);">4.9 · 189 reviews</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Review Cards -->
+<div class="reviews-grid">
+<div class="review-card reveal" style="transition-delay:0.1s">
+<div class="review-header">
+<div class="review-avatar-fallback">M</div>
+<div>
+<div class="reviewer-name">Michael T.</div>
+<div class="reviewer-meta">
+<span class="reviewer-platform"><i class="fab fa-google" style="color:#4285f4;"></i> Google</span>
+<span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+</div>
+</div>
+</div>
+<div class="review-stars">★★★★★</div>
+<p class="review-text">"Called in the morning and they were at my house by 2pm. The two guys were polite, professional, and worked fast. They cleared out my entire garage — 20 years of clutter — in under 2 hours. The price was exactly what they quoted. Absolutely will use again!"</p>
+<div class="review-date"><i class="far fa-calendar"></i> 2 weeks ago</div>
+<span class="review-service-tag">🏠 Garage Cleanout</span>
+</div>
+<div class="review-card reveal" style="transition-delay:0.2s">
+<div class="review-header">
+<div class="review-avatar-fallback" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);">S</div>
+<div>
+<div class="reviewer-name">Sarah K.</div>
+<div class="reviewer-meta">
+<span class="reviewer-platform"><i class="fab fa-yelp" style="color:#f43f5e;"></i> Yelp</span>
+<span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+</div>
+</div>
+</div>
+<div class="review-stars">★★★★★</div>
+<p class="review-text">"Used JunkAway Pro for my mom's estate cleanout after she passed. They were incredibly respectful and patient with us during a difficult time. They donated several items to local charities, which meant a lot. Highly recommend for anyone going through a similar situation."</p>
+<div class="review-date"><i class="far fa-calendar"></i> 1 month ago</div>
+<span class="review-service-tag">🏡 Estate Cleanout</span>
+</div>
+<div class="review-card reveal" style="transition-delay:0.3s">
+<div class="review-header">
+<div class="review-avatar-fallback" style="background:linear-gradient(135deg,#065f46,#047857);">R</div>
+<div>
+<div class="reviewer-name">Robert D.</div>
+<div class="reviewer-meta">
+<span class="reviewer-platform"><i class="fab fa-google" style="color:#4285f4;"></i> Google</span>
+<span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+</div>
+</div>
+</div>
+<div class="review-stars">★★★★★</div>
+<p class="review-text">"Best junk removal experience I've had. I've tried 3 other companies before finding JunkAway. The difference is night and day. They showed up on time (actually 10 min early!), gave me a fair price, and left the area cleaner than they found it. This is my go-to now."</p>
+<div class="review-date"><i class="far fa-calendar"></i> 3 weeks ago</div>
+<span class="review-service-tag">🛋️ Furniture Removal</span>
+</div>
+<div class="review-card reveal" style="transition-delay:0.1s">
+<div class="review-header">
+<div class="review-avatar-fallback" style="background:linear-gradient(135deg,#1e40af,#1d4ed8);">J</div>
+<div>
+<div class="reviewer-name">Jennifer L.</div>
+<div class="reviewer-meta">
+<span class="reviewer-platform"><i class="fab fa-facebook" style="color:#1877f2;"></i> Facebook</span>
+<span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+</div>
+</div>
+</div>
+<div class="review-stars">★★★★★</div>
+<p class="review-text">"Used them for a post-renovation cleanout — drywall, lumber, old fixtures. They were efficient and knew exactly how to handle the debris. The crew even swept the floor when they were done. Would 100% recommend for construction waste removal. Super professional!"</p>
+<div class="review-date"><i class="far fa-calendar"></i> 2 months ago</div>
+<span class="review-service-tag">🔨 Construction Debris</span>
+</div>
+<div class="review-card reveal" style="transition-delay:0.2s">
+<div class="review-header">
+<div class="review-avatar-fallback" style="background:linear-gradient(135deg,#92400e,#78350f);">C</div>
+<div>
+<div class="reviewer-name">Carlos M.</div>
+<div class="reviewer-meta">
+<span class="reviewer-platform"><i class="fab fa-google" style="color:#4285f4;"></i> Google</span>
+<span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+</div>
+</div>
+</div>
+<div class="review-stars">★★★★★</div>
+<p class="review-text">"The online booking was super easy. I booked at 8am and had a team at my house by 11am. They took old appliances, furniture, and a mountain of boxes from my move. Price was very reasonable for the amount of stuff. The guys were friendly and worked non-stop."</p>
+<div class="review-date"><i class="far fa-calendar"></i> 1 week ago</div>
+<span class="review-service-tag">🏢 Move-Out Cleanout</span>
+</div>
+<div class="review-card reveal" style="transition-delay:0.3s">
+<div class="review-header">
+<div class="review-avatar-fallback" style="background:linear-gradient(135deg,#be185d,#9d174d);">A</div>
+<div>
+<div class="reviewer-name">Amanda W.</div>
+<div class="reviewer-meta">
+<span class="reviewer-platform"><i class="fab fa-yelp" style="color:#f43f5e;"></i> Yelp</span>
+<span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+</div>
+</div>
+</div>
+<div class="review-stars">★★★★★</div>
+<p class="review-text">"Outstanding company. I'm a property manager and I use JunkAway Pro exclusively for all my tenant turnover cleanouts. They're reliable, fast, and my tenants' old furniture is gone the same day I call. Their commercial pricing is fair for repeat clients. 10/10 recommend!"</p>
+<div class="review-date"><i class="far fa-calendar"></i> 5 days ago</div>
+<span class="review-service-tag">🏢 Commercial Client</span>
+</div>
+</div>
+</div>
 </section>
-
 <!-- GALLERY -->
 <section class="gallery" id="gallery">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">
-                <i class="fas fa-images"></i> Our Work
+<div class="container">
+<div class="section-header reveal">
+<div class="section-tag">
+<i class="fas fa-images"></i> Our Work
             </div>
-            <h2 class="section-title">Real <span>Jobs, Real Results</span></h2>
-            <p class="section-desc">See the difference JunkAway Pro makes. These are actual photos from our team on the job.</p>
-        </div>
-
-        <div class="gallery-filter reveal">
-            <button class="filter-btn active" data-filter="all">All Work</button>
-            <button class="filter-btn" data-filter="residential">Residential</button>
-            <button class="filter-btn" data-filter="commercial">Commercial</button>
-            <button class="filter-btn" data-filter="construction">Construction</button>
-            <button class="filter-btn" data-filter="estate">Estate</button>
-        </div>
-
-        <div class="gallery-grid reveal">
-            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80')">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Full home cleanout" loading="lazy">
-                <div class="gallery-overlay">
-                    <div class="gallery-overlay-text">Full Home Cleanout — Austin, TX</div>
-                </div>
-                <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80')">
-                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80" alt="Construction debris" loading="lazy">
-                <div class="gallery-overlay">
-                    <div class="gallery-overlay-text">Construction Debris</div>
-                </div>
-                <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80')">
-                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80" alt="Furniture removal" loading="lazy">
-                <div class="gallery-overlay">
-                    <div class="gallery-overlay-text">Furniture Removal</div>
-                </div>
-                <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80')">
-                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Yard waste" loading="lazy">
-                <div class="gallery-overlay">
-                    <div class="gallery-overlay-text">Yard Waste Cleanup</div>
-                </div>
-                <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80')">
-                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&q=80" alt="Commercial cleanout" loading="lazy">
-                <div class="gallery-overlay">
-                    <div class="gallery-overlay-text">Office Cleanout</div>
-                </div>
-                <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80')">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80" alt="Estate cleanout" loading="lazy">
-                <div class="gallery-overlay">
-                    <div class="gallery-overlay-text">Estate Cleanout</div>
-                </div>
-                <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80')">
-                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&q=80" alt="Professional team" loading="lazy">
-                <div class="gallery-overlay">
-                    <div class="gallery-overlay-text">Our Professional Team</div>
-                </div>
-                <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=1200&q=80')">
-                <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=400&q=80" alt="Clean truck" loading="lazy">
-                <div class="gallery-overlay">
-                    <div class="gallery-overlay-text">Ready to Haul</div>
-                </div>
-                <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
-            </div>
-        </div>
-    </div>
+<h2 class="section-title">Real <span>Jobs, Real Results</span></h2>
+<p class="section-desc">See the difference JunkAway Pro makes. These are actual photos from our team on the job.</p>
+</div>
+<div class="gallery-filter reveal">
+<button class="filter-btn active" data-filter="all">All Work</button>
+<button class="filter-btn" data-filter="residential">Residential</button>
+<button class="filter-btn" data-filter="commercial">Commercial</button>
+<button class="filter-btn" data-filter="construction">Construction</button>
+<button class="filter-btn" data-filter="estate">Estate</button>
+</div>
+<div class="gallery-grid reveal">
+<div class="gallery-item" data-category="residential" onclick="openLightbox('images/residential.jpg')">
+<img alt="Full home cleanout" loading="lazy" src="images/residential.jpg"/>
+<div class="gallery-overlay">
+<div class="gallery-overlay-text">Full Home Cleanout — Austin, TX</div>
+</div>
+<div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+</div>
+<div class="gallery-item" data-category="construction" onclick="openLightbox('images/construction.jpg')">
+<img alt="Construction debris" loading="lazy" src="images/construction.jpg"/>
+<div class="gallery-overlay">
+<div class="gallery-overlay-text">Construction Debris</div>
+</div>
+<div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+</div>
+<div class="gallery-item" data-category="residential" onclick="openLightbox('images/furniture.jpg')">
+<img alt="Furniture removal" loading="lazy" src="images/furniture.jpg"/>
+<div class="gallery-overlay">
+<div class="gallery-overlay-text">Furniture Removal</div>
+</div>
+<div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+</div>
+<div class="gallery-item" data-category="residential" onclick="openLightbox('images/yard-waste.jpg')">
+<img alt="Yard waste" loading="lazy" src="images/yard-waste.jpg"/>
+<div class="gallery-overlay">
+<div class="gallery-overlay-text">Yard Waste Cleanup</div>
+</div>
+<div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+</div>
+<div class="gallery-item" data-category="commercial" onclick="openLightbox('images/commercial.jpg')">
+<img alt="Commercial cleanout" loading="lazy" src="images/commercial.jpg"/>
+<div class="gallery-overlay">
+<div class="gallery-overlay-text">Office Cleanout</div>
+</div>
+<div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+</div>
+<div class="gallery-item" data-category="estate" onclick="openLightbox('images/estate.jpg')">
+<img alt="Estate cleanout" loading="lazy" src="images/estate.jpg"/>
+<div class="gallery-overlay">
+<div class="gallery-overlay-text">Estate Cleanout</div>
+</div>
+<div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+</div>
+<div class="gallery-item" data-category="residential" onclick="openLightbox('images/why-main.jpg')">
+<img alt="Professional team" loading="lazy" src="images/why-main.jpg"/>
+<div class="gallery-overlay">
+<div class="gallery-overlay-text">Our Professional Team</div>
+</div>
+<div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+</div>
+<div class="gallery-item" data-category="commercial" onclick="openLightbox('images/why-accent.jpg')">
+<img alt="Clean truck" loading="lazy" src="images/why-accent.jpg"/>
+<div class="gallery-overlay">
+<div class="gallery-overlay-text">Ready to Haul</div>
+</div>
+<div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- BEFORE & AFTER -->
 <section class="before-after" id="before-after">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">
-                <i class="fas fa-exchange-alt"></i> Transformations
+<div class="container">
+<div class="section-header reveal">
+<div class="section-tag">
+<i class="fas fa-exchange-alt"></i> Transformations
             </div>
-            <h2 class="section-title">Before & <span>After Results</span></h2>
-            <p class="section-desc">See the dramatic transformations we create for our customers every single day.</p>
-        </div>
-
-        <div class="ba-grid">
-            <div class="ba-card reveal" style="transition-delay:0.1s">
-                <div class="ba-images">
-                    <div class="ba-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Before">
-                        <span class="ba-label ba-label-before">Before</span>
-                    </div>
-                    <div class="ba-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=400&q=80" alt="After">
-                        <span class="ba-label ba-label-after">After</span>
-                    </div>
-                    <div class="ba-arrow"><i class="fas fa-arrows-alt-h"></i></div>
-                </div>
-                <div class="ba-content">
-                    <h4 class="ba-title">Garage Cleanout — 20 Years of Clutter</h4>
-                    <div class="ba-stats">
-                        <span class="ba-stat"><i class="fas fa-clock"></i> 3 Hours</span>
-                        <span class="ba-stat"><i class="fas fa-truck"></i> Full Load</span>
-                        <span class="ba-stat"><i class="fas fa-recycle"></i> 70% Donated</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="ba-card reveal" style="transition-delay:0.2s">
-                <div class="ba-images">
-                    <div class="ba-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80" alt="Before">
-                        <span class="ba-label ba-label-before">Before</span>
-                    </div>
-                    <div class="ba-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&q=80" alt="After">
-                        <span class="ba-label ba-label-after">After</span>
-                    </div>
-                    <div class="ba-arrow"><i class="fas fa-arrows-alt-h"></i></div>
-                </div>
-                <div class="ba-content">
-                    <h4 class="ba-title">Post-Renovation Debris Removal</h4>
-                    <div class="ba-stats">
-                        <span class="ba-stat"><i class="fas fa-clock"></i> 2 Hours</span>
-                        <span class="ba-stat"><i class="fas fa-truck"></i> Half Load</span>
-                        <span class="ba-stat"><i class="fas fa-recycle"></i> 90% Recycled</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="ba-card reveal" style="transition-delay:0.3s">
-                <div class="ba-images">
-                    <div class="ba-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80" alt="Before">
-                        <span class="ba-label ba-label-before">Before</span>
-                    </div>
-                    <div class="ba-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&q=80" alt="After">
-                        <span class="ba-label ba-label-after">After</span>
-                    </div>
-                    <div class="ba-arrow"><i class="fas fa-arrows-alt-h"></i></div>
-                </div>
-                <div class="ba-content">
-                    <h4 class="ba-title">Full Estate Cleanout</h4>
-                    <div class="ba-stats">
-                        <span class="ba-stat"><i class="fas fa-clock"></i> Full Day</span>
-                        <span class="ba-stat"><i class="fas fa-truck"></i> 3 Full Loads</span>
-                        <span class="ba-stat"><i class="fas fa-recycle"></i> 65% Donated</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<h2 class="section-title">Before &amp; <span>After Results</span></h2>
+<p class="section-desc">See the dramatic transformations we create for our customers every single day.</p>
+</div>
+<div class="ba-grid">
+<div class="ba-card reveal" style="transition-delay:0.1s">
+<div class="ba-images">
+<div class="ba-img-wrap">
+<img alt="Before" src="images/ba1-before.jpg"/>
+<span class="ba-label ba-label-before">Before</span>
+</div>
+<div class="ba-img-wrap">
+<img alt="After" src="images/ba1-after.jpg"/>
+<span class="ba-label ba-label-after">After</span>
+</div>
+<div class="ba-arrow"><i class="fas fa-arrows-alt-h"></i></div>
+</div>
+<div class="ba-content">
+<h4 class="ba-title">Garage Cleanout — 20 Years of Clutter</h4>
+<div class="ba-stats">
+<span class="ba-stat"><i class="fas fa-clock"></i> 3 Hours</span>
+<span class="ba-stat"><i class="fas fa-truck"></i> Full Load</span>
+<span class="ba-stat"><i class="fas fa-recycle"></i> 70% Donated</span>
+</div>
+</div>
+</div>
+<div class="ba-card reveal" style="transition-delay:0.2s">
+<div class="ba-images">
+<div class="ba-img-wrap">
+<img alt="Before" src="images/ba2-before.jpg"/>
+<span class="ba-label ba-label-before">Before</span>
+</div>
+<div class="ba-img-wrap">
+<img alt="After" src="images/ba2-after.jpg"/>
+<span class="ba-label ba-label-after">After</span>
+</div>
+<div class="ba-arrow"><i class="fas fa-arrows-alt-h"></i></div>
+</div>
+<div class="ba-content">
+<h4 class="ba-title">Post-Renovation Debris Removal</h4>
+<div class="ba-stats">
+<span class="ba-stat"><i class="fas fa-clock"></i> 2 Hours</span>
+<span class="ba-stat"><i class="fas fa-truck"></i> Half Load</span>
+<span class="ba-stat"><i class="fas fa-recycle"></i> 90% Recycled</span>
+</div>
+</div>
+</div>
+<div class="ba-card reveal" style="transition-delay:0.3s">
+<div class="ba-images">
+<div class="ba-img-wrap">
+<img alt="Before" src="images/ba3-before.jpg"/>
+<span class="ba-label ba-label-before">Before</span>
+</div>
+<div class="ba-img-wrap">
+<img alt="After" src="images/ba3-after.jpg"/>
+<span class="ba-label ba-label-after">After</span>
+</div>
+<div class="ba-arrow"><i class="fas fa-arrows-alt-h"></i></div>
+</div>
+<div class="ba-content">
+<h4 class="ba-title">Full Estate Cleanout</h4>
+<div class="ba-stats">
+<span class="ba-stat"><i class="fas fa-clock"></i> Full Day</span>
+<span class="ba-stat"><i class="fas fa-truck"></i> 3 Full Loads</span>
+<span class="ba-stat"><i class="fas fa-recycle"></i> 65% Donated</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- SERVICE AREAS -->
 <section class="service-areas" id="areas">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">
-                <i class="fas fa-map-marker-alt"></i> Locations
+<div class="container">
+<div class="section-header reveal">
+<div class="section-tag">
+<i class="fas fa-map-marker-alt"></i> Locations
             </div>
-            <h2 class="section-title">We Serve <span>Your Area</span></h2>
-            <p class="section-desc">JunkAway Pro covers a wide service radius. Enter your ZIP code to confirm same-day availability in your area.</p>
-        </div>
-
-        <div class="areas-grid">
-            <div class="reveal-left">
-                <div class="areas-map">
-                    <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80" 
-                         alt="Service area map"
-                         onerror="this.style.background='#e2e8f0';"
-                         style="width:100%;height:100%;object-fit:cover;">
-                    <div class="map-overlay"></div>
-                    <div class="map-label">
-                        <div class="map-label-title">📍 Metropolitan Area Coverage</div>
-                        <div class="map-label-sub">50+ mile service radius from downtown</div>
-                    </div>
-                </div>
-
-                <div style="margin-top:25px;background:var(--gray-50);border-radius:var(--radius-lg);padding:25px;">
-                    <h4 style="font-size:15px;font-weight:700;color:var(--secondary);margin-bottom:15px;">🔍 Check Your ZIP Code</h4>
-                    <div style="display:flex;gap:10px;">
-                        <input type="text" class="form-control" placeholder="Enter ZIP code..." style="flex:1;" id="zipCheck">
-                        <button onclick="checkZip()" class="btn-primary" style="padding:12px 20px;font-size:14px;">
+<h2 class="section-title">We Serve <span>Your Area</span></h2>
+<p class="section-desc">JunkAway Pro covers a wide service radius. Enter your ZIP code to confirm same-day availability in your area.</p>
+</div>
+<div class="areas-grid">
+<div class="reveal-left">
+<div class="areas-map">
+<img alt="Service area map" onerror="this.style.background='#e2e8f0';" src="images/service-area.jpg" style="width:100%;height:100%;object-fit:cover;"/>
+<div class="map-overlay"></div>
+<div class="map-label">
+<div class="map-label-title">📍 Metropolitan Area Coverage</div>
+<div class="map-label-sub">50+ mile service radius from downtown</div>
+</div>
+</div>
+<div style="margin-top:25px;background:var(--gray-50);border-radius:var(--radius-lg);padding:25px;">
+<h4 style="font-size:15px;font-weight:700;color:var(--secondary);margin-bottom:15px;">🔍 Check Your ZIP Code</h4>
+<div style="display:flex;gap:10px;">
+<input class="form-control" id="zipCheck" placeholder="Enter ZIP code..." style="flex:1;" type="text"/>
+<button class="btn-primary" onclick="checkZip()" style="padding:12px 20px;font-size:14px;">
                             Check <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                    <div id="zipResult" style="margin-top:12px;font-size:14px;"></div>
-                </div>
-            </div>
-
-            <div class="reveal-right">
-                <h3 style="font-size:20px;font-weight:700;color:var(--secondary);margin-bottom:8px;">Cities We Serve</h3>
-                <p style="color:var(--gray-500);font-size:14px;margin-bottom:20px;">We service the following cities and surrounding neighborhoods:</p>
-
-                <div class="areas-list">
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Downtown Metro</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Northside</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Westfield</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Eastview</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Riverside</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Hillcrest</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Lakewood</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Maple Grove</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Cedar Hills</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Oak Park</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Sunnyvale</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Pinewood</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Brighton</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Clearwater</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Fairview</span></div>
-                    <div class="area-item"><i class="fas fa-map-pin"></i><span>Millbrook</span></div>
-                </div>
-
-                <div style="background:var(--primary-light);border-radius:var(--radius);padding:20px;margin-top:20px;border:1px solid rgba(249,115,22,0.2);">
-                    <p style="font-size:14px;color:var(--primary-dark);font-weight:600;">
-                        <i class="fas fa-info-circle"></i> Don't see your city? Call us at (555) 123-4567 — we may still be able to serve you!
+</button>
+</div>
+<div id="zipResult" style="margin-top:12px;font-size:14px;"></div>
+</div>
+</div>
+<div class="reveal-right">
+<h3 style="font-size:20px;font-weight:700;color:var(--secondary);margin-bottom:8px;">Cities We Serve</h3>
+<p style="color:var(--gray-500);font-size:14px;margin-bottom:20px;">We service the following cities and surrounding neighborhoods:</p>
+<div class="areas-list">
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Downtown Metro</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Northside</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Westfield</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Eastview</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Riverside</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Hillcrest</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Lakewood</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Maple Grove</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Cedar Hills</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Oak Park</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Sunnyvale</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Pinewood</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Brighton</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Clearwater</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Fairview</span></div>
+<div class="area-item"><i class="fas fa-map-pin"></i><span>Millbrook</span></div>
+</div>
+<div style="background:var(--primary-light);border-radius:var(--radius);padding:20px;margin-top:20px;border:1px solid rgba(232,93,38,0.2);">
+<p style="font-size:14px;color:var(--primary-dark);font-weight:600;">
+<i class="fas fa-info-circle"></i> Don't see your city? Call us at (555) 123-4567 — we may still be able to serve you!
                     </p>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ECO-FRIENDLY -->
 <section class="eco" id="eco">
-    <div class="container">
-        <div class="eco-inner">
-            <div class="reveal-left">
-                <div class="section-tag">
-                    <i class="fas fa-leaf"></i> Eco Commitment
+<div class="container">
+<div class="eco-inner">
+<div class="reveal-left">
+<div class="section-tag">
+<i class="fas fa-leaf"></i> Eco Commitment
                 </div>
-                <h2 class="section-title">We're <span style="color:#6ee7b7;">Green</span> to the Core</h2>
-                <p class="eco-desc">
+<h2 class="section-title">We're <span style="color:#6ee7b7;">Green</span> to the Core</h2>
+<p class="eco-desc">
                     We don't just haul junk — we haul it responsibly. Our team sorts every load to maximize donations, 
                     recycling, and repurposing. Less than 15% of what we collect ends up in a landfill.
                 </p>
-
-                <div class="eco-process">
-                    <div class="eco-process-item">
-                        <div class="eco-process-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                        <div class="eco-process-text"><strong>Donate First:</strong> Usable items go to local Goodwill, Habitat for Humanity, and food banks</div>
-                    </div>
-                    <div class="eco-process-item">
-                        <div class="eco-process-icon"><i class="fas fa-recycle"></i></div>
-                        <div class="eco-process-text"><strong>Recycle Everything Possible:</strong> Metal, wood, electronics, cardboard — all sorted at certified recycling centers</div>
-                    </div>
-                    <div class="eco-process-item">
-                        <div class="eco-process-icon"><i class="fas fa-truck-loading"></i></div>
-                        <div class="eco-process-text"><strong>Responsible Disposal:</strong> What can't be donated or recycled goes to certified, EPA-compliant disposal sites</div>
-                    </div>
-                    <div class="eco-process-item">
-                        <div class="eco-process-icon"><i class="fas fa-certificate"></i></div>
-                        <div class="eco-process-text"><strong>Certified Partners:</strong> We work with licensed recyclers and donation centers across the region</div>
-                    </div>
-                </div>
-
-                <div class="eco-stats" style="margin-top:35px;">
-                    <div class="eco-stat">
-                        <span class="eco-stat-num">85%</span>
-                        <div class="eco-stat-label">Diverted from Landfill</div>
-                    </div>
-                    <div class="eco-stat">
-                        <span class="eco-stat-num">40%</span>
-                        <div class="eco-stat-label">Donated to Charity</div>
-                    </div>
-                    <div class="eco-stat">
-                        <span class="eco-stat-num">45%</span>
-                        <div class="eco-stat-label">Recycled Materials</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="eco-image reveal-right">
-                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&q=80" 
-                     alt="Eco-friendly junk removal"
-                     onerror="this.style.background='#065f46';">
-            </div>
-        </div>
-    </div>
+<div class="eco-process">
+<div class="eco-process-item">
+<div class="eco-process-icon"><i class="fas fa-hand-holding-heart"></i></div>
+<div class="eco-process-text"><strong>Donate First:</strong> Usable items go to local Goodwill, Habitat for Humanity, and food banks</div>
+</div>
+<div class="eco-process-item">
+<div class="eco-process-icon"><i class="fas fa-recycle"></i></div>
+<div class="eco-process-text"><strong>Recycle Everything Possible:</strong> Metal, wood, electronics, cardboard — all sorted at certified recycling centers</div>
+</div>
+<div class="eco-process-item">
+<div class="eco-process-icon"><i class="fas fa-truck-loading"></i></div>
+<div class="eco-process-text"><strong>Responsible Disposal:</strong> What can't be donated or recycled goes to certified, EPA-compliant disposal sites</div>
+</div>
+<div class="eco-process-item">
+<div class="eco-process-icon"><i class="fas fa-certificate"></i></div>
+<div class="eco-process-text"><strong>Certified Partners:</strong> We work with licensed recyclers and donation centers across the region</div>
+</div>
+</div>
+<div class="eco-stats" style="margin-top:35px;">
+<div class="eco-stat">
+<span class="eco-stat-num">85%</span>
+<div class="eco-stat-label">Diverted from Landfill</div>
+</div>
+<div class="eco-stat">
+<span class="eco-stat-num">40%</span>
+<div class="eco-stat-label">Donated to Charity</div>
+</div>
+<div class="eco-stat">
+<span class="eco-stat-num">45%</span>
+<div class="eco-stat-label">Recycled Materials</div>
+</div>
+</div>
+</div>
+<div class="eco-image reveal-right">
+<img alt="Eco-friendly junk removal" onerror="this.style.background='#065f46';" src="images/eco.jpg"/>
+</div>
+</div>
+</div>
 </section>
-
 <!-- BOOKING FORM -->
 <section class="booking" id="booking">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">
-                <i class="fas fa-calendar-check"></i> Online Booking
+<div class="container">
+<div class="section-header reveal">
+<div class="section-tag">
+<i class="fas fa-calendar-check"></i> Online Booking
             </div>
-            <h2 class="section-title">Schedule Your <span>Free Pickup</span></h2>
-            <p class="section-desc">Fill out the form and we'll reach out within 30 minutes to confirm your appointment.</p>
-        </div>
-
-        <div class="booking-wrapper reveal">
-            <div class="booking-info">
-                <h3 class="booking-info-title">Why Book with Us?</h3>
-                <p class="booking-info-desc">We've made booking as easy as possible. No complicated process — just tell us what you need and we'll handle the rest.</p>
-
-                <div class="booking-perks">
-                    <div class="booking-perk">
-                        <div class="booking-perk-icon"><i class="fas fa-bolt"></i></div>
-                        <div>
-                            <div class="booking-perk-title">30-Minute Response</div>
-                            <div class="booking-perk-desc">We confirm your booking fast — no waiting days for a callback</div>
-                        </div>
-                    </div>
-                    <div class="booking-perk">
-                        <div class="booking-perk-icon"><i class="fas fa-dollar-sign"></i></div>
-                        <div>
-                            <div class="booking-perk-title">Free On-Site Estimate</div>
-                            <div class="booking-perk-desc">Our crew arrives, you approve the price, then we get to work</div>
-                        </div>
-                    </div>
-                    <div class="booking-perk">
-                        <div class="booking-perk-icon"><i class="fas fa-shield-alt"></i></div>
-                        <div>
-                            <div class="booking-perk-title">Zero Obligation</div>
-                            <div class="booking-perk-desc">Not happy with the quote? Send us home — zero charge</div>
-                        </div>
-                    </div>
-                    <div class="booking-perk">
-                        <div class="booking-perk-icon"><i class="fas fa-credit-card"></i></div>
-                        <div>
-                            <div class="booking-perk-title">Easy Payment</div>
-                            <div class="booking-perk-desc">Cash, all major cards, Venmo, Zelle, or check accepted</div>
-                        </div>
-                    </div>
-                    <div class="booking-perk">
-                        <div class="booking-perk-icon"><i class="fas fa-file-alt"></i></div>
-                        <div>
-                            <div class="booking-perk-title">Itemized Receipt</div>
-                            <div class="booking-perk-desc">Detailed receipt provided for tax or insurance purposes</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-top:35px;border-top:1px solid rgba(255,255,255,0.1);padding-top:25px;">
-                    <div style="color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:10px;">OR CALL US DIRECTLY</div>
-                    <a href="tel:+15551234567" style="color:white;text-decoration:none;font-size:22px;font-weight:800;display:flex;align-items:center;gap:10px;">
-                        <i class="fas fa-phone" style="color:var(--primary);"></i>
+<h2 class="section-title">Schedule Your <span>Free Pickup</span></h2>
+<p class="section-desc">Fill out the form and we'll reach out within 30 minutes to confirm your appointment.</p>
+</div>
+<div class="booking-wrapper reveal">
+<div class="booking-info">
+<h3 class="booking-info-title">Why Book with Us?</h3>
+<p class="booking-info-desc">We've made booking as easy as possible. No complicated process — just tell us what you need and we'll handle the rest.</p>
+<div class="booking-perks">
+<div class="booking-perk">
+<div class="booking-perk-icon"><i class="fas fa-bolt"></i></div>
+<div>
+<div class="booking-perk-title">30-Minute Response</div>
+<div class="booking-perk-desc">We confirm your booking fast — no waiting days for a callback</div>
+</div>
+</div>
+<div class="booking-perk">
+<div class="booking-perk-icon"><i class="fas fa-dollar-sign"></i></div>
+<div>
+<div class="booking-perk-title">Free On-Site Estimate</div>
+<div class="booking-perk-desc">Our crew arrives, you approve the price, then we get to work</div>
+</div>
+</div>
+<div class="booking-perk">
+<div class="booking-perk-icon"><i class="fas fa-shield-alt"></i></div>
+<div>
+<div class="booking-perk-title">Zero Obligation</div>
+<div class="booking-perk-desc">Not happy with the quote? Send us home — zero charge</div>
+</div>
+</div>
+<div class="booking-perk">
+<div class="booking-perk-icon"><i class="fas fa-credit-card"></i></div>
+<div>
+<div class="booking-perk-title">Easy Payment</div>
+<div class="booking-perk-desc">Cash, all major cards, Venmo, Zelle, or check accepted</div>
+</div>
+</div>
+<div class="booking-perk">
+<div class="booking-perk-icon"><i class="fas fa-file-alt"></i></div>
+<div>
+<div class="booking-perk-title">Itemized Receipt</div>
+<div class="booking-perk-desc">Detailed receipt provided for tax or insurance purposes</div>
+</div>
+</div>
+</div>
+<div style="margin-top:35px;border-top:1px solid rgba(255,255,255,0.1);padding-top:25px;">
+<div style="color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:10px;">OR CALL US DIRECTLY</div>
+<a href="tel:+15551234567" style="color:white;text-decoration:none;font-size:22px;font-weight:800;display:flex;align-items:center;gap:10px;">
+<i class="fas fa-phone" style="color:var(--primary);"></i>
                         (555) 123-4567
                     </a>
-                    <div style="color:rgba(255,255,255,0.5);font-size:12px;margin-top:5px;">Available 7AM–9PM, 7 Days a Week</div>
-                </div>
-            </div>
-
-            <div class="booking-form">
-                <h3 class="booking-form-title">📋 Book Your Appointment</h3>
-
-                <form onsubmit="handleBookingForm(event)">
-                    <p style="font-size:14px;font-weight:700;color:var(--secondary);margin-bottom:12px;">Select Service Type:</p>
-                    <div class="service-select-grid">
-                        <div class="service-select-item selected" onclick="selectService(this)">
-                            <span class="service-select-icon">🏠</span>
-                            <div class="service-select-name">Residential</div>
-                        </div>
-                        <div class="service-select-item" onclick="selectService(this)">
-                            <span class="service-select-icon">🏢</span>
-                            <div class="service-select-name">Commercial</div>
-                        </div>
-                        <div class="service-select-item" onclick="selectService(this)">
-                            <span class="service-select-icon">🔨</span>
-                            <div class="service-select-name">Construction</div>
-                        </div>
-                        <div class="service-select-item" onclick="selectService(this)">
-                            <span class="service-select-icon">🛋️</span>
-                            <div class="service-select-name">Furniture</div>
-                        </div>
-                        <div class="service-select-item" onclick="selectService(this)">
-                            <span class="service-select-icon">🌿</span>
-                            <div class="service-select-name">Yard Waste</div>
-                        </div>
-                        <div class="service-select-item" onclick="selectService(this)">
-                            <span class="service-select-icon">🏡</span>
-                            <div class="service-select-name">Estate</div>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>First Name *</label>
-                            <input type="text" class="form-control" placeholder="John" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name *</label>
-                            <input type="text" class="form-control" placeholder="Smith" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Phone Number *</label>
-                            <input type="tel" class="form-control" placeholder="(555) 000-0000" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" class="form-control" placeholder="john@example.com">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Street Address *</label>
-                        <input type="text" class="form-control" placeholder="123 Main Street" required>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>City *</label>
-                            <input type="text" class="form-control" placeholder="Your city" required>
-                        </div>
-                        <div class="form-group">
-                            <label>ZIP Code *</label>
-                            <input type="text" class="form-control" placeholder="ZIP code" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Preferred Date *</label>
-                            <input type="date" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Preferred Time</label>
-                            <select class="form-control">
-                                <option>Morning (7AM–12PM)</option>
-                                <option>Afternoon (12PM–5PM)</option>
-                                <option>Evening (5PM–9PM)</option>
-                                <option>Flexible — Any Time</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Load Size Estimate</label>
-                        <select class="form-control">
-                            <option>Not sure yet</option>
-                            <option>Small — 1-2 items</option>
-                            <option>Medium — 1/4 to 1/2 truck</option>
-                            <option>Large — 1/2 to full truck</option>
-                            <option>Extra Large — Multiple trucks</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Additional Notes</label>
-                        <textarea class="form-control" rows="3" placeholder="Tell us about your items, access info, or any special requirements..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:16px;">
-                        <i class="fas fa-calendar-check"></i>
-                        Schedule My Free Pickup
+<div style="color:rgba(255,255,255,0.5);font-size:12px;margin-top:5px;">Available 7AM–9PM, 7 Days a Week</div>
+</div>
+</div>
+<div class="booking-form">
+<h3 class="booking-form-title">📋 Book Your Appointment</h3>
+<form onsubmit="handleBookingForm(event)">
+<p style="font-size:14px;font-weight:700;color:var(--secondary);margin-bottom:12px;">Select Service Type:</p>
+<div class="service-select-grid">
+<div class="service-select-item selected" onclick="selectService(this)">
+<span class="service-select-icon">🏠</span>
+<div class="service-select-name">Residential</div>
+</div>
+<div class="service-select-item" onclick="selectService(this)">
+<span class="service-select-icon">🏢</span>
+<div class="service-select-name">Commercial</div>
+</div>
+<div class="service-select-item" onclick="selectService(this)">
+<span class="service-select-icon">🔨</span>
+<div class="service-select-name">Construction</div>
+</div>
+<div class="service-select-item" onclick="selectService(this)">
+<span class="service-select-icon">🛋️</span>
+<div class="service-select-name">Furniture</div>
+</div>
+<div class="service-select-item" onclick="selectService(this)">
+<span class="service-select-icon">🌿</span>
+<div class="service-select-name">Yard Waste</div>
+</div>
+<div class="service-select-item" onclick="selectService(this)">
+<span class="service-select-icon">🏡</span>
+<div class="service-select-name">Estate</div>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>First Name *</label>
+<input class="form-control" placeholder="John" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>Last Name *</label>
+<input class="form-control" placeholder="Smith" required="" type="text"/>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Phone Number *</label>
+<input class="form-control" placeholder="(555) 000-0000" required="" type="tel"/>
+</div>
+<div class="form-group">
+<label>Email Address</label>
+<input class="form-control" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="form-group">
+<label>Street Address *</label>
+<input class="form-control" placeholder="123 Main Street" required="" type="text"/>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>City *</label>
+<input class="form-control" placeholder="Your city" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>ZIP Code *</label>
+<input class="form-control" placeholder="ZIP code" required="" type="text"/>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Preferred Date *</label>
+<input class="form-control" required="" type="date"/>
+</div>
+<div class="form-group">
+<label>Preferred Time</label>
+<select class="form-control">
+<option>Morning (7AM–12PM)</option>
+<option>Afternoon (12PM–5PM)</option>
+<option>Evening (5PM–9PM)</option>
+<option>Flexible — Any Time</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label>Load Size Estimate</label>
+<select class="form-control">
+<option>Not sure yet</option>
+<option>Small — 1-2 items</option>
+<option>Medium — 1/4 to 1/2 truck</option>
+<option>Large — 1/2 to full truck</option>
+<option>Extra Large — Multiple trucks</option>
+</select>
+</div>
+<div class="form-group">
+<label>Additional Notes</label>
+<textarea class="form-control" placeholder="Tell us about your items, access info, or any special requirements..." rows="3"></textarea>
+</div>
+<button class="btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:16px;" type="submit">
+<i class="fas fa-calendar-check"></i>
+                        Book My Free Estimate
                     </button>
-
-                    <div class="form-guarantee" style="justify-content:center;margin-top:15px;">
-                        <i class="fas fa-lock"></i>
-                        <span>Your information is secure and never shared. We respond within 30 minutes.</span>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+<div class="form-guarantee" style="justify-content:center;margin-top:15px;">
+<i class="fas fa-lock"></i>
+<span>Your information is secure and never shared. We respond within 30 minutes.</span>
+</div>
+</form>
+</div>
+</div>
+</div>
 </section>
-
 <!-- TEAM -->
 <section class="team" id="team">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">
-                <i class="fas fa-users"></i> Meet the Team
+<div class="container">
+<div class="section-header reveal">
+<div class="section-tag">
+<i class="fas fa-users"></i> Meet the Team
             </div>
-            <h2 class="section-title">The People <span>Behind the Truck</span></h2>
-            <p class="section-desc">Our team of trained, background-checked professionals are here to make your experience seamless.</p>
-        </div>
-
-        <div class="team-grid">
-            <div class="team-card reveal" style="transition-delay:0.1s">
-                <div class="team-img-wrap">
-                    <img class="team-img" 
-                         src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" 
-                         alt="Marcus Johnson"
-                         onerror="this.style.background='linear-gradient(135deg,#f97316,#ea580c)';this.style.display='flex';this.style.alignItems='center';this.style.justifyContent='center';">
-                    <div class="team-social">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                    </div>
-                </div>
-                <div class="team-info">
-                    <div class="team-name">Marcus Johnson</div>
-                    <div class="team-role">Founder & CEO</div>
-                    <div class="team-stats">
-                        <div class="team-stat">
-                            <div class="team-stat-num">12</div>
-                            <div class="team-stat-label">Years Exp</div>
-                        </div>
-                        <div class="team-stat">
-                            <div class="team-stat-num">5K+</div>
-                            <div class="team-stat-label">Jobs Done</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="team-card reveal" style="transition-delay:0.2s">
-                <div class="team-img-wrap">
-                    <img class="team-img" 
-                         src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" 
-                         alt="Sarah Chen"
-                         onerror="this.style.background='linear-gradient(135deg,#7c3aed,#6d28d9)';">
-                    <div class="team-social">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="team-info">
-                    <div class="team-name">Sarah Chen</div>
-                    <div class="team-role">Operations Manager</div>
-                    <div class="team-stats">
-                        <div class="team-stat">
-                            <div class="team-stat-num">8</div>
-                            <div class="team-stat-label">Years Exp</div>
-                        </div>
-                        <div class="team-stat">
-                            <div class="team-stat-num">98%</div>
-                            <div class="team-stat-label">Satisfaction</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="team-card reveal" style="transition-delay:0.3s">
-                <div class="team-img-wrap">
-                    <img class="team-img" 
-                         src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" 
-                         alt="David Torres"
-                         onerror="this.style.background='linear-gradient(135deg,#065f46,#047857)';">
-                    <div class="team-social">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="team-info">
-                    <div class="team-name">David Torres</div>
-                    <div class="team-role">Lead Crew Supervisor</div>
-                    <div class="team-stats">
-                        <div class="team-stat">
-                            <div class="team-stat-num">6</div>
-                            <div class="team-stat-label">Years Exp</div>
-                        </div>
-                        <div class="team-stat">
-                            <div class="team-stat-num">2K+</div>
-                            <div class="team-stat-label">Jobs Done</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="team-card reveal" style="transition-delay:0.4s">
-                <div class="team-img-wrap">
-                    <img class="team-img" 
-                         src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" 
-                         alt="Emily Richards"
-                         onerror="this.style.background='linear-gradient(135deg,#1e40af,#1d4ed8)';">
-                    <div class="team-social">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="team-info">
-                    <div class="team-name">Emily Richards</div>
-                    <div class="team-role">Customer Success</div>
-                    <div class="team-stats">
-                        <div class="team-stat">
-                            <div class="team-stat-num">4</div>
-                            <div class="team-stat-label">Years Exp</div>
-                        </div>
-                        <div class="team-stat">
-                            <div class="team-stat-num">99%</div>
-                            <div class="team-stat-label">Satisfaction</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<h2 class="section-title">The People <span>Behind the Truck</span></h2>
+<p class="section-desc">Our team of trained, background-checked professionals are here to make your experience seamless.</p>
+</div>
+<div class="team-grid">
+<div class="team-card reveal" style="transition-delay:0.1s">
+<div class="team-img-wrap">
+<img alt="Marcus Johnson" class="team-img" onerror="this.style.background='linear-gradient(135deg,#f97316,#ea580c)';this.style.display='flex';this.style.alignItems='center';this.style.justifyContent='center';" src="images/marcus.jpg"/>
+<div class="team-social">
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-facebook"></i></a>
+</div>
+</div>
+<div class="team-info">
+<div class="team-name">Marcus Johnson</div>
+<div class="team-role">Founder &amp; CEO</div>
+<div class="team-stats">
+<div class="team-stat">
+<div class="team-stat-num">12</div>
+<div class="team-stat-label">Years Exp</div>
+</div>
+<div class="team-stat">
+<div class="team-stat-num">5K+</div>
+<div class="team-stat-label">Jobs Done</div>
+</div>
+</div>
+</div>
+</div>
+<div class="team-card reveal" style="transition-delay:0.2s">
+<div class="team-img-wrap">
+<img alt="Sarah Chen" class="team-img" onerror="this.style.background='linear-gradient(135deg,#7c3aed,#6d28d9)';" src="images/sarah.jpg"/>
+<div class="team-social">
+<a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+</div>
+<div class="team-info">
+<div class="team-name">Sarah Chen</div>
+<div class="team-role">Operations Manager</div>
+<div class="team-stats">
+<div class="team-stat">
+<div class="team-stat-num">8</div>
+<div class="team-stat-label">Years Exp</div>
+</div>
+<div class="team-stat">
+<div class="team-stat-num">98%</div>
+<div class="team-stat-label">Satisfaction</div>
+</div>
+</div>
+</div>
+</div>
+<div class="team-card reveal" style="transition-delay:0.3s">
+<div class="team-img-wrap">
+<img alt="David Torres" class="team-img" onerror="this.style.background='linear-gradient(135deg,#065f46,#047857)';" src="images/david.jpg"/>
+<div class="team-social">
+<a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+</div>
+<div class="team-info">
+<div class="team-name">David Torres</div>
+<div class="team-role">Lead Crew Supervisor</div>
+<div class="team-stats">
+<div class="team-stat">
+<div class="team-stat-num">6</div>
+<div class="team-stat-label">Years Exp</div>
+</div>
+<div class="team-stat">
+<div class="team-stat-num">2K+</div>
+<div class="team-stat-label">Jobs Done</div>
+</div>
+</div>
+</div>
+</div>
+<div class="team-card reveal" style="transition-delay:0.4s">
+<div class="team-img-wrap">
+<img alt="Emily Richards" class="team-img" onerror="this.style.background='linear-gradient(135deg,#1e40af,#1d4ed8)';" src="images/emily.jpg"/>
+<div class="team-social">
+<a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+</div>
+<div class="team-info">
+<div class="team-name">Emily Richards</div>
+<div class="team-role">Customer Success</div>
+<div class="team-stats">
+<div class="team-stat">
+<div class="team-stat-num">4</div>
+<div class="team-stat-label">Years Exp</div>
+</div>
+<div class="team-stat">
+<div class="team-stat-num">99%</div>
+<div class="team-stat-label">Satisfaction</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- FAQ -->
 <section class="faq" id="faq">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">
-                <i class="fas fa-question-circle"></i> FAQ
+<div class="container">
+<div class="section-header reveal">
+<div class="section-tag">
+<i class="fas fa-question-circle"></i> FAQ
             </div>
-            <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
-            <p class="section-desc">Everything you need to know before booking. Can't find your answer? Call us anytime.</p>
-        </div>
-
-        <div class="faq-grid">
-            <div class="faq-list">
-                <div class="faq-item open">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+<h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+<p class="section-desc">Everything you need to know before booking. Can't find your answer? Call us anytime.</p>
+</div>
+<div class="faq-grid">
+<div class="faq-list">
+<div class="faq-item open">
+<div class="faq-question" onclick="toggleFaq(this)">
                         How do you determine the price?
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
+</div>
+<div class="faq-answer">
                         Our pricing is based on how much space your items take up in our truck — not by weight or number of items. Our crew provides a free, no-obligation estimate on-site before any work begins. You approve the price, then we start. No surprises, ever.
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">
                         Do you offer same-day service?
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
+</div>
+<div class="faq-answer">
                         Yes! We offer same-day service 7 days a week. Book before 12PM and we can usually be there the same afternoon. Call us at (555) 123-4567 for fastest scheduling.
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">
                         What items do you NOT take?
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
+</div>
+<div class="faq-answer">
                         We cannot accept: hazardous materials (paint, chemicals, asbestos), medical waste, certain electronics (call to confirm), or items with biohazard contamination. For most other items, we can help! Call us if you're unsure about a specific item.
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">
                         Are you licensed and insured?
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
+</div>
+<div class="faq-answer">
                         Absolutely. JunkAway Pro is fully licensed, bonded, and insured in all areas we operate. We carry general liability and workers' compensation insurance. Proof of insurance is available upon request.
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">
                         Do I need to be home during pickup?
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
+</div>
+<div class="faq-answer">
                         While we prefer someone to be present for the initial estimate and approval, in some cases we can accommodate contactless service with prior arrangements. Please call us to discuss your specific needs.
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">
                         What happens to my stuff after you take it?
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
+</div>
+<div class="faq-answer">
                         We sort everything at our facility. Usable items are donated to local charities (Goodwill, Habitat for Humanity, etc.). Recyclable materials go to certified recycling centers. Only what can't be repurposed goes to an EPA-compliant disposal facility.
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">
                         Do you disassemble furniture?
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
+</div>
+<div class="faq-answer">
                         Yes! Our team is equipped to disassemble furniture, disconnect appliances, and break down large items as needed. This service is included in our labor — no extra charge.
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">
                         What payment methods do you accept?
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
+</div>
+<div class="faq-answer">
                         We accept all major credit/debit cards (Visa, Mastercard, AMEX, Discover), cash, check, Venmo, Zelle, and PayPal. Payment is collected after the job is complete and you're satisfied.
                     </div>
-                </div>
-            </div>
-
-            <div class="faq-cta">
-                <span class="faq-cta-icon">🎧</span>
-                <h3 class="faq-cta-title">Still Have Questions?</h3>
-                <p class="faq-cta-desc">Our friendly team is available 7 days a week to answer any questions you have about our services, pricing, or availability.</p>
-                <span class="faq-cta-phone">📞 (555) 123-4567</span>
-                <a href="tel:+15551234567" class="btn-white">Call Us Now</a>
-                <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.2);">
-                    <p style="font-size:13px;opacity:0.8;margin-bottom:12px;">Or reach us by email:</p>
-                    <a href="mailto:hello@junkaway.pro" style="color:white;font-weight:600;font-size:14px;">hello@junkaway.pro</a>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+<div class="faq-cta">
+<span class="faq-cta-icon">🎧</span>
+<h3 class="faq-cta-title">Still Have Questions?</h3>
+<p class="faq-cta-desc">Our friendly team is available 7 days a week to answer any questions you have about our services, pricing, or availability.</p>
+<span class="faq-cta-phone">📞 (555) 123-4567</span>
+<a class="btn-white" href="tel:+15551234567">Call Us Now</a>
+<div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.2);">
+<p style="font-size:13px;opacity:0.8;margin-bottom:12px;">Or reach us by email:</p>
+<a href="mailto:hello@junkaway.pro" style="color:white;font-weight:600;font-size:14px;">hello@junkaway.pro</a>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- BLOG -->
 <section class="blog" id="blog">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">
-                <i class="fas fa-blog"></i> Helpful Tips
+<div class="container">
+<div class="section-header reveal">
+<div class="section-tag">
+<i class="fas fa-blog"></i> Helpful Tips
             </div>
-            <h2 class="section-title">From the <span>JunkAway Blog</span></h2>
-            <p class="section-desc">Tips, guides, and advice for decluttering, recycling, and getting the most out of your cleanout.</p>
-        </div>
-
-        <div class="blog-grid">
-            <div class="blog-card reveal" style="transition-delay:0.1s">
-                <div class="blog-img-wrap">
-                    <img class="blog-img" 
-                         src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" 
-                         alt="Decluttering tips" loading="lazy">
-                    <span class="blog-category">Decluttering</span>
-                </div>
-                <div class="blog-body">
-                    <div class="blog-meta">
-                        <span><i class="far fa-calendar"></i> Dec 12, 2024</span>
-                        <span><i class="far fa-clock"></i> 5 min read</span>
-                        <span><i class="far fa-eye"></i> 2.1K views</span>
-                    </div>
-                    <h3 class="blog-title">The Ultimate Guide to Decluttering Your Home Before the New Year</h3>
-                    <p class="blog-excerpt">Start the new year fresh with a clean, organized home. Our experts share the room-by-room strategy that our customers swear by...</p>
-                    <a href="#" class="blog-read-more">Read Full Article <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <div class="blog-card reveal" style="transition-delay:0.2s">
-                <div class="blog-img-wrap">
-                    <img class="blog-img" 
-                         src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&q=80" 
-                         alt="Recycling guide" loading="lazy">
-                    <span class="blog-category">Recycling</span>
-                </div>
-                <div class="blog-body">
-                    <div class="blog-meta">
-                        <span><i class="far fa-calendar"></i> Dec 5, 2024</span>
-                        <span><i class="far fa-clock"></i> 4 min read</span>
-                    </div>
-                    <h3 class="blog-title">What Happens to Your Junk After We Pick It Up</h3>
-                    <p class="blog-excerpt">A behind-the-scenes look at our sorting process and how we keep items out of landfills...</p>
-                    <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <div class="blog-card reveal" style="transition-delay:0.3s">
-                <div class="blog-img-wrap">
-                    <img class="blog-img" 
-                         src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80" 
-                         alt="Estate cleanout" loading="lazy">
-                    <span class="blog-category">Estate Cleanout</span>
-                </div>
-                <div class="blog-body">
-                    <div class="blog-meta">
-                        <span><i class="far fa-calendar"></i> Nov 28, 2024</span>
-                        <span><i class="far fa-clock"></i> 6 min read</span>
-                    </div>
-                    <h3 class="blog-title">How to Handle an Estate Cleanout: A Compassionate Guide</h3>
-                    <p class="blog-excerpt">Dealing with a loved one's belongings is never easy. Here's how to approach it with care...</p>
-                    <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
+<h2 class="section-title">From the <span>JunkAway Blog</span></h2>
+<p class="section-desc">Tips, guides, and advice for decluttering, recycling, and getting the most out of your cleanout.</p>
+</div>
+<div class="blog-grid">
+<div class="blog-card reveal" style="transition-delay:0.1s">
+<div class="blog-img-wrap">
+<img alt="Decluttering tips" class="blog-img" loading="lazy" src="images/residential.jpg"/>
+<span class="blog-category">Decluttering</span>
+</div>
+<div class="blog-body">
+<div class="blog-meta">
+<span><i class="far fa-calendar"></i> Dec 12, 2024</span>
+<span><i class="far fa-clock"></i> 5 min read</span>
+<span><i class="far fa-eye"></i> 2.1K views</span>
+</div>
+<h3 class="blog-title">The Ultimate Guide to Decluttering Your Home Before the New Year</h3>
+<p class="blog-excerpt">Start the new year fresh with a clean, organized home. Our experts share the room-by-room strategy that our customers swear by...</p>
+<a class="blog-read-more" href="#">Read Full Article <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+<div class="blog-card reveal" style="transition-delay:0.2s">
+<div class="blog-img-wrap">
+<img alt="Recycling guide" class="blog-img" loading="lazy" src="images/eco.jpg"/>
+<span class="blog-category">Recycling</span>
+</div>
+<div class="blog-body">
+<div class="blog-meta">
+<span><i class="far fa-calendar"></i> Dec 5, 2024</span>
+<span><i class="far fa-clock"></i> 4 min read</span>
+</div>
+<h3 class="blog-title">What Happens to Your Junk After We Pick It Up</h3>
+<p class="blog-excerpt">A behind-the-scenes look at our sorting process and how we keep items out of landfills...</p>
+<a class="blog-read-more" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+<div class="blog-card reveal" style="transition-delay:0.3s">
+<div class="blog-img-wrap">
+<img alt="Estate cleanout" class="blog-img" loading="lazy" src="images/estate.jpg"/>
+<span class="blog-category">Estate Cleanout</span>
+</div>
+<div class="blog-body">
+<div class="blog-meta">
+<span><i class="far fa-calendar"></i> Nov 28, 2024</span>
+<span><i class="far fa-clock"></i> 6 min read</span>
+</div>
+<h3 class="blog-title">How to Handle an Estate Cleanout: A Compassionate Guide</h3>
+<p class="blog-excerpt">Dealing with a loved one's belongings is never easy. Here's how to approach it with care...</p>
+<a class="blog-read-more" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- PARTNERS -->
 <div class="partners">
-    <div class="container">
-        <div class="partners-title">Trusted by Homeowners, Realtors, Contractors & Property Managers Across the Region</div>
-        <div class="partners-logos">
-            <div class="partner-logo">
-                <div class="partner-logo-icon">🏠</div>
-                <div class="partner-logo-text">Realty Pro</div>
-            </div>
-            <div class="partner-logo">
-                <div class="partner-logo-icon">🔨</div>
-                <div class="partner-logo-text">BuildRight</div>
-            </div>
-            <div class="partner-logo">
-                <div class="partner-logo-icon">🌿</div>
-                <div class="partner-logo-text">GreenLand</div>
-            </div>
-            <div class="partner-logo">
-                <div class="partner-logo-icon">🏢</div>
-                <div class="partner-logo-text">OfficePlus</div>
-            </div>
-            <div class="partner-logo">
-                <div class="partner-logo-icon">♻️</div>
-                <div class="partner-logo-text">EcoSort</div>
-            </div>
-            <div class="partner-logo">
-                <div class="partner-logo-icon">💼</div>
-                <div class="partner-logo-text">EstateMax</div>
-            </div>
-        </div>
-    </div>
+<div class="container">
+<div class="partners-title">Trusted by Homeowners, Realtors, Contractors &amp; Property Managers Across the Region</div>
+<div class="partners-logos">
+<div class="partner-logo">
+<div class="partner-logo-icon">🏠</div>
+<div class="partner-logo-text">Realty Pro</div>
 </div>
-
+<div class="partner-logo">
+<div class="partner-logo-icon">🔨</div>
+<div class="partner-logo-text">BuildRight</div>
+</div>
+<div class="partner-logo">
+<div class="partner-logo-icon">🌿</div>
+<div class="partner-logo-text">GreenLand</div>
+</div>
+<div class="partner-logo">
+<div class="partner-logo-icon">🏢</div>
+<div class="partner-logo-text">OfficePlus</div>
+</div>
+<div class="partner-logo">
+<div class="partner-logo-icon">♻️</div>
+<div class="partner-logo-text">EcoSort</div>
+</div>
+<div class="partner-logo">
+<div class="partner-logo-icon">💼</div>
+<div class="partner-logo-text">EstateMax</div>
+</div>
+</div>
+</div>
+</div>
 <!-- CTA BANNER -->
 <section class="cta-banner" id="contact">
-    <div class="cta-banner-inner">
-        <h2 class="cta-banner-title">Ready to Clear Out the Clutter?</h2>
-        <p class="cta-banner-desc">Get a free, no-obligation estimate today. Same-day service available. We respond in under 30 minutes.</p>
-        <div class="cta-banner-actions">
-            <a href="#booking" class="btn-cta-white">
-                <i class="fas fa-calendar-check"></i> Book Free Estimate
+<div class="cta-banner-inner">
+<h2 class="cta-banner-title">Ready to Clear Out the Clutter?</h2>
+<p class="cta-banner-desc">Get a free, no-obligation estimate today. Same-day service available. We respond in under 30 minutes.</p>
+<div class="cta-banner-actions">
+<a class="btn-cta-white" href="#booking">
+<i class="fas fa-calendar-check"></i> Book Free Estimate
             </a>
-            <a href="tel:+15551234567" class="btn-cta-ghost">
-                <i class="fas fa-phone"></i> (555) 123-4567
+<a class="btn-cta-ghost" href="tel:+15551234567">
+<i class="fas fa-phone"></i> (555) 123-4567
             </a>
-        </div>
-    </div>
+</div>
+</div>
 </section>
-
 <!-- FOOTER -->
 <footer>
-    <div class="footer-top">
-        <div class="footer-brand">
-            <div class="logo">
-                <div class="logo-icon">🚛</div>
-                <div class="logo-text">
-                    <span class="logo-name" style="color:white;">Junk<span>Away</span></span>
-                    <span class="logo-tagline">Pro Services</span>
-                </div>
-            </div>
-            <p>JunkAway Pro is the region's most trusted junk removal company. Fully licensed, insured, and committed to eco-friendly practices. Available 7 days a week, 7AM–9PM.</p>
-
-            <div class="footer-contact-item">
-                <i class="fas fa-phone"></i>
-                <span>(555) 123-4567</span>
-            </div>
-            <div class="footer-contact-item">
-                <i class="fas fa-envelope"></i>
-                <span>hello@junkaway.pro</span>
-            </div>
-            <div class="footer-contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>123 Clearout Lane, Austin, TX 78701</span>
-            </div>
-            <div class="footer-contact-item">
-                <i class="fas fa-clock"></i>
-                <span>Mon–Sun: 7AM – 9PM</span>
-            </div>
-
-            <div class="footer-social">
-                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-google"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-yelp"></i></a>
-            </div>
-        </div>
-
-        <div class="footer-col">
-            <h4>Services</h4>
-            <ul class="footer-links">
-                <li><a href="#services">Residential Removal</a></li>
-                <li><a href="#services">Commercial Cleanout</a></li>
-                <li><a href="#services">Construction Debris</a></li>
-                <li><a href="#services">Furniture & Appliances</a></li>
-                <li><a href="#services">Yard Waste</a></li>
-                <li><a href="#services">Estate Cleanouts</a></li>
-                <li><a href="#services">Dumpster Rental</a></li>
-                <li><a href="#services">Vehicle Removal</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul class="footer-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#pricing">Pricing Guide</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#areas">Service Areas</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#team">Our Team</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h4>Resources</h4>
-            <ul class="footer-links">
-                <li><a href="#">Recycling Guide</a></li>
-                <li><a href="#">Donation Centers</a></li>
-                <li><a href="#">What We Take</a></li>
-                <li><a href="#">Hazmat FAQ</a></li>
-                <li><a href="#">Moving Tips</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Franchise Info</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h4>Stay Updated</h4>
-            <p style="font-size:13px;line-height:1.6;margin-bottom:15px;">Subscribe for tips, promotions, and service updates.</p>
-            <div class="footer-newsletter-input">
-                <input type="email" placeholder="Your email address...">
-                <button><i class="fas fa-paper-plane"></i></button>
-            </div>
-            <p style="font-size:11px;color:rgba(255,255,255,0.3);">No spam. Unsubscribe anytime.</p>
-
-            <h4 style="margin-top:25px;">Download Our App</h4>
-            <div class="app-buttons">
-                <a href="#" class="app-btn">
-                    <i class="fab fa-apple"></i>
-                    <div class="app-btn-text">
-                        <span class="app-btn-sub">Download on</span>
-                        <span class="app-btn-name">App Store</span>
-                    </div>
-                </a>
-                <a href="#" class="app-btn">
-                    <i class="fab fa-google-play"></i>
-                    <div class="app-btn-text">
-                        <span class="app-btn-sub">Get it on</span>
-                        <span class="app-btn-name">Google Play</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p class="footer-bottom-text">© 2024 JunkAway Pro. All Rights Reserved.</p>
-        <div class="footer-certifications">
-            <div class="cert-badge"><i class="fas fa-shield-alt"></i> Licensed & Insured</div>
-            <div class="cert-badge"><i class="fas fa-leaf"></i> Eco-Certified</div>
-            <div class="cert-badge"><i class="fab fa-google" style="color:#4285f4;"></i> 4.9 ★ Rating</div>
-        </div>
-        <div class="footer-bottom-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Sitemap</a>
-        </div>
-    </div>
+<div class="footer-top">
+<div class="footer-brand">
+<div class="logo">
+<div class="logo-icon">🚛</div>
+<div class="logo-text">
+<span class="logo-name" style="color:white;">Junk<span>Away</span></span>
+<span class="logo-tagline">Pro Services</span>
+</div>
+</div>
+<p>JunkAway Pro is the region's most trusted junk removal company. Fully licensed, insured, and committed to eco-friendly practices. Available 7 days a week, 7AM–9PM.</p>
+<div class="footer-contact-item">
+<i class="fas fa-phone"></i>
+<span>(555) 123-4567</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-envelope"></i>
+<span>hello@junkaway.pro</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-map-marker-alt"></i>
+<span>123 Clearout Lane, Austin, TX 78701</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-clock"></i>
+<span>Mon–Sun: 7AM – 9PM</span>
+</div>
+<div class="footer-social">
+<a class="social-link" href="#"><i class="fab fa-facebook"></i></a>
+<a class="social-link" href="#"><i class="fab fa-instagram"></i></a>
+<a class="social-link" href="#"><i class="fab fa-twitter"></i></a>
+<a class="social-link" href="#"><i class="fab fa-youtube"></i></a>
+<a class="social-link" href="#"><i class="fab fa-google"></i></a>
+<a class="social-link" href="#"><i class="fab fa-yelp"></i></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul class="footer-links">
+<li><a href="#services">Residential Removal</a></li>
+<li><a href="#services">Commercial Cleanout</a></li>
+<li><a href="#services">Construction Debris</a></li>
+<li><a href="#services">Furniture &amp; Appliances</a></li>
+<li><a href="#services">Yard Waste</a></li>
+<li><a href="#services">Estate Cleanouts</a></li>
+<li><a href="#services">Dumpster Rental</a></li>
+<li><a href="#services">Vehicle Removal</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<ul class="footer-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#how-it-works">How It Works</a></li>
+<li><a href="#pricing">Pricing Guide</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#areas">Service Areas</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#blog">Blog</a></li>
+<li><a href="#team">Our Team</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Resources</h4>
+<ul class="footer-links">
+<li><a href="#">Recycling Guide</a></li>
+<li><a href="#">Donation Centers</a></li>
+<li><a href="#">What We Take</a></li>
+<li><a href="#">Hazmat FAQ</a></li>
+<li><a href="#">Moving Tips</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Franchise Info</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Stay Updated</h4>
+<p style="font-size:13px;line-height:1.6;margin-bottom:15px;">Subscribe for tips, promotions, and service updates.</p>
+<div class="footer-newsletter-input">
+<input placeholder="Your email address..." type="email"/>
+<button><i class="fas fa-paper-plane"></i></button>
+</div>
+<p style="font-size:11px;color:rgba(255,255,255,0.3);">No spam. Unsubscribe anytime.</p>
+<h4 style="margin-top:25px;">Download Our App</h4>
+<div class="app-buttons">
+<a class="app-btn" href="#">
+<i class="fab fa-apple"></i>
+<div class="app-btn-text">
+<span class="app-btn-sub">Download on</span>
+<span class="app-btn-name">App Store</span>
+</div>
+</a>
+<a class="app-btn" href="#">
+<i class="fab fa-google-play"></i>
+<div class="app-btn-text">
+<span class="app-btn-sub">Get it on</span>
+<span class="app-btn-name">Google Play</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="footer-bottom-text">© 2024 JunkAway Pro. All Rights Reserved.</p>
+<div class="footer-certifications">
+<div class="cert-badge"><i class="fas fa-shield-alt"></i> Licensed &amp; Insured</div>
+<div class="cert-badge"><i class="fas fa-leaf"></i> Eco-Certified</div>
+<div class="cert-badge"><i class="fab fa-google" style="color:#4285f4;"></i> 4.9 ★ Rating</div>
+</div>
+<div class="footer-bottom-links">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+<a href="#">Sitemap</a>
+</div>
+</div>
 </footer>
-
 <!-- FLOATING WIDGETS -->
 <div class="float-phone">
-    <a href="tel:+15551234567">
-        <i class="fas fa-phone"></i>
-        <span>(555) 123-4567</span>
-    </a>
+<a href="tel:+15551234567">
+<i class="fas fa-phone"></i>
+<span>(555) 123-4567</span>
+</a>
 </div>
-
 <div class="float-chat" id="floatChat">
-    <button class="float-chat-btn" aria-label="Live Chat" onclick="toggleChat()">
-        <i class="fas fa-comments" id="chatIcon"></i>
-        <i class="fas fa-times" id="chatCloseIcon" style="display:none"></i>
-        <span class="chat-notification" id="chatBadge">1</span>
-    </button>
-    <div class="chat-popup">
-        <div class="chat-popup-header">
-            <div class="chat-popup-avatar">👩‍💼</div>
-            <div class="chat-popup-name">Emily — Support</div>
-            <div class="chat-popup-status">Online now — typically replies instantly</div>
-        </div>
-        <div class="chat-popup-body">
-            <div id="chatMessages" style="max-height:180px;overflow-y:auto;margin-bottom:12px;"></div>
-            <div class="chat-input">
-                <input type="text" id="chatInput" placeholder="Type a message..." maxlength="300">
-                <button onclick="sendMsg()"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    <i class="fas fa-arrow-up"></i>
+<button aria-label="Live Chat" class="float-chat-btn" onclick="toggleChat()">
+<i class="fas fa-comments" id="chatIcon"></i>
+<i class="fas fa-times" id="chatCloseIcon" style="display:none"></i>
+<span class="chat-notification" id="chatBadge">1</span>
 </button>
-
+<div class="chat-popup">
+<div class="chat-popup-header">
+<div class="chat-popup-avatar">👩‍💼</div>
+<div class="chat-popup-name">Emily — Support</div>
+<div class="chat-popup-status">Online now — typically replies instantly</div>
+</div>
+<div class="chat-popup-body">
+<div id="chatMessages" style="max-height:180px;overflow-y:auto;margin-bottom:12px;"></div>
+<div class="chat-input">
+<input id="chatInput" maxlength="300" placeholder="Type a message..." type="text"/>
+<button onclick="sendMsg()"><i class="fas fa-paper-plane"></i></button>
+</div>
+</div>
+</div>
+</div>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+<i class="fas fa-arrow-up"></i>
+</button>
 <script>
     // ===== LOADER =====
     window.addEventListener('load', () => {
@@ -5489,6 +5312,14 @@
         btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                if (filter === 'all' || item.dataset.category === filter) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         });
     });
 
@@ -5645,8 +5476,8 @@
                  "Hello! Got a question about pricing, booking, or what we haul? I'm here!"] },
             { name:'pricing', phrases:['how much'],
               keywords:['price','cost','charge','fee','expensive','cheap','quote','estimate','rate','pay','money','dollar','affordable'],
-              r:["Pricing starts at $99 for a single item and up to $599 for a full truck load. All estimates are free with no obligation — final price confirmed before we start!",
-                 "We offer free upfront estimates! Single items from $99, full loads up to $599. No hidden fees, ever."] },
+              r:["Pricing starts at $157 for a minimum load and up to $897 for a full truck load. All estimates are free with no obligation — final price confirmed before we start!",
+                 "We offer free upfront estimates! Minimum loads from $157, full loads up to $897. No hidden fees, ever."] },
             { name:'booking', phrases:['same day','pick up','can you come'],
               keywords:['book','schedule','appointment','available','come','pickup','today','tomorrow','weekend','asap','urgent','when'],
               r:["We're available 7 days a week, 7AM–9PM — same-day service if you book before noon! Fill out the form or call (555) 123-4567.",
@@ -5771,6 +5602,87 @@
         });
     })();
 
+</script>
+<script>
+/* Demo Overlay — does not touch any existing site HTML/CSS/JS */
+(function () {
+  const ORANGE = '#f97316';
+  const DARK   = '#0f172a';
+  const WHITE  = '#ffffff';
+
+  const style = document.createElement('style');
+  style.textContent = [
+    '.demo-layer * { box-sizing:border-box; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }',
+    '#demo-badge { position:fixed; top:14px; left:50%; transform:translateX(-50%); background:#f97316; color:#fff; font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:5px 14px; border-radius:20px; z-index:99999; pointer-events:none; box-shadow:0 2px 10px rgba(249,115,22,.45); white-space:nowrap; }',
+    '#demo-welcome-backdrop { position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:99998; display:flex; align-items:center; justify-content:center; animation:demoFadeIn .35s ease; }',
+    '#demo-welcome-box { background:#fff; border-radius:16px; max-width:460px; width:90%; padding:36px 32px; box-shadow:0 24px 60px rgba(0,0,0,.3); text-align:center; position:relative; animation:demoSlideUp .4s ease; }',
+    '#demo-welcome-box .demo-pill { display:inline-block; background:#f97316; color:#fff; font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:4px 12px; border-radius:20px; margin-bottom:16px; }',
+    '#demo-welcome-box h2 { font-size:1.5rem; font-weight:800; color:#0f172a; margin:0 0 10px; line-height:1.25; }',
+    '#demo-welcome-box p { font-size:.9rem; color:#64748b; line-height:1.6; margin:0 0 24px; }',
+    '#demo-welcome-box .demo-progress { height:3px; background:#e2e8f0; border-radius:3px; overflow:hidden; margin-bottom:20px; }',
+    '#demo-welcome-box .demo-progress-bar { height:100%; background:#f97316; border-radius:3px; width:0%; transition:width 4s linear; }',
+    '#demo-welcome-close { background:#0f172a; color:#fff; border:none; padding:11px 28px; border-radius:8px; font-size:.875rem; font-weight:700; cursor:pointer; }',
+    '#demo-welcome-close:hover { background:#1e293b; }',
+    '#demo-welcome-box .demo-skip { display:block; margin-top:12px; font-size:.75rem; color:#94a3b8; cursor:pointer; text-decoration:underline; }',
+    '#demo-scroll-popup { position:fixed; bottom:90px; right:20px; background:#0f172a; color:#fff; border-radius:14px; padding:20px 22px; max-width:280px; z-index:99997; box-shadow:0 12px 40px rgba(0,0,0,.35); transform:translateX(320px); transition:transform .45s cubic-bezier(.34,1.56,.64,1); border-left:4px solid #f97316; }',
+    '#demo-scroll-popup.show { transform:translateX(0); }',
+    '#demo-scroll-popup .demo-sp-tag { font-size:9px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:#f97316; margin-bottom:8px; }',
+    '#demo-scroll-popup h3 { font-size:1rem; font-weight:800; margin:0 0 8px; line-height:1.3; }',
+    '#demo-scroll-popup p { font-size:.8rem; color:#94a3b8; line-height:1.5; margin:0 0 14px; }',
+    '#demo-scroll-popup .demo-sp-cta { display:block; width:100%; background:#f97316; color:#fff; border:none; border-radius:8px; padding:10px; font-size:.8rem; font-weight:700; cursor:pointer; text-align:center; text-decoration:none; }',
+    '#demo-scroll-popup .demo-sp-cta:hover { opacity:.88; }',
+    '#demo-scroll-close { position:absolute; top:10px; right:12px; background:none; border:none; color:#475569; font-size:18px; cursor:pointer; line-height:1; }',
+    '#demo-scroll-close:hover { color:#fff; }',
+    '#demo-get-tab { position:fixed; right:-2px; top:50%; transform:translateY(-50%); z-index:99996; }',
+    '#demo-get-tab button { background:#f97316; color:#fff; border:none; border-radius:10px 0 0 10px; padding:14px 10px; cursor:pointer; font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; writing-mode:vertical-rl; text-orientation:mixed; transform:rotate(180deg); line-height:1; display:flex; align-items:center; gap:8px; box-shadow:-3px 0 16px rgba(249,115,22,.4); transition:padding .2s,background .2s; }',
+    '#demo-get-tab button:hover { background:#ea580c; padding:14px 14px; }',
+    '#demo-get-tab .demo-tab-dot { width:6px; height:6px; background:#fff; border-radius:50%; animation:demoPulse 1.6s infinite; flex-shrink:0; }',
+    '@keyframes demoFadeIn { from{opacity:0} to{opacity:1} }',
+    '@keyframes demoSlideUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }',
+    '@keyframes demoPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }'
+  ].join(' ');
+  document.head.appendChild(style);
+
+  // 1. BADGE
+  var badge = document.createElement('div');
+  badge.id = 'demo-badge'; badge.className = 'demo-layer';
+  badge.textContent = 'Demo Site';
+  document.body.appendChild(badge);
+
+  // 2. WELCOME MODAL
+  var backdrop = document.createElement('div');
+  backdrop.id = 'demo-welcome-backdrop'; backdrop.className = 'demo-layer';
+  backdrop.innerHTML = '<div id="demo-welcome-box"><div class="demo-pill">Live Demo</div><h2>You\'re previewing a full junk removal website</h2><p>Everything you see — the AI chat, pricing, before &amp; after photos, booking form — is fully built and ready. This site can be customized for your brand and live within 48 hours.</p><div class="demo-progress"><div class="demo-progress-bar" id="demo-prog"></div></div><button id="demo-welcome-close">Explore the Site</button><span class="demo-skip">Auto-closing in 4 seconds</span></div>';
+  document.body.appendChild(backdrop);
+  requestAnimationFrame(function(){ document.getElementById('demo-prog').style.width = '100%'; });
+  function closeModal() {
+    backdrop.style.opacity = '0'; backdrop.style.transition = 'opacity .3s';
+    setTimeout(function(){ backdrop.remove(); }, 300);
+  }
+  var timer = setTimeout(closeModal, 4000);
+  document.getElementById('demo-welcome-close').addEventListener('click', function(){ clearTimeout(timer); closeModal(); });
+  backdrop.addEventListener('click', function(e){ if (e.target === backdrop){ clearTimeout(timer); closeModal(); } });
+
+  // 3. SCROLL POPUP
+  var popup = document.createElement('div');
+  popup.id = 'demo-scroll-popup'; popup.className = 'demo-layer';
+  popup.innerHTML = '<button id="demo-scroll-close">&times;</button><div class="demo-sp-tag">&#9889; For Business Owners</div><h3>Want this site for your business?</h3><p>Custom brand, your service area, your phone number — live in 48 hours.</p><a class="demo-sp-cta" href="#">Get Your Own Site &rarr;</a>';
+  document.body.appendChild(popup);
+  document.getElementById('demo-scroll-close').addEventListener('click', function(){ popup.classList.remove('show'); });
+  var scrollShown = false;
+  window.addEventListener('scroll', function() {
+    if (scrollShown) return;
+    var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    if (pct >= 0.55) { scrollShown = true; popup.classList.add('show'); }
+  }, { passive: true });
+
+  // 4. GET THIS SITE TAB
+  var tab = document.createElement('div');
+  tab.id = 'demo-get-tab'; tab.className = 'demo-layer';
+  tab.innerHTML = '<button onclick="document.getElementById(\'demo-scroll-popup\').classList.toggle(\'show\')"><span class="demo-tab-dot"></span>Get This Site</button>';
+  document.body.appendChild(tab);
+
+})();
 </script>
 </body>
 </html>
