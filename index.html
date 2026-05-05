@@ -3984,7 +3984,7 @@
 <p class="pricing-desc">Perfect for 1–2 small items, a few boxes, or a single piece of furniture.</p>
 <div class="pricing-price">
 <div class="pricing-from">Starting from</div>
-<div class="pricing-amount"><sup>$</sup><span class="counter" data-target="157">0</span></div>
+<div class="pricing-amount"><sup>$</sup><span class="counter" data-target="157" data-duration="700">0</span></div>
 <div class="pricing-unit">up to 1/8 truck</div>
 </div>
 <ul class="pricing-features">
@@ -4006,7 +4006,7 @@
 <p class="pricing-desc">Great for home cleanouts, garage clearing, or multiple furniture pieces.</p>
 <div class="pricing-price">
 <div class="pricing-from">Starting from</div>
-<div class="pricing-amount"><sup>$</sup><span class="counter" data-target="497">0</span></div>
+<div class="pricing-amount"><sup>$</sup><span class="counter" data-target="497" data-duration="700">0</span></div>
 <div class="pricing-unit">up to 1/2 truck</div>
 </div>
 <ul class="pricing-features">
@@ -4027,7 +4027,7 @@
 <p class="pricing-desc">Complete estate cleanouts, commercial jobs, and large-scale junk removal projects.</p>
 <div class="pricing-price">
 <div class="pricing-from">Starting from</div>
-<div class="pricing-amount"><sup>$</sup><span class="counter" data-target="897">0</span></div>
+<div class="pricing-amount"><sup>$</sup><span class="counter" data-target="897" data-duration="700">0</span></div>
 <div class="pricing-unit">full truck load</div>
 </div>
 <ul class="pricing-features">
@@ -5277,7 +5277,7 @@
 
     function animateCounter(el) {
         const target = parseInt(el.dataset.target);
-        const duration = 2800;
+        const duration = parseInt(el.dataset.duration) || 1600;
         const increment = target / (duration / 16);
         let current = 0;
 
