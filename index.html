@@ -1524,6 +1524,11 @@
             grid-column: span 2;
         }
 
+        .gallery-grid.filtered .gallery-item {
+            grid-column: span 1 !important;
+            grid-row: span 1 !important;
+        }
+
         .gallery-item img {
             width: 100%;
             height: 100%;
@@ -4970,7 +4975,7 @@
 <div class="blog-grid">
 <div class="blog-card reveal" style="transition-delay:0.1s">
 <div class="blog-img-wrap">
-<img alt="Decluttering tips" class="blog-img" loading="lazy" src="images/residential.jpg"/>
+<img alt="Decluttering tips" class="blog-img" loading="lazy" src="images/blog-declutter.jpg"/>
 <span class="blog-category">Decluttering</span>
 </div>
 <div class="blog-body">
@@ -4986,7 +4991,7 @@
 </div>
 <div class="blog-card reveal" style="transition-delay:0.2s">
 <div class="blog-img-wrap">
-<img alt="Recycling guide" class="blog-img" loading="lazy" src="images/eco.jpg"/>
+<img alt="Recycling guide" class="blog-img" loading="lazy" src="images/blog-recycling.jpg"/>
 <span class="blog-category">Recycling</span>
 </div>
 <div class="blog-body">
@@ -5001,7 +5006,7 @@
 </div>
 <div class="blog-card reveal" style="transition-delay:0.3s">
 <div class="blog-img-wrap">
-<img alt="Estate cleanout" class="blog-img" loading="lazy" src="images/estate.jpg"/>
+<img alt="Estate cleanout" class="blog-img" loading="lazy" src="images/blog-estate.jpg"/>
 <span class="blog-category">Estate Cleanout</span>
 </div>
 <div class="blog-body">
@@ -5313,12 +5318,14 @@
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const filter = btn.dataset.filter;
+            const grid = document.querySelector('.gallery-grid');
+            if (filter === 'all') {
+                grid.classList.remove('filtered');
+            } else {
+                grid.classList.add('filtered');
+            }
             document.querySelectorAll('.gallery-item').forEach(item => {
-                if (filter === 'all' || item.dataset.category === filter) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
+                item.style.display = (filter === 'all' || item.dataset.category === filter) ? '' : 'none';
             });
         });
     });
@@ -5693,7 +5700,15 @@
 
     '@keyframes dFI{from{opacity:0}to{opacity:1}}',
     '@keyframes dSU{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}',
-    '@keyframes dPL{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}'
+    '@keyframes dPL{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}',
+    '@media(max-width:768px){',
+    '#ddr{width:100%;left:0;right:0;top:auto;bottom:0;height:88vh;border-radius:20px 20px 0 0;transform:translateY(100%)}',
+    '#ddr.open{transform:translateY(0)}',
+    '#dgt{top:auto;bottom:80px;transform:none}',
+    '#dgt button{border-radius:10px 10px 0 0;writing-mode:horizontal-tb;transform:none;padding:10px 14px;font-size:10px}',
+    '#dsn{left:10px;right:10px;max-width:none;bottom:80px}',
+    '#dcc{display:none}',
+    '}'
   ].join('');
   document.head.appendChild(s);
 
